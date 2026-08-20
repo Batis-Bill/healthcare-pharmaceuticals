@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Healthcare Pharmaceuticals"
+  >
+
+  <title>Healthcare Pharmaceuticals</title>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
+</head>
+
+
+<body>
+
+  <!-- =====================================================
+       MOVING SHIPPING BANNER
+  ====================================================== -->
+
+  <div class="shipping-banner">
+
+    <div class="shipping-track">
+
+      <span>
+        Free UPS or FedEx 2 Day Shipping on Orders $150+
+      </span>
+
+      <span>
+        Free UPS or FedEx 2 Day Shipping on Orders $150+
+      </span>
+
+      <span>
+        Free UPS or FedEx 2 Day Shipping on Orders $150+
+      </span>
+
+      <span>
+        Free UPS or FedEx 2 Day Shipping on Orders $150+
+      </span>
+
+      <span>
+        Free UPS or FedEx 2 Day Shipping on Orders $150+
+      </span>
+
+      <span>
+        Free UPS or FedEx 2 Day Shipping on Orders $150+
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header
+    class="site-header"
+    id="top"
+  >
+
+    <div class="container header-card glass-card">
+
+      <a
+        class="brand"
+        href="#home"
+      >
+
+        <span class="brand-mark">
+          +
+        </span>
+
+        <span class="brand-text">
+
+          Healthcare
+
+          <strong>
+            Pharmaceuticals
+          </strong>
+
+        </span>
+
+      </a>
+
+
+      <div class="header-actions">
+
+        <!-- SEARCH -->
+
+        <button
+          class="icon-button"
+          id="searchToggle"
+          type="button"
+          aria-label="Search products"
+        >
+
+          <svg viewBox="0 0 24 24">
+
+            <circle
+              cx="11"
+              cy="11"
+              r="7"
+            ></circle>
+
+            <path
+              d="m20 20-3.5-3.5"
+            ></path>
+
+          </svg>
+
+        </button>
+
+
+        <!-- ACCOUNT -->
+
+        <button
+          class="icon-button account-header-button"
+          id="accountHeaderButton"
+          type="button"
+          aria-label="My account"
+        >
+
+          <svg viewBox="0 0 24 24">
+
+            <circle
+              cx="12"
+              cy="8"
+              r="4"
+            ></circle>
+
+            <path
+              d="M4 21a8 8 0 0 1 16 0"
+            ></path>
+
+          </svg>
+
+
+          <span
+            class="account-online-dot"
+            id="accountOnlineDot"
+          ></span>
+
+        </button>
+
+
+        <!-- CART -->
+
+        <button
+          class="icon-button cart-button"
+          id="cartToggle"
+          type="button"
+          aria-label="Open cart"
+        >
+
+          <svg viewBox="0 0 24 24">
+
+            <path
+              d="M3 3h2l2.2 10.2a2 2 0 0 0 2 1.6h7.9a2 2 0 0 0 2-1.6L21 7H6"
+            ></path>
+
+            <circle
+              cx="10"
+              cy="20"
+              r="1"
+            ></circle>
+
+            <circle
+              cx="18"
+              cy="20"
+              r="1"
+            ></circle>
+
+          </svg>
+
+
+          <span
+            class="cart-count"
+            id="cartCount"
+          >
+            0
+          </span>
+
+        </button>
+
+
+        <!-- MENU -->
+
+        <button
+          class="icon-button"
+          id="menuToggle"
+          type="button"
+          aria-label="Open menu"
+        >
+
+          <svg viewBox="0 0 24 24">
+
+            <path
+              d="M4 7h16M4 12h16M4 17h16"
+            ></path>
+
+          </svg>
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- SEARCH PANEL -->
+
+    <div
+      class="search-panel glass-card"
+      id="searchPanel"
+    >
+
+      <div class="search-panel-inner">
+
+        <svg viewBox="0 0 24 24">
+
+          <circle
+            cx="11"
+            cy="11"
+            r="7"
+          ></circle>
+
+          <path
+            d="m20 20-3.5-3.5"
+          ></path>
+
+        </svg>
+
+
+        <input
+          id="globalSearch"
+          type="search"
+          placeholder="Search products..."
+          autocomplete="off"
+        >
+
+
+        <button
+          id="searchClose"
+          class="text-button"
+          type="button"
+        >
+          Close
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =====================================================
+       PAGE OVERLAY
+  ====================================================== -->
+
+  <div
+    class="overlay"
+    id="pageOverlay"
+  ></div>
+
+
+  <!-- =====================================================
+       SIDE MENU
+  ====================================================== -->
+
+  <aside
+    class="side-menu glass-card"
+    id="sideMenu"
+  >
+
+    <div class="side-menu-header">
+
+      <span class="eyebrow">
+        Navigation
+      </span>
+
+
+      <button
+        class="icon-button"
+        id="menuClose"
+        type="button"
+        aria-label="Close menu"
+      >
+        ✕
+      </button>
+
+    </div>
+
+
+    <!-- LOGGED-IN CUSTOMER -->
+
+    <div
+      class="menu-user-card"
+      id="menuUserCard"
+    >
+
+      <div
+        class="menu-user-avatar"
+        id="menuUserAvatar"
+      >
+        U
+      </div>
+
+
+      <div>
+
+        <strong id="menuUserName">
+          Customer
+        </strong>
+
+        <span id="menuUserEmail">
+          customer@example.com
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <nav class="side-nav">
+
+      <a href="#home">
+        Home
+      </a>
+
+      <a href="#shop">
+        Shop
+      </a>
+
+      <a href="#gallery">
+        Gallery
+      </a>
+
+      <a href="#about">
+        About Us
+      </a>
+
+      <a href="#wholesale">
+        Wholesale
+      </a>
+
+      <a href="#contact">
+        Contact Us
+      </a>
+
+
+      <button
+        class="menu-account-link"
+        id="myAccountMenuButton"
+        type="button"
+      >
+        My Account
+      </button>
+
+    </nav>
+
+
+    <button
+      class="login-link"
+      id="loginOpen"
+      type="button"
+    >
+      Log In / Create Account
+    </button>
+
+
+    <button
+      class="logout-link"
+      id="logoutMenuButton"
+      type="button"
+    >
+      Log Out
+    </button>
+
+  </aside>
+
+
+  <!-- =====================================================
+       CART DRAWER
+  ====================================================== -->
+
+  <aside
+    class="cart-drawer glass-card"
+    id="cartDrawer"
+  >
+
+    <div class="cart-header">
+
+      <div>
+
+        <span class="eyebrow">
+          Your Order
+        </span>
+
+        <h2>
+          Shopping Cart
+        </h2>
+
+      </div>
+
+
+      <button
+        class="icon-button"
+        id="cartClose"
+        type="button"
+        aria-label="Close cart"
+      >
+        ✕
+      </button>
+
+    </div>
+
+
+    <div
+      class="cart-items"
+      id="cartItems"
+    ></div>
+
+
+    <div
+      class="cart-empty"
+      id="cartEmpty"
+    >
+
+      <div class="empty-cart-icon">
+        🛒
+      </div>
+
+      <h3>
+        Your cart is empty
+      </h3>
+
+      <p>
+        Browse our catalog and add products to your cart.
+      </p>
+
+      <a
+        href="#shop"
+        class="button button-secondary"
+        id="cartShopLink"
+      >
+        Browse Products
+      </a>
+
+    </div>
+
+
+    <div
+      class="cart-summary"
+      id="cartSummary"
+    >
+
+      <div class="cart-total-line">
+
+        <span>
+          Subtotal
+        </span>
+
+        <strong id="cartSubtotal">
+          $0.00
+        </strong>
+
+      </div>
+
+
+      <p>
+        Shipping and taxes calculated at checkout.
+      </p>
+
+
+      <button
+        class="button button-primary button-full"
+        id="checkoutButton"
+        type="button"
+      >
+        Proceed to Checkout
+      </button>
+
+
+      <button
+        class="text-button clear-cart"
+        id="clearCart"
+        type="button"
+      >
+        Clear Cart
+      </button>
+
+    </div>
+
+  </aside>
+
+
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section
+      class="hero section"
+      id="home"
+    >
+
+      <div class="hero-glow hero-glow-one"></div>
+      <div class="hero-glow hero-glow-two"></div>
+
+
+      <div class="container hero-grid">
+
+        <div class="hero-copy">
+
+          <span class="eyebrow pill">
+            Healthcare Products & Customer Support
+          </span>
+
+
+          <h1>
+
+            <span>
+              Ascend
+            </span>
+
+            Your Research to New Heights.
+
+          </h1>
+
+
+          <p class="hero-description">
+
+            Browse our product collection, explore our gallery,
+            create a customer account and communicate directly
+            with our team through live chat.
+
+          </p>
+
+
+          <div class="hero-actions">
+
+            <a
+              href="#shop"
+              class="button button-primary"
+            >
+              Browse Catalog
+            </a>
+
+            <a
+              href="#gallery"
+              class="button button-secondary"
+            >
+              View Gallery
+            </a>
+
+          </div>
+
+
+          <div class="hero-trust">
+
+            <div class="trust-badge glass-card">
+
+              <span class="trust-symbol">
+                ✓
+              </span>
+
+              <span>
+                Professional Customer Service
+              </span>
+
+            </div>
+
+
+            <div class="trust-badge glass-card">
+
+              <span class="trust-symbol">
+                📍
+              </span>
+
+              <span>
+                Based in FL, USA
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HERO VISUAL -->
+
+        <div class="hero-products glass-card">
+
+          <div class="hero-products-header">
+
+            <span class="eyebrow">
+              Featured Collection
+            </span>
+
+            <span class="status-dot">
+              Available
+            </span>
+
+          </div>
+
+
+          <div class="vial-stage">
+
+            <article class="vial vial-left">
+
+              <div class="vial-cap"></div>
+              <div class="vial-neck"></div>
+
+              <div class="vial-body">
+
+                <div class="vial-label">
+
+                  <span class="vial-brand">
+                    Healthcare Pharmaceuticals
+                  </span>
+
+                  <strong>
+                    NAD+
+                  </strong>
+
+                  <span>
+                    1000mg
+                  </span>
+
+                  <small>
+                    Healthcare Pharmaceuticals
+                  </small>
+
+                </div>
+
+              </div>
+
+            </article>
+
+
+            <article class="vial vial-right">
+
+              <div class="vial-cap"></div>
+              <div class="vial-neck"></div>
+
+              <div class="vial-body">
+
+                <div class="vial-label">
+
+                  <span class="vial-brand">
+                    Healthcare Pharmaceuticals
+                  </span>
+
+                  <strong>
+                    GHK-Cu
+                  </strong>
+
+                  <span>
+                    1000mg
+                  </span>
+
+                  <small>
+                    Healthcare Pharmaceuticals
+                  </small>
+
+                </div>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         BENEFITS
+    ====================================================== -->
+
+    <section class="benefits section">
+
+      <div class="container">
+
+        <div class="section-heading centered">
+
+          <span class="eyebrow">
+            Why Choose Us
+          </span>
+
+          <h2>
+            A Better Customer Experience
+          </h2>
+
+          <p>
+            From product discovery to customer support,
+            our website is designed to make ordering simple.
+          </p>
+
+        </div>
+
+
+        <div class="benefits-grid">
+
+          <article class="benefit-card glass-card">
+
+            <span class="feature-icon">
+              🚚
+            </span>
+
+            <h3>
+              Fast Shipping
+            </h3>
+
+            <p>
+              Orders can be prepared for tracked delivery.
+            </p>
+
+          </article>
+
+
+          <article class="benefit-card glass-card">
+
+            <span class="feature-icon">
+              🔐
+            </span>
+
+            <h3>
+              Secure Accounts
+            </h3>
+
+            <p>
+              Customer accounts are powered by Supabase authentication.
+            </p>
+
+          </article>
+
+
+          <article class="benefit-card glass-card">
+
+            <span class="feature-icon">
+              🛒
+            </span>
+
+            <h3>
+              Simple Ordering
+            </h3>
+
+            <p>
+              Select products and strengths and add them directly to your cart.
+            </p>
+
+          </article>
+
+
+          <article class="benefit-card glass-card">
+
+            <span class="feature-icon">
+              📷
+            </span>
+
+            <h3>
+              Product Gallery
+            </h3>
+
+            <p>
+              Browse images and videos of products and inventory.
+            </p>
+
+          </article>
+
+
+          <article class="benefit-card glass-card">
+
+            <span class="feature-icon">
+              💬
+            </span>
+
+            <h3>
+              Live Support
+            </h3>
+
+            <p>
+              Customers can communicate directly with the owner through live chat.
+            </p>
+
+          </article>
+
+
+          <article class="benefit-card glass-card">
+
+            <span class="feature-icon">
+              👤
+            </span>
+
+            <h3>
+              Customer Dashboard
+            </h3>
+
+            <p>
+              Registered customers can view profiles and order history.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MOVING CUSTOMER REVIEWS
+    ====================================================== -->
+
+    <section class="reviews section">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            Customer Feedback
+          </span>
+
+          <h2>
+            What Customers Say
+          </h2>
+
+          <p>
+            Feedback shared by customers about their experience.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="review-marquee">
+
+        <div
+          class="review-track"
+          id="reviewTrack"
+        ></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SHOP
+    ====================================================== -->
+
+    <section
+      class="shop section"
+      id="shop"
+    >
+
+      <div class="container">
+
+        <div class="shop-header">
+
+          <div class="section-heading">
+
+            <span class="eyebrow">
+              Product Catalog
+            </span>
+
+            <h2>
+              Featured Products
+            </h2>
+
+            <p>
+              Browse the products currently listed on our website.
+            </p>
+
+          </div>
+
+
+          <div class="shop-tools">
+
+            <select
+              id="categoryFilter"
+              aria-label="Filter products"
+            >
+
+              <option value="all">
+                All Products
+              </option>
+
+              <option value="medicine">
+                Medicines
+              </option>
+
+              <option value="peptide">
+                Peptides
+              </option>
+
+              <option value="cofactor">
+                Cofactors
+              </option>
+
+              <option value="reference">
+                Reference Materials
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="product-grid"
+          id="productGrid"
+        ></div>
+
+
+        <div class="load-more-wrap">
+
+          <button
+            class="button button-secondary"
+            id="showAllProducts"
+            type="button"
+          >
+            See All Products
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         IMAGE + VIDEO GALLERY
+    ====================================================== -->
+
+    <section
+      class="gallery-section section"
+      id="gallery"
+    >
+
+      <div class="container">
+
+        <div class="section-heading centered">
+
+          <span class="eyebrow">
+            Our Gallery
+          </span>
+
+          <h2>
+            Explore Healthcare Pharmaceuticals
+          </h2>
+
+          <p>
+            Browse product photographs, pharmacy images,
+            inventory pictures and videos.
+          </p>
+
+        </div>
+
+
+        <!--
+          JavaScript automatically creates all image
+          and video cards inside this container.
+        -->
+
+        <div
+          class="gallery-grid"
+          id="galleryGrid"
+        ></div>
+
+
+        <div class="gallery-more">
+
+          <button
+            class="button button-secondary"
+            id="showMoreGallery"
+            type="button"
+          >
+            View More
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABOUT
+    ====================================================== -->
+
+    <section
+      class="about section"
+      id="about"
+    >
+
+      <div class="container about-grid">
+
+        <div class="about-visual glass-card">
+
+          <div class="about-big-symbol">
+            +
+          </div>
+
+
+          <div class="about-stat">
+
+            <strong>
+              HP
+            </strong>
+
+            <span>
+              Healthcare Pharmaceuticals
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="about-copy">
+
+          <span class="eyebrow">
+            About Healthcare Pharmaceuticals
+          </span>
+
+          <h2>
+            Our Mission
+          </h2>
+
+          <p>
+            Healthcare Pharmaceuticals is focused on providing
+            customers with a professional and convenient online
+            experience for discovering available healthcare products.
+          </p>
+
+          <p>
+            Customers can browse products, view media, create
+            accounts, maintain order history and contact the business
+            directly through live chat.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         WHOLESALE
+    ====================================================== -->
+
+    <section
+      class="wholesale section"
+      id="wholesale"
+    >
+
+      <div class="container wholesale-card glass-card">
+
+        <div>
+
+          <span class="eyebrow">
+            Wholesale
+          </span>
+
+          <h2>
+            Wholesale & Bulk Supply
+          </h2>
+
+          <p>
+            Contact the business for wholesale and bulk purchasing inquiries.
+          </p>
+
+        </div>
+
+
+        <a
+          class="button button-secondary"
+          href="mailto:example@gmail.com?subject=Wholesale%20Inquiry"
+        >
+          Contact Wholesale
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =====================================================
+       LOGIN / REGISTER MODAL
+  ====================================================== -->
+
+  <dialog
+    class="account-modal glass-card"
+    id="accountModal"
+  >
+
+    <button
+      class="account-modal-close"
+      id="accountModalClose"
+      type="button"
+      aria-label="Close account window"
+    >
+      ✕
+    </button>
+
+
+    <!-- LOGIN -->
+
+    <div
+      class="auth-view"
+      id="loginView"
+    >
+
+      <span class="eyebrow">
+        Customer Account
+      </span>
+
+      <h2>
+        Welcome Back
+      </h2>
+
+      <p>
+        Log in to access your account.
+      </p>
+
+
+      <form id="loginForm">
+
+        <label>
+
+          Email Address
+
+          <input
+            type="email"
+            id="loginEmail"
+            required
+            autocomplete="email"
+            placeholder="you@example.com"
+          >
+
+        </label>
+
+
+        <label>
+
+          Password
+
+          <input
+            type="password"
+            id="loginPassword"
+            required
+            autocomplete="current-password"
+            placeholder="Enter your password"
+          >
+
+        </label>
+
+
+        <button
+          class="button button-primary button-full"
+          type="submit"
+        >
+          Log In
+        </button>
+
+      </form>
+
+
+      <button
+        class="text-button forgot-password-button"
+        id="forgotPasswordButton"
+        type="button"
+      >
+        Forgot Password?
+      </button>
+
+
+      <p class="auth-switch">
+
+        Don't have an account?
+
+        <button
+          id="showRegisterButton"
+          type="button"
+        >
+          Create Account
+        </button>
+
+      </p>
+
+    </div>
+
+
+    <!-- REGISTER -->
+
+    <div
+      class="auth-view hidden"
+      id="registerView"
+    >
+
+      <span class="eyebrow">
+        New Customer
+      </span>
+
+      <h2>
+        Create Account
+      </h2>
+
+      <p>
+        Register for a customer account.
+      </p>
+
+
+      <form id="registerForm">
+
+        <label>
+
+          Full Name
+
+          <input
+            type="text"
+            id="registerName"
+            required
+            autocomplete="name"
+          >
+
+        </label>
+
+
+        <label>
+
+          Email Address
+
+          <input
+            type="email"
+            id="registerEmail"
+            required
+            autocomplete="email"
+          >
+
+        </label>
+
+
+        <label>
+
+          Phone Number
+
+          <input
+            type="tel"
+            id="registerPhone"
+            autocomplete="tel"
+          >
+
+        </label>
+
+
+        <label>
+
+          Password
+
+          <input
+            type="password"
+            id="registerPassword"
+            required
+            minlength="6"
+            autocomplete="new-password"
+          >
+
+        </label>
+
+
+        <label>
+
+          Confirm Password
+
+          <input
+            type="password"
+            id="registerConfirmPassword"
+            required
+            minlength="6"
+            autocomplete="new-password"
+          >
+
+        </label>
+
+
+        <button
+          class="button button-primary button-full"
+          type="submit"
+        >
+          Create Account
+        </button>
+
+      </form>
+
+
+      <p class="auth-switch">
+
+        Already have an account?
+
+        <button
+          id="showLoginButton"
+          type="button"
+        >
+          Log In
+        </button>
+
+      </p>
+
+    </div>
+
+  </dialog>
+
+
+  <!-- =====================================================
+       CUSTOMER DASHBOARD
+  ====================================================== -->
+
+  <dialog
+    class="dashboard-modal glass-card"
+    id="dashboardModal"
+  >
+
+    <button
+      class="account-modal-close"
+      id="dashboardClose"
+      type="button"
+      aria-label="Close dashboard"
+    >
+      ✕
+    </button>
+
+
+    <div class="dashboard-header">
+
+      <div
+        class="dashboard-avatar"
+        id="dashboardAvatar"
+      >
+        U
+      </div>
+
+
+      <div>
+
+        <span class="eyebrow">
+          My Account
+        </span>
+
+        <h2 id="dashboardName">
+          Customer
+        </h2>
+
+        <p id="dashboardEmail"></p>
+
+      </div>
+
+    </div>
+
+
+    <div class="dashboard-tabs">
+
+      <button
+        class="dashboard-tab active"
+        data-tab="profile"
+        type="button"
+      >
+        Profile
+      </button>
+
+      <button
+        class="dashboard-tab"
+        data-tab="orders"
+        type="button"
+      >
+        Orders
+      </button>
+
+      <button
+        class="dashboard-tab"
+        data-tab="security"
+        type="button"
+      >
+        Security
+      </button>
+
+    </div>
+
+
+    <!-- PROFILE -->
+
+    <section
+      class="dashboard-panel active"
+      id="profilePanel"
+    >
+
+      <h3>
+        Profile Information
+      </h3>
+
+
+      <form id="profileForm">
+
+        <label>
+
+          Full Name
+
+          <input
+            type="text"
+            id="profileName"
+            required
+          >
+
+        </label>
+
+
+        <label>
+
+          Email Address
+
+          <input
+            type="email"
+            id="profileEmail"
+            disabled
+          >
+
+        </label>
+
+
+        <label>
+
+          Phone Number
+
+          <input
+            type="tel"
+            id="profilePhone"
+          >
+
+        </label>
+
+
+        <button
+          class="button button-primary"
+          type="submit"
+        >
+          Save Changes
+        </button>
+
+      </form>
+
+    </section>
+
+
+    <!-- ORDERS -->
+
+    <section
+      class="dashboard-panel"
+      id="ordersPanel"
+    >
+
+      <h3>
+        Order History
+      </h3>
+
+
+      <div
+        class="order-history"
+        id="orderHistory"
+      ></div>
+
+    </section>
+
+
+    <!-- SECURITY -->
+
+    <section
+      class="dashboard-panel"
+      id="securityPanel"
+    >
+
+      <h3>
+        Change Password
+      </h3>
+
+
+      <form id="passwordForm">
+
+        <label>
+
+          Current Password
+
+          <input
+            type="password"
+            id="currentPassword"
+            required
+            autocomplete="current-password"
+          >
+
+        </label>
+
+
+        <label>
+
+          New Password
+
+          <input
+            type="password"
+            id="newPassword"
+            required
+            minlength="6"
+            autocomplete="new-password"
+          >
+
+        </label>
+
+
+        <button
+          class="button button-primary"
+          type="submit"
+        >
+          Change Password
+        </button>
+
+      </form>
+
+
+      <hr>
+
+
+      <h3>
+        Delete Account
+      </h3>
+
+
+      <p class="danger-copy">
+        Permanently deleting an account cannot be undone.
+      </p>
+
+
+      <button
+        class="button danger-button"
+        id="deleteAccountButton"
+        type="button"
+      >
+        Delete Account
+      </button>
+
+    </section>
+
+
+    <button
+      class="button button-secondary button-full dashboard-logout"
+      id="dashboardLogoutButton"
+      type="button"
+    >
+      Log Out
+    </button>
+
+  </dialog>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer
+    class="footer"
+    id="contact"
+  >
+
+    <div class="container footer-grid">
+
+      <div>
+
+        <a
+          href="#top"
+          class="brand"
+        >
+
+          <span class="brand-mark">
+            +
+          </span>
+
+          <span>
+
+            Healthcare
+
+            <strong>
+              Pharmaceuticals
+            </strong>
+
+          </span>
+
+        </a>
+
+
+        <p>
+          Professional products and dependable customer support.
+        </p>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          Contact Us
+        </h3>
+
+
+        <div class="contact-list">
+
+          <a href="tel:+19049074610">
+            904-907-4610
+          </a>
+
+          <a href="mailto:example@gmail.com">
+            example@gmail.com
+          </a>
+
+          <address>
+            145 Crystal Palm Blvd
+            <br>
+            St. Johns, FL 32259
+          </address>
+
+        </div>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          Quick Links
+        </h3>
+
+
+        <nav class="footer-links">
+
+          <a href="#home">
+            Home
+          </a>
+
+          <a href="#shop">
+            Shop
+          </a>
+
+          <a href="#gallery">
+            Gallery
+          </a>
+
+          <a href="#about">
+            About Us
+          </a>
+
+          <a href="#wholesale">
+            Wholesale
+          </a>
+
+        </nav>
+
+      </div>
+
+
+      <div>
+
+        <h3>
+          Secure Payments
+        </h3>
+
+
+        <div class="payment-badges">
+
+          <span>
+            VISA
+          </span>
+
+          <span>
+            Mastercard
+          </span>
+
+          <span>
+            Discover
+          </span>
+
+          <span>
+            AMEX
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="container footer-bottom">
+
+      <p>
+        ©
+        <span id="currentYear"></span>
+        Healthcare Pharmaceuticals.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================================
+       TOAST
+  ====================================================== -->
+
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+
+  <!-- =====================================================
+       SUPABASE
+       DO NOT CHANGE THE ORDER
+  ====================================================== -->
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+  ></script>
+
+
+  <!-- WEBSITE JAVASCRIPT -->
+
+  <script src="script.js"></script>
+
+
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/6a846581e9b7ea3447457161/1k0aip14q';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
+
+
+</body>
+
+</html>
