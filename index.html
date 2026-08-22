@@ -41,8 +41,9 @@
 
 <body>
 
+
   <!-- =====================================================
-       MOVING SHIPPING BANNER
+       MOVING SHIPPING BAR
   ====================================================== -->
 
   <div class="shipping-banner">
@@ -98,7 +99,7 @@
           +
         </span>
 
-        <span class="brand-text">
+        <span>
 
           Healthcare
 
@@ -113,13 +114,11 @@
 
       <div class="header-actions">
 
-        <!-- SEARCH -->
-
         <button
           class="icon-button"
           id="searchToggle"
           type="button"
-          aria-label="Search products"
+          aria-label="Search"
         >
 
           <svg viewBox="0 0 24 24">
@@ -139,13 +138,11 @@
         </button>
 
 
-        <!-- ACCOUNT -->
-
         <button
-          class="icon-button account-header-button"
+          class="icon-button"
           id="accountHeaderButton"
           type="button"
-          aria-label="My account"
+          aria-label="Customer Account"
         >
 
           <svg viewBox="0 0 24 24">
@@ -171,13 +168,11 @@
         </button>
 
 
-        <!-- CART -->
-
         <button
           class="icon-button cart-button"
           id="cartToggle"
           type="button"
-          aria-label="Open cart"
+          aria-label="Shopping Cart"
         >
 
           <svg viewBox="0 0 24 24">
@@ -211,13 +206,11 @@
         </button>
 
 
-        <!-- MENU -->
-
         <button
           class="icon-button"
           id="menuToggle"
           type="button"
-          aria-label="Open menu"
+          aria-label="Menu"
         >
 
           <svg viewBox="0 0 24 24">
@@ -235,7 +228,7 @@
     </div>
 
 
-    <!-- SEARCH PANEL -->
+    <!-- SEARCH -->
 
     <div
       class="search-panel glass-card"
@@ -244,28 +237,12 @@
 
       <div class="search-panel-inner">
 
-        <svg viewBox="0 0 24 24">
-
-          <circle
-            cx="11"
-            cy="11"
-            r="7"
-          ></circle>
-
-          <path
-            d="m20 20-3.5-3.5"
-          ></path>
-
-        </svg>
-
-
         <input
           id="globalSearch"
           type="search"
           placeholder="Search products..."
           autocomplete="off"
         >
-
 
         <button
           id="searchClose"
@@ -293,7 +270,7 @@
 
 
   <!-- =====================================================
-       SIDE MENU
+       MENU
   ====================================================== -->
 
   <aside
@@ -307,20 +284,16 @@
         Navigation
       </span>
 
-
       <button
         class="icon-button"
         id="menuClose"
         type="button"
-        aria-label="Close menu"
       >
         ✕
       </button>
 
     </div>
 
-
-    <!-- LOGGED-IN CUSTOMER -->
 
     <div
       class="menu-user-card"
@@ -334,16 +307,13 @@
         U
       </div>
 
-
       <div>
 
         <strong id="menuUserName">
           Customer
         </strong>
 
-        <span id="menuUserEmail">
-          customer@example.com
-        </span>
+        <span id="menuUserEmail"></span>
 
       </div>
 
@@ -388,6 +358,9 @@
     </nav>
 
 
+    <!-- NO ADMIN LINK HERE -->
+
+
     <button
       class="login-link"
       id="loginOpen"
@@ -409,7 +382,7 @@
 
 
   <!-- =====================================================
-       CART DRAWER
+       CART
   ====================================================== -->
 
   <aside
@@ -431,12 +404,10 @@
 
       </div>
 
-
       <button
         class="icon-button"
         id="cartClose"
         type="button"
-        aria-label="Close cart"
       >
         ✕
       </button>
@@ -455,16 +426,12 @@
       id="cartEmpty"
     >
 
-      <div class="empty-cart-icon">
-        🛒
-      </div>
-
       <h3>
         Your cart is empty
       </h3>
 
       <p>
-        Browse our catalog and add products to your cart.
+        Browse our catalog to get started.
       </p>
 
       <a
@@ -530,25 +497,19 @@
   <main>
 
 
-    <!-- =====================================================
-         HERO
-    ====================================================== -->
+    <!-- HERO -->
 
     <section
       class="hero section"
       id="home"
     >
 
-      <div class="hero-glow hero-glow-one"></div>
-      <div class="hero-glow hero-glow-two"></div>
-
-
       <div class="container hero-grid">
 
         <div class="hero-copy">
 
           <span class="eyebrow pill">
-            Healthcare Products & Customer Support
+            Healthcare Pharmaceuticals
           </span>
 
 
@@ -565,9 +526,10 @@
 
           <p class="hero-description">
 
-            Browse our product collection, explore our gallery,
-            create a customer account and communicate directly
-            with our team through live chat.
+            Browse our extensive product catalog,
+            explore our image and video gallery,
+            create your customer account and
+            communicate directly with our team.
 
           </p>
 
@@ -590,40 +552,8 @@
 
           </div>
 
-
-          <div class="hero-trust">
-
-            <div class="trust-badge glass-card">
-
-              <span class="trust-symbol">
-                ✓
-              </span>
-
-              <span>
-                Professional Customer Service
-              </span>
-
-            </div>
-
-
-            <div class="trust-badge glass-card">
-
-              <span class="trust-symbol">
-                📍
-              </span>
-
-              <span>
-                Based in FL, USA
-              </span>
-
-            </div>
-
-          </div>
-
         </div>
 
-
-        <!-- HERO VISUAL -->
 
         <div class="hero-products glass-card">
 
@@ -642,16 +572,17 @@
 
           <div class="vial-stage">
 
-            <article class="vial vial-left">
+            <article class="vial">
 
               <div class="vial-cap"></div>
+
               <div class="vial-neck"></div>
 
               <div class="vial-body">
 
                 <div class="vial-label">
 
-                  <span class="vial-brand">
+                  <span>
                     Healthcare Pharmaceuticals
                   </span>
 
@@ -659,12 +590,8 @@
                     NAD+
                   </strong>
 
-                  <span>
-                    1000mg
-                  </span>
-
                   <small>
-                    Healthcare Pharmaceuticals
+                    Research Collection
                   </small>
 
                 </div>
@@ -674,16 +601,17 @@
             </article>
 
 
-            <article class="vial vial-right">
+            <article class="vial">
 
               <div class="vial-cap"></div>
+
               <div class="vial-neck"></div>
 
               <div class="vial-body">
 
                 <div class="vial-label">
 
-                  <span class="vial-brand">
+                  <span>
                     Healthcare Pharmaceuticals
                   </span>
 
@@ -691,12 +619,8 @@
                     GHK-Cu
                   </strong>
 
-                  <span>
-                    1000mg
-                  </span>
-
                   <small>
-                    Healthcare Pharmaceuticals
+                    Research Collection
                   </small>
 
                 </div>
@@ -714,11 +638,9 @@
     </section>
 
 
-    <!-- =====================================================
-         BENEFITS
-    ====================================================== -->
+    <!-- BENEFITS -->
 
-    <section class="benefits section">
+    <section class="section">
 
       <div class="container">
 
@@ -729,13 +651,8 @@
           </span>
 
           <h2>
-            A Better Customer Experience
+            Designed Around Our Customers
           </h2>
-
-          <p>
-            From product discovery to customer support,
-            our website is designed to make ordering simple.
-          </p>
 
         </div>
 
@@ -753,7 +670,7 @@
             </h3>
 
             <p>
-              Orders can be prepared for tracked delivery.
+              Quick order processing and tracked fulfillment.
             </p>
 
           </article>
@@ -766,11 +683,11 @@
             </span>
 
             <h3>
-              Secure Accounts
+              Customer Accounts
             </h3>
 
             <p>
-              Customer accounts are powered by Supabase authentication.
+              Secure login powered by Supabase.
             </p>
 
           </article>
@@ -783,11 +700,11 @@
             </span>
 
             <h3>
-              Simple Ordering
+              Easy Ordering
             </h3>
 
             <p>
-              Select products and strengths and add them directly to your cart.
+              Select product strengths and quantities easily.
             </p>
 
           </article>
@@ -804,7 +721,7 @@
             </h3>
 
             <p>
-              Browse images and videos of products and inventory.
+              Browse our product images and videos.
             </p>
 
           </article>
@@ -821,7 +738,7 @@
             </h3>
 
             <p>
-              Customers can communicate directly with the owner through live chat.
+              Speak directly with our team.
             </p>
 
           </article>
@@ -834,11 +751,11 @@
             </span>
 
             <h3>
-              Customer Dashboard
+              Order History
             </h3>
 
             <p>
-              Registered customers can view profiles and order history.
+              Customers can follow their submitted orders.
             </p>
 
           </article>
@@ -850,9 +767,7 @@
     </section>
 
 
-    <!-- =====================================================
-         MOVING CUSTOMER REVIEWS
-    ====================================================== -->
+    <!-- REVIEWS -->
 
     <section class="reviews section">
 
@@ -867,10 +782,6 @@
           <h2>
             What Customers Say
           </h2>
-
-          <p>
-            Feedback shared by customers about their experience.
-          </p>
 
         </div>
 
@@ -889,9 +800,7 @@
     </section>
 
 
-    <!-- =====================================================
-         SHOP
-    ====================================================== -->
+    <!-- SHOP -->
 
     <section
       class="shop section"
@@ -909,11 +818,11 @@
             </span>
 
             <h2>
-              Featured Products
+              Available Products
             </h2>
 
             <p>
-              Browse the products currently listed on our website.
+              Select a category or search the catalog.
             </p>
 
           </div>
@@ -921,10 +830,7 @@
 
           <div class="shop-tools">
 
-            <select
-              id="categoryFilter"
-              aria-label="Filter products"
-            >
+            <select id="categoryFilter">
 
               <option value="all">
                 All Products
@@ -976,9 +882,7 @@
     </section>
 
 
-    <!-- =====================================================
-         IMAGE + VIDEO GALLERY
-    ====================================================== -->
+    <!-- GALLERY -->
 
     <section
       class="gallery-section section"
@@ -990,25 +894,20 @@
         <div class="section-heading centered">
 
           <span class="eyebrow">
-            Our Gallery
+            Gallery
           </span>
 
           <h2>
-            Explore Healthcare Pharmaceuticals
+            Images & Videos
           </h2>
 
           <p>
-            Browse product photographs, pharmacy images,
-            inventory pictures and videos.
+            Browse photographs and video media from
+            Healthcare Pharmaceuticals.
           </p>
 
         </div>
 
-
-        <!--
-          JavaScript automatically creates all image
-          and video cards inside this container.
-        -->
 
         <div
           class="gallery-grid"
@@ -1033,9 +932,7 @@
     </section>
 
 
-    <!-- =====================================================
-         ABOUT
-    ====================================================== -->
+    <!-- ABOUT -->
 
     <section
       class="about section"
@@ -1050,42 +947,29 @@
             +
           </div>
 
-
-          <div class="about-stat">
-
-            <strong>
-              HP
-            </strong>
-
-            <span>
-              Healthcare Pharmaceuticals
-            </span>
-
-          </div>
-
         </div>
 
 
         <div class="about-copy">
 
           <span class="eyebrow">
-            About Healthcare Pharmaceuticals
+            About Us
           </span>
 
           <h2>
-            Our Mission
+            Healthcare Pharmaceuticals
           </h2>
 
           <p>
-            Healthcare Pharmaceuticals is focused on providing
-            customers with a professional and convenient online
-            experience for discovering available healthcare products.
+            Our goal is to provide a convenient and
+            professional customer experience from product
+            discovery through ordering and customer support.
           </p>
 
           <p>
-            Customers can browse products, view media, create
-            accounts, maintain order history and contact the business
-            directly through live chat.
+            Customers can create accounts, browse products,
+            view their orders and communicate directly with us
+            through live chat.
           </p>
 
         </div>
@@ -1095,12 +979,10 @@
     </section>
 
 
-    <!-- =====================================================
-         WHOLESALE
-    ====================================================== -->
+    <!-- WHOLESALE -->
 
     <section
-      class="wholesale section"
+      class="section"
       id="wholesale"
     >
 
@@ -1117,7 +999,7 @@
           </h2>
 
           <p>
-            Contact the business for wholesale and bulk purchasing inquiries.
+            Contact us for wholesale inquiries.
           </p>
 
         </div>
@@ -1125,7 +1007,7 @@
 
         <a
           class="button button-secondary"
-          href="mailto:example@gmail.com?subject=Wholesale%20Inquiry"
+          href="mailto:YOUR-WEBSITE-EMAIL-HERE"
         >
           Contact Wholesale
         </a>
@@ -1138,7 +1020,7 @@
 
 
   <!-- =====================================================
-       LOGIN / REGISTER MODAL
+       LOGIN / REGISTER
   ====================================================== -->
 
   <dialog
@@ -1150,13 +1032,10 @@
       class="account-modal-close"
       id="accountModalClose"
       type="button"
-      aria-label="Close account window"
     >
       ✕
     </button>
 
-
-    <!-- LOGIN -->
 
     <div
       class="auth-view"
@@ -1171,10 +1050,6 @@
         Welcome Back
       </h2>
 
-      <p>
-        Log in to access your account.
-      </p>
-
 
       <form id="loginForm">
 
@@ -1183,11 +1058,10 @@
           Email Address
 
           <input
-            type="email"
             id="loginEmail"
+            type="email"
             required
             autocomplete="email"
-            placeholder="you@example.com"
           >
 
         </label>
@@ -1198,11 +1072,10 @@
           Password
 
           <input
-            type="password"
             id="loginPassword"
+            type="password"
             required
             autocomplete="current-password"
-            placeholder="Enter your password"
           >
 
         </label>
@@ -1219,7 +1092,7 @@
 
 
       <button
-        class="text-button forgot-password-button"
+        class="text-button"
         id="forgotPasswordButton"
         type="button"
       >
@@ -1243,8 +1116,6 @@
     </div>
 
 
-    <!-- REGISTER -->
-
     <div
       class="auth-view hidden"
       id="registerView"
@@ -1258,10 +1129,6 @@
         Create Account
       </h2>
 
-      <p>
-        Register for a customer account.
-      </p>
-
 
       <form id="registerForm">
 
@@ -1270,10 +1137,9 @@
           Full Name
 
           <input
-            type="text"
             id="registerName"
+            type="text"
             required
-            autocomplete="name"
           >
 
         </label>
@@ -1284,10 +1150,9 @@
           Email Address
 
           <input
-            type="email"
             id="registerEmail"
+            type="email"
             required
-            autocomplete="email"
           >
 
         </label>
@@ -1298,9 +1163,8 @@
           Phone Number
 
           <input
-            type="tel"
             id="registerPhone"
-            autocomplete="tel"
+            type="tel"
           >
 
         </label>
@@ -1311,11 +1175,10 @@
           Password
 
           <input
-            type="password"
             id="registerPassword"
-            required
+            type="password"
             minlength="6"
-            autocomplete="new-password"
+            required
           >
 
         </label>
@@ -1326,11 +1189,10 @@
           Confirm Password
 
           <input
-            type="password"
             id="registerConfirmPassword"
-            required
+            type="password"
             minlength="6"
-            autocomplete="new-password"
+            required
           >
 
         </label>
@@ -1348,7 +1210,7 @@
 
       <p class="auth-switch">
 
-        Already have an account?
+        Already registered?
 
         <button
           id="showLoginButton"
@@ -1366,6 +1228,7 @@
 
   <!-- =====================================================
        CUSTOMER DASHBOARD
+       NO ADMIN FEATURES HERE
   ====================================================== -->
 
   <dialog
@@ -1377,7 +1240,6 @@
       class="account-modal-close"
       id="dashboardClose"
       type="button"
-      aria-label="Close dashboard"
     >
       ✕
     </button>
@@ -1439,17 +1301,10 @@
     </div>
 
 
-    <!-- PROFILE -->
-
     <section
       class="dashboard-panel active"
       id="profilePanel"
     >
-
-      <h3>
-        Profile Information
-      </h3>
-
 
       <form id="profileForm">
 
@@ -1458,8 +1313,8 @@
           Full Name
 
           <input
-            type="text"
             id="profileName"
+            type="text"
             required
           >
 
@@ -1468,11 +1323,11 @@
 
         <label>
 
-          Email Address
+          Email
 
           <input
-            type="email"
             id="profileEmail"
+            type="email"
             disabled
           >
 
@@ -1481,11 +1336,11 @@
 
         <label>
 
-          Phone Number
+          Phone
 
           <input
-            type="tel"
             id="profilePhone"
+            type="tel"
           >
 
         </label>
@@ -1503,27 +1358,19 @@
     </section>
 
 
-    <!-- ORDERS -->
-
     <section
       class="dashboard-panel"
       id="ordersPanel"
     >
 
       <h3>
-        Order History
+        My Orders
       </h3>
 
-
-      <div
-        class="order-history"
-        id="orderHistory"
-      ></div>
+      <div id="orderHistory"></div>
 
     </section>
 
-
-    <!-- SECURITY -->
 
     <section
       class="dashboard-panel"
@@ -1542,10 +1389,9 @@
           Current Password
 
           <input
-            type="password"
             id="currentPassword"
+            type="password"
             required
-            autocomplete="current-password"
           >
 
         </label>
@@ -1556,11 +1402,10 @@
           New Password
 
           <input
-            type="password"
             id="newPassword"
-            required
+            type="password"
             minlength="6"
-            autocomplete="new-password"
+            required
           >
 
         </label>
@@ -1575,28 +1420,6 @@
 
       </form>
 
-
-      <hr>
-
-
-      <h3>
-        Delete Account
-      </h3>
-
-
-      <p class="danger-copy">
-        Permanently deleting an account cannot be undone.
-      </p>
-
-
-      <button
-        class="button danger-button"
-        id="deleteAccountButton"
-        type="button"
-      >
-        Delete Account
-      </button>
-
     </section>
 
 
@@ -1607,6 +1430,343 @@
     >
       Log Out
     </button>
+
+  </dialog>
+
+
+  <!-- =====================================================
+       CHECKOUT MODAL
+  ====================================================== -->
+
+  <dialog
+    class="checkout-modal glass-card"
+    id="checkoutModal"
+  >
+
+    <button
+      class="account-modal-close"
+      id="checkoutClose"
+      type="button"
+    >
+      ✕
+    </button>
+
+
+    <div class="checkout-heading">
+
+      <span class="eyebrow">
+        Checkout
+      </span>
+
+      <h2>
+        Complete Your Order
+      </h2>
+
+    </div>
+
+
+    <form id="checkoutForm">
+
+      <div class="checkout-grid">
+
+
+        <!-- CUSTOMER -->
+
+        <div class="checkout-column">
+
+          <h3>
+            Contact Information
+          </h3>
+
+
+          <label>
+
+            Full Name
+
+            <input
+              id="checkoutName"
+              type="text"
+              required
+            >
+
+          </label>
+
+
+          <label>
+
+            Email Address
+
+            <input
+              id="checkoutEmail"
+              type="email"
+              required
+            >
+
+          </label>
+
+
+          <label>
+
+            Phone Number
+
+            <input
+              id="checkoutPhone"
+              type="tel"
+              required
+            >
+
+          </label>
+
+
+          <h3>
+            Shipping Address
+          </h3>
+
+
+          <label>
+
+            Street Address
+
+            <input
+              id="shippingAddress"
+              type="text"
+              required
+            >
+
+          </label>
+
+
+          <label>
+
+            Apartment / Suite
+
+            <input
+              id="shippingAddress2"
+              type="text"
+            >
+
+          </label>
+
+
+          <div class="form-row">
+
+            <label>
+
+              City
+
+              <input
+                id="shippingCity"
+                type="text"
+                required
+              >
+
+            </label>
+
+
+            <label>
+
+              State
+
+              <input
+                id="shippingState"
+                type="text"
+                required
+              >
+
+            </label>
+
+          </div>
+
+
+          <div class="form-row">
+
+            <label>
+
+              ZIP Code
+
+              <input
+                id="shippingZip"
+                type="text"
+                required
+              >
+
+            </label>
+
+
+            <label>
+
+              Country
+
+              <select
+                id="shippingCountry"
+                required
+              >
+
+                <option value="United States">
+                  United States
+                </option>
+
+                <option value="Canada">
+                  Canada
+                </option>
+
+              </select>
+
+            </label>
+
+          </div>
+
+
+          <label>
+
+            Delivery Instructions
+
+            <textarea
+              id="deliveryInstructions"
+              rows="3"
+            ></textarea>
+
+          </label>
+
+        </div>
+
+
+        <!-- SUMMARY -->
+
+        <div class="checkout-column checkout-order-card">
+
+          <h3>
+            Order Summary
+          </h3>
+
+
+          <div
+            id="checkoutItems"
+            class="checkout-items"
+          ></div>
+
+
+          <div class="checkout-totals">
+
+            <div>
+
+              <span>
+                Subtotal
+              </span>
+
+              <strong id="checkoutSubtotal">
+                $0.00
+              </strong>
+
+            </div>
+
+
+            <div>
+
+              <span>
+                Shipping
+              </span>
+
+              <strong>
+                $0.00
+              </strong>
+
+            </div>
+
+
+            <div class="checkout-grand-total">
+
+              <span>
+                Total
+              </span>
+
+              <strong id="checkoutTotal">
+                $0.00
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <button
+            class="button button-primary button-full"
+            id="placeOrderButton"
+            type="submit"
+          >
+            Place Order
+          </button>
+
+        </div>
+
+      </div>
+
+    </form>
+
+  </dialog>
+
+
+  <!-- =====================================================
+       CONFIRMATION
+  ====================================================== -->
+
+  <dialog
+    class="confirmation-modal glass-card"
+    id="confirmationModal"
+  >
+
+    <div class="confirmation-icon">
+      ✓
+    </div>
+
+
+    <span class="eyebrow">
+      Order Confirmed
+    </span>
+
+
+    <h2 id="confirmationOrderNumber">
+      Order
+    </h2>
+
+
+    <p>
+      Your order has been received successfully.
+    </p>
+
+
+    <div class="confirmation-details">
+
+      <span>
+        Total
+      </span>
+
+      <strong id="confirmationTotal">
+        $0.00
+      </strong>
+
+    </div>
+
+
+    <div class="confirmation-actions">
+
+      <button
+        class="button button-primary"
+        id="viewOrderButton"
+        type="button"
+      >
+        View My Orders
+      </button>
+
+      <button
+        class="button button-secondary"
+        id="continueShoppingButton"
+        type="button"
+      >
+        Continue Shopping
+      </button>
+
+    </div>
 
   </dialog>
 
@@ -1624,10 +1784,7 @@
 
       <div>
 
-        <a
-          href="#top"
-          class="brand"
-        >
+        <div class="brand">
 
           <span class="brand-mark">
             +
@@ -1643,12 +1800,7 @@
 
           </span>
 
-        </a>
-
-
-        <p>
-          Professional products and dependable customer support.
-        </p>
+        </div>
 
       </div>
 
@@ -1656,27 +1808,22 @@
       <div>
 
         <h3>
-          Contact Us
+          Contact
         </h3>
 
+        <p>
+          904-907-4610
+        </p>
 
-        <div class="contact-list">
+        <p>
+          healthcarepharmaceutical797@gmail.com
+        </p>
 
-          <a href="tel:+19049074610">
-            904-907-4610
-          </a>
-
-          <a href="mailto:example@gmail.com">
-            healthcarepharmaceutical797@gmail.com
-          </a>
-
-          <address>
-            145 Crystal Palm Blvd
-            <br>
-            St. Johns, FL 32259
-          </address>
-
-        </div>
+        <p>
+          145 Crystal Palm Blvd
+          <br>
+          St. Johns, FL 32259
+        </p>
 
       </div>
 
@@ -1686,7 +1833,6 @@
         <h3>
           Quick Links
         </h3>
-
 
         <nav class="footer-links">
 
@@ -1706,10 +1852,6 @@
             About Us
           </a>
 
-          <a href="#wholesale">
-            Wholesale
-          </a>
-
         </nav>
 
       </div>
@@ -1718,27 +1860,15 @@
       <div>
 
         <h3>
-          Secure Payments
+          Payments
         </h3>
-
 
         <div class="payment-badges">
 
-          <span>
-            VISA
-          </span>
-
-          <span>
-            Mastercard
-          </span>
-
-          <span>
-            Discover
-          </span>
-
-          <span>
-            AMEX
-          </span>
+          <span>VISA</span>
+          <span>Mastercard</span>
+          <span>Discover</span>
+          <span>AMEX</span>
 
         </div>
 
@@ -1749,40 +1879,27 @@
 
     <div class="container footer-bottom">
 
-      <p>
-        ©
-        <span id="currentYear"></span>
-        Healthcare Pharmaceuticals.
-      </p>
+      ©
+      <span id="currentYear"></span>
+      Healthcare Pharmaceuticals.
 
     </div>
 
   </footer>
 
 
-  <!-- =====================================================
-       TOAST
-  ====================================================== -->
-
   <div
     class="toast"
     id="toast"
-    role="status"
-    aria-live="polite"
   ></div>
 
 
-  <!-- =====================================================
-       SUPABASE
-       DO NOT CHANGE THE ORDER
-  ====================================================== -->
+  <!-- SUPABASE MUST LOAD FIRST -->
 
   <script
     src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
   ></script>
 
-
-  <!-- WEBSITE JAVASCRIPT -->
 
   <script src="script.js"></script>
 
@@ -1800,6 +1917,7 @@
   })();
   </script>
   <!--End of Tawk.to Script-->
+
 
 
 </body>

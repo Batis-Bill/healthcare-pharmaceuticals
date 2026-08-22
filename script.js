@@ -1,6 +1,5 @@
 /* =========================================================
    HEALTHCARE PHARMACEUTICALS
-   COMPLETE SCRIPT.JS
 ========================================================= */
 
 
@@ -8,23 +7,12 @@
    SUPABASE
 ========================================================= */
 
-/*
-   KEEP YOUR CURRENT WORKING VALUES HERE.
-
-   DO NOT USE:
-   service_role
-   sb_secret_
-
-   Use your browser-safe publishable key.
-*/
-
 const SUPABASE_URL =
   "https://sjpppwvjbvltuidutxkd.supabase.co";
 
 
 const SUPABASE_PUBLISHABLE_KEY =
   "sb_publishable_dWP9JhycYoBY_TnICJKIeA_IN8m4E4z";
-
 
 
 const supabaseClient =
@@ -51,6 +39,10 @@ const supabaseClient =
 
 const products = [
 
+  /* =====================================================
+     CURRENT PRODUCTS
+  ====================================================== */
+
   {
     id: 1,
 
@@ -67,7 +59,7 @@ const products = [
       "assets/products/mounjaro.jpg",
 
     video:
-      "",
+      "assets/products/mounjaro.mp4",
 
     description:
       "Available in multiple strengths.",
@@ -78,51 +70,33 @@ const products = [
     dosages: [
 
       {
-        strength:
-          "2.5 mg",
-
-        price:
-          150
+        strength: "2.5 mg",
+        price: 150
       },
 
       {
-        strength:
-          "5 mg",
-
-        price:
-          200
+        strength: "5 mg",
+        price: 200
       },
 
       {
-        strength:
-          "7.5 mg",
-
-        price:
-          250
+        strength: "7.5 mg",
+        price: 250
       },
 
       {
-        strength:
-          "10 mg",
-
-        price:
-          300
+        strength: "10 mg",
+        price: 300
       },
 
       {
-        strength:
-          "12.5 mg",
-
-        price:
-          400
+        strength: "12.5 mg",
+        price: 400
       },
 
       {
-        strength:
-          "15 mg",
-
-        price:
-          450
+        strength: "15 mg",
+        price: 450
       }
 
     ]
@@ -156,27 +130,18 @@ const products = [
     dosages: [
 
       {
-        strength:
-          "0.25 mg",
-
-        price:
-          100
+        strength: "0.25 mg",
+        price: 100
       },
 
       {
-        strength:
-          "0.5 mg",
-
-        price:
-          130
+        strength: "0.5 mg",
+        price: 130
       },
 
       {
-        strength:
-          "1 mg",
-
-        price:
-          150
+        strength: "1 mg",
+        price: 150
       }
 
     ]
@@ -210,43 +175,28 @@ const products = [
     dosages: [
 
       {
-        strength:
-          "0.25 mg",
-
-        price:
-          199
+        strength: "0.25 mg",
+        price: 199
       },
 
       {
-        strength:
-          "0.5 mg",
-
-        price:
-          199
+        strength: "0.5 mg",
+        price: 199
       },
 
       {
-        strength:
-          "1 mg",
-
-        price:
-          249
+        strength: "1 mg",
+        price: 249
       },
 
       {
-        strength:
-          "1.7 mg",
-
-        price:
-          299
+        strength: "1.7 mg",
+        price: 299
       },
 
       {
-        strength:
-          "2.4 mg",
-
-        price:
-          349
+        strength: "2.4 mg",
+        price: 349
       }
 
     ]
@@ -280,43 +230,28 @@ const products = [
     dosages: [
 
       {
-        strength:
-          "0.6 mg",
-
-        price:
-          150
+        strength: "0.6 mg",
+        price: 150
       },
 
       {
-        strength:
-          "1.2 mg",
-
-        price:
-          175
+        strength: "1.2 mg",
+        price: 175
       },
 
       {
-        strength:
-          "1.8 mg",
-
-        price:
-          200
+        strength: "1.8 mg",
+        price: 200
       },
 
       {
-        strength:
-          "2.4 mg",
-
-        price:
-          225
+        strength: "2.4 mg",
+        price: 225
       },
 
       {
-        strength:
-          "3 mg",
-
-        price:
-          250
+        strength: "3 mg",
+        price: 250
       }
 
     ]
@@ -341,11 +276,8 @@ const products = [
     image:
       "assets/products/NAD+.jpg",
 
-    video:
-      "",
-
     description:
-      "NAD+ product listed in our catalog.",
+      "NAD+ product in our research collection.",
 
     badge:
       "Available"
@@ -370,11 +302,8 @@ const products = [
     image:
       "assets/products/ghk-cu.jpg",
 
-    video:
-      "",
-
     description:
-      "GHK-Cu product listed in our catalog.",
+      "GHK-Cu product in our research collection.",
 
     badge:
       "Available"
@@ -399,11 +328,8 @@ const products = [
     image:
       "assets/products/BPC.jpg",
 
-    video:
-      "",
-
     description:
-      "BPC product listed in our catalog.",
+      "BPC reference product.",
 
     badge:
       "Available"
@@ -428,32 +354,278 @@ const products = [
     image:
       "assets/products/CJC.jpg",
 
+    description:
+      "CJC reference material.",
+
+    badge:
+      "Available"
+  },
+
+
+  /* =====================================================
+     NEW PEPTIDES
+  ====================================================== */
+
+
+  /* RETTA / RETATRUTIDE */
+
+  {
+    id: 9,
+
+    name:
+      "Retta",
+
+    fullName:
+      "Retatrutide",
+
+    category:
+      "peptide",
+
+    categoryLabel:
+      "Peptide",
+
+    image:
+      "assets/products/retatrutide.jpg",
+
     video:
       "",
 
     description:
-      "CJC product listed in our catalog.",
+      "Retatrutide research compound available in multiple vial strengths.",
 
     badge:
-      "Available"
+      "Available",
+
+    dosages: [
+
+      {
+        strength: "10 mg",
+        price: 69
+      },
+
+      {
+        strength: "30 mg",
+        price: 170
+      }
+
+    ]
+  },
+
+
+  /* BPC-157 */
+
+  {
+    id: 10,
+
+    name:
+      "BPC-157",
+
+    category:
+      "peptide",
+
+    categoryLabel:
+      "Peptide",
+
+    image:
+      "assets/products/bpc-157.jpg",
+
+    video:
+      "",
+
+    description:
+      "BPC-157 research peptide available in multiple vial strengths.",
+
+    badge:
+      "Available",
+
+    dosages: [
+
+      {
+        strength: "5 mg",
+        price: 52
+      },
+
+      {
+        strength: "10 mg",
+        price: 97
+      }
+
+    ]
+  },
+
+
+  /* TESAMORELIN */
+
+  {
+    id: 11,
+
+    name:
+      "Tesamorelin",
+
+    category:
+      "peptide",
+
+    categoryLabel:
+      "Peptide",
+
+    image:
+      "assets/products/tesamorelin.jpg",
+
+    video:
+      "",
+
+    description:
+      "Tesamorelin research peptide available in multiple vial strengths.",
+
+    badge:
+      "Available",
+
+    dosages: [
+
+      {
+        strength: "5 mg",
+        price: 43
+      },
+
+      {
+        strength: "10 mg",
+        price: 79
+      }
+
+    ]
+  },
+
+
+  /* MOTS-C */
+
+  {
+    id: 12,
+
+    name:
+      "MOTS-C",
+
+    category:
+      "peptide",
+
+    categoryLabel:
+      "Peptide",
+
+    image:
+      "assets/products/mots-c.jpg",
+
+    video:
+      "",
+
+    description:
+      "MOTS-C research peptide.",
+
+    badge:
+      "Available",
+
+    dosages: [
+
+      {
+        strength: "10 mg",
+        price: 116
+      }
+
+    ]
+  },
+
+
+  /* SS-31 */
+
+  {
+    id: 13,
+
+    name:
+      "SS-31",
+
+    category:
+      "peptide",
+
+    categoryLabel:
+      "Peptide",
+
+    image:
+      "assets/products/ss-31.jpg",
+
+    video:
+      "",
+
+    description:
+      "SS-31 research peptide available in multiple vial strengths.",
+
+    badge:
+      "Available",
+
+    dosages: [
+
+      {
+        strength: "10 mg",
+        price: 29
+      },
+
+      {
+        strength: "50 mg",
+        price: 130
+      }
+
+    ]
+  },
+
+
+  /* KPV */
+
+  {
+    id: 14,
+
+    name:
+      "KPV",
+
+    category:
+      "peptide",
+
+    categoryLabel:
+      "Peptide",
+
+    image:
+      "assets/products/kpv.jpg",
+
+    video:
+      "",
+
+    description:
+      "KPV research peptide available in multiple vial strengths.",
+
+    badge:
+      "Available",
+
+    dosages: [
+
+      {
+        strength: "4 mg",
+        price: 38
+      },
+
+      {
+        strength: "10 mg",
+        price: 29
+      }
+
+    ]
   }
 
 ];
 
 
 /* =========================================================
-   GALLERY MEDIA
+   GALLERY
 
-   ADD EVERY IMAGE / VIDEO HERE.
-
-   Because your screenshot truncates several IMG/VID filenames,
-   replace the examples below with the EXACT complete filenames
-   visible in your assets/gallery folder.
+   KEEP ADDING YOUR EXACT FILE NAMES HERE
 ========================================================= */
 
 const galleryMedia = [
-
-  /* ---------- CURRENT KNOWN IMAGES ---------- */
 
   {
     type:
@@ -461,6 +633,7 @@ const galleryMedia = [
 
     source:
       "assets/gallery/IMG-20260727-WA0039.jpg",
+
     title:
       "Our Pharmacy"
   },
@@ -478,11 +651,6 @@ const galleryMedia = [
   },
 
 
-  /* ---------- CURRENT KNOWN VIDEOS ---------- */
-
-  
-  
-  
   {
     type:
       "video",
@@ -492,8 +660,9 @@ const galleryMedia = [
 
     title:
       "Inventory Description"
-  }
-  ,
+  },
+
+
   {
     type:
       "video",
@@ -503,8 +672,9 @@ const galleryMedia = [
 
     title:
       "Inventory Description"
-  }
-  ,
+  },
+
+
   {
     type:
       "video",
@@ -514,8 +684,8 @@ const galleryMedia = [
 
     title:
       "Inventory Description"
-  }
-  ,
+  },
+
   {
     type:
       "video",
@@ -525,8 +695,9 @@ const galleryMedia = [
 
     title:
       "Inventory Description"
-  }
-  ,
+  },
+
+
   {
     type:
       "video",
@@ -536,8 +707,9 @@ const galleryMedia = [
 
     title:
       "Inventory Description"
-  }
-  ,
+  },
+
+
   {
     type:
       "video",
@@ -548,31 +720,6 @@ const galleryMedia = [
     title:
       "Inventory Description"
   }
-
-  
-
-
-
-  /*
-     ======================================================
-     ADD THE REST OF YOUR REAL FILES LIKE THIS:
-
-     ,
-     {
-       type: "image",
-       source: "assets/gallery/IMG-20260727-WA0001.jpg",
-       title: "Product Gallery"
-     }
-
-     ,
-     {
-       type: "video",
-       source: "assets/gallery/VID-20260727-WA0001.mp4",
-       title: "Product Video"
-     }
-
-     ======================================================
-  */
 
 ];
 
@@ -594,7 +741,6 @@ const reviews = [
       "@budgetbeaker"
   },
 
-
   {
     text:
       "Devon is the man. 10/10 support.",
@@ -606,10 +752,9 @@ const reviews = [
       "@gmason"
   },
 
-
   {
     text:
-      "Love that priority shipping is free on all orders, no minimums and no surprise fees at checkout. Made me a repeat customer.",
+      "Love that priority shipping is free on all orders, no minimums and no surprise fees at checkout.",
 
     initials:
       "NV",
@@ -618,10 +763,9 @@ const reviews = [
       "@nina.volkov"
   },
 
-
   {
     text:
-      "Genuinely the most affordable pricing I've found anywhere, and the quality didn't drop to match it.",
+      "Genuinely the most affordable pricing I've found anywhere.",
 
     initials:
       "MD",
@@ -630,10 +774,9 @@ const reviews = [
       "@marcus.delgado"
   },
 
-
   {
     text:
-      "Ryan in customer service is awesome. He patiently answered every question I had.",
+      "Ryan in customer service is awesome.",
 
     initials:
       "HC",
@@ -642,64 +785,15 @@ const reviews = [
       "@hannahcole"
   },
 
-
   {
     text:
-      "Free priority shipping that actually shows up fast. Can't beat it.",
+      "Free priority shipping that actually shows up fast.",
 
     initials:
       "DP",
 
     handle:
       "@devin_park"
-  },
-
-
-  {
-    text:
-      "Eight separate tests on every batch. That level of verification is the whole reason I moved my orders here.",
-
-    initials:
-      "EM",
-
-    handle:
-      "@elena.marsh"
-  },
-
-
-  {
-    text:
-      "The packaging was super secure. Everything arrived sealed, padded, and completely intact in transit.",
-
-    initials:
-      "OB",
-
-    handle:
-      "@obrennan"
-  },
-
-
-  {
-    text:
-      "Easiest site I've ever ordered from. In and out in two minutes.",
-
-    initials:
-      "RP",
-
-    handle:
-      "@rajpatel"
-  },
-
-
-  {
-    text:
-      "The 8x testing sold me instantly.",
-
-    initials:
-      "PU",
-
-    handle:
-      "@purityhound"
   }
 
 ];
@@ -736,7 +830,7 @@ const state = {
 
 
 /* =========================================================
-   DOM REFERENCES
+   DOM
 ========================================================= */
 
 const productGrid =
@@ -811,12 +905,6 @@ const pageOverlay =
   );
 
 
-const searchPanel =
-  document.getElementById(
-    "searchPanel"
-  );
-
-
 const accountModal =
   document.getElementById(
     "accountModal"
@@ -829,6 +917,24 @@ const dashboardModal =
   );
 
 
+const checkoutModal =
+  document.getElementById(
+    "checkoutModal"
+  );
+
+
+const confirmationModal =
+  document.getElementById(
+    "confirmationModal"
+  );
+
+
+const searchPanel =
+  document.getElementById(
+    "searchPanel"
+  );
+
+
 const toast =
   document.getElementById(
     "toast"
@@ -836,7 +942,7 @@ const toast =
 
 
 /* =========================================================
-   HELPERS
+   UTILITIES
 ========================================================= */
 
 function formatPrice(
@@ -846,11 +952,13 @@ function formatPrice(
   return new Intl.NumberFormat(
     "en-US",
     {
+
       style:
         "currency",
 
       currency:
         "USD"
+
     }
   ).format(
     Number(value) || 0
@@ -921,7 +1029,7 @@ function getInitials(
 
     .map(
       word =>
-        word.charAt(0)
+        word[0]
     )
 
     .join("")
@@ -975,7 +1083,7 @@ function showToast(
 
 
 /* =========================================================
-   SUPABASE PROFILE
+   AUTH PROFILE
 ========================================================= */
 
 async function loadUserProfile() {
@@ -987,76 +1095,55 @@ async function loadUserProfile() {
     state.currentProfile =
       null;
 
-
-    return null;
+    return;
 
   }
 
 
-  try {
+  const {
+    data,
+    error
+  } =
+    await supabaseClient
 
-    const {
-      data,
-      error
-    } =
-      await supabaseClient
+      .from(
+        "profiles"
+      )
 
-        .from(
-          "profiles"
-        )
+      .select(
+        "*"
+      )
 
-        .select(
-          "*"
-        )
+      .eq(
+        "id",
+        state.currentUser.id
+      )
 
-        .eq(
-          "id",
-          state.currentUser.id
-        )
-
-        .maybeSingle();
+      .maybeSingle();
 
 
-    if (
-      error
-    ) {
-
-      console.error(
-        "Profile error:",
-        error
-      );
-
-
-      return null;
-
-    }
-
-
-    state.currentProfile =
-      data;
-
-
-    return data;
-
-  } catch (
+  if (
     error
   ) {
 
     console.error(
-      "Profile load failed:",
+      "Profile error:",
       error
     );
 
-
-    return null;
+    return;
 
   }
+
+
+  state.currentProfile =
+    data;
 
 }
 
 
 /* =========================================================
-   TAWK.TO VISITOR NAME + EMAIL
+   TAWK
 ========================================================= */
 
 async function updateTawkVisitor() {
@@ -1070,7 +1157,7 @@ async function updateTawkVisitor() {
   }
 
 
-  const customerName =
+  const name =
     state.currentProfile
       ?.full_name ||
 
@@ -1081,13 +1168,13 @@ async function updateTawkVisitor() {
     "Customer";
 
 
-  const customerEmail =
+  const email =
     state.currentUser
       ?.email ||
     "";
 
 
-  const setTawkIdentity =
+  const update =
     () => {
 
       if (
@@ -1097,40 +1184,17 @@ async function updateTawkVisitor() {
           "function"
       ) {
 
-        window.Tawk_API
-          .setAttributes(
+        window.Tawk_API.setAttributes(
+          {
 
-            {
-              name:
-                customerName,
+            name:
+              name,
 
-              email:
-                customerEmail
-            },
+            email:
+              email
 
-            error => {
-
-              if (
-                error
-              ) {
-
-                console.error(
-                  "Tawk identity error:",
-                  error
-                );
-
-              } else {
-
-                console.log(
-                  "Tawk customer identified:",
-                  customerName
-                );
-
-              }
-
-            }
-
-          );
+          }
+        );
 
       }
 
@@ -1144,7 +1208,7 @@ async function updateTawkVisitor() {
       "function"
   ) {
 
-    setTawkIdentity();
+    update();
 
   } else {
 
@@ -1153,28 +1217,8 @@ async function updateTawkVisitor() {
       {};
 
 
-    const previousOnLoad =
-      window.Tawk_API
-        .onLoad;
-
-
-    window.Tawk_API
-      .onLoad =
-      function () {
-
-        if (
-          typeof previousOnLoad ===
-          "function"
-        ) {
-
-          previousOnLoad();
-
-        }
-
-
-        setTawkIdentity();
-
-      };
+    window.Tawk_API.onLoad =
+      update;
 
   }
 
@@ -1192,114 +1236,83 @@ async function registerUser(
   password
 ) {
 
-  try {
+  const {
+    data,
+    error
+  } =
+    await supabaseClient.auth
+      .signUp({
 
-    const {
-      data,
-      error
-    } =
-      await supabaseClient.auth
-        .signUp({
+        email:
+          email
+            .trim()
+            .toLowerCase(),
 
-          email:
-            email
-              .trim()
-              .toLowerCase(),
+        password:
+          password,
 
-          password:
-            password,
+        options: {
 
-          options: {
+          data: {
 
-            data: {
+            full_name:
+              name.trim(),
 
-              full_name:
-                name.trim(),
+            phone:
+              phone.trim()
 
-              phone:
-                phone.trim()
+          },
 
-            },
+          emailRedirectTo:
+            window.location.origin
 
-            emailRedirectTo:
-              window.location.origin
+        }
 
-          }
-
-        });
+      });
 
 
-    if (
-      error
-    ) {
-
-      showToast(
-        error.message
-      );
-
-
-      return false;
-
-    }
-
-
-    if (
-      data.user &&
-      !data.session
-    ) {
-
-      showToast(
-        "Account created. Check your email to confirm your account."
-      );
-
-    } else {
-
-      state.currentUser =
-        data.user;
-
-
-      await loadUserProfile();
-
-
-      loadCart();
-
-
-      updateAccountUI();
-
-
-      renderCart();
-
-
-      await updateTawkVisitor();
-
-
-      showToast(
-        "Account created successfully."
-      );
-
-    }
-
-
-    return true;
-
-  } catch (
+  if (
     error
   ) {
 
     console.error(
-      "Registration error:",
       error
     );
 
-
     showToast(
-      "Unable to create account."
+      error.message
     );
-
 
     return false;
 
   }
+
+
+  if (
+    !data.session
+  ) {
+
+    showToast(
+      "Account created. Check your email to confirm your account."
+    );
+
+
+    return true;
+
+  }
+
+
+  state.currentUser =
+    data.user;
+
+
+  await loadUserProfile();
+
+
+  updateAccountUI();
+
+
+  return true;
 
 }
 
@@ -1313,106 +1326,68 @@ async function loginUser(
   password
 ) {
 
-  try {
+  const {
+    data,
+    error
+  } =
+    await supabaseClient.auth
+      .signInWithPassword({
 
-    const {
-      data,
-      error
-    } =
-      await supabaseClient.auth
-        .signInWithPassword({
+        email:
+          email
+            .trim()
+            .toLowerCase(),
 
-          email:
-            email
-              .trim()
-              .toLowerCase(),
+        password:
+          password
 
-          password:
-            password
-
-        });
+      });
 
 
-    if (
-      error
-    ) {
-
-      console.error(
-        "Login error:",
-        error
-      );
-
-
-      if (
-        error.message
-          .toLowerCase()
-          .includes(
-            "email not confirmed"
-          )
-      ) {
-
-        showToast(
-          "Please confirm your email before logging in."
-        );
-
-      } else {
-
-        showToast(
-          error.message
-        );
-
-      }
-
-
-      return false;
-
-    }
-
-
-    state.currentUser =
-      data.user;
-
-
-    await loadUserProfile();
-
-
-    loadCart();
-
-
-    updateAccountUI();
-
-
-    renderCart();
-
-
-    await updateTawkVisitor();
-
-
-    showToast(
-      "Login successful."
-    );
-
-
-    return true;
-
-  } catch (
+  if (
     error
   ) {
 
     console.error(
-      "Login failed:",
       error
     );
 
 
     showToast(
-      "Unable to log in."
+      error.message
     );
 
 
     return false;
 
   }
+
+
+  state.currentUser =
+    data.user;
+
+
+  await loadUserProfile();
+
+
+  loadCart();
+
+
+  updateAccountUI();
+
+
+  renderCart();
+
+
+  await updateTawkVisitor();
+
+
+  showToast(
+    "Login successful."
+  );
+
+
+  return true;
 
 }
 
@@ -1423,171 +1398,84 @@ async function loginUser(
 
 async function logoutUser() {
 
-  try {
-
-    saveCart();
-
-
-    const {
-      error
-    } =
-      await supabaseClient.auth
-        .signOut();
+  await supabaseClient.auth
+    .signOut();
 
 
-    if (
-      error
-    ) {
-
-      showToast(
-        error.message
-      );
+  state.currentUser =
+    null;
 
 
-      return;
-
-    }
-
-
-    state.currentUser =
-      null;
+  state.currentProfile =
+    null;
 
 
-    state.currentProfile =
-      null;
+  state.cart =
+    [];
 
 
-    state.cart =
-      [];
+  loadCart();
 
 
-    loadCart();
+  updateAccountUI();
 
 
-    updateAccountUI();
+  renderCart();
 
 
-    renderCart();
+  dashboardModal
+    ?.close();
 
 
-    if (
-      dashboardModal
-        ?.open
-    ) {
-
-      dashboardModal.close();
-
-    }
+  closeSidePanels();
 
 
-    closeSidePanels();
-
-
-    showToast(
-      "You have been logged out."
-    );
-
-  } catch (
-    error
-  ) {
-
-    console.error(
-      "Logout error:",
-      error
-    );
-
-  }
+  showToast(
+    "Logged out."
+  );
 
 }
 
 
 /* =========================================================
-   RESTORE SESSION
+   SESSION
 ========================================================= */
 
 async function restoreSession() {
 
-  try {
-
-    const {
-      data,
-      error
-    } =
-      await supabaseClient.auth
-        .getSession();
+  const {
+    data
+  } =
+    await supabaseClient.auth
+      .getSession();
 
 
-    if (
-      error
-    ) {
-
-      console.error(
-        "Session error:",
-        error
-      );
-
-
-      loadCart();
-
-
-      return;
-
-    }
-
-
-    if (
-      data.session
-    ) {
-
-      state.currentUser =
-        data.session.user;
-
-
-      await loadUserProfile();
-
-
-      await updateTawkVisitor();
-
-    } else {
-
-      state.currentUser =
-        null;
-
-
-      state.currentProfile =
-        null;
-
-    }
-
-
-    loadCart();
-
-
-    updateAccountUI();
-
-
-    renderCart();
-
-  } catch (
-    error
+  if (
+    data.session
   ) {
 
-    console.error(
-      "Session restore error:",
-      error
-    );
+    state.currentUser =
+      data.session.user;
 
 
-    loadCart();
+    await loadUserProfile();
+
+
+    await updateTawkVisitor();
 
   }
 
+
+  loadCart();
+
+
+  updateAccountUI();
+
+
+  renderCart();
+
 }
 
-
-/* =========================================================
-   AUTH LISTENER
-========================================================= */
 
 function initializeAuthListener() {
 
@@ -1599,30 +1487,19 @@ function initializeAuthListener() {
         session
       ) => {
 
-        console.log(
-          "Supabase auth event:",
-          event
-        );
+        state.currentUser =
+          session
+            ?.user ||
+          null;
 
 
         if (
-          session
+          state.currentUser
         ) {
-
-          state.currentUser =
-            session.user;
-
 
           await loadUserProfile();
 
-
-          await updateTawkVisitor();
-
         } else {
-
-          state.currentUser =
-            null;
-
 
           state.currentProfile =
             null;
@@ -1630,13 +1507,7 @@ function initializeAuthListener() {
         }
 
 
-        loadCart();
-
-
         updateAccountUI();
-
-
-        renderCart();
 
       }
 
@@ -1651,41 +1522,67 @@ function initializeAuthListener() {
 
 function updateAccountUI() {
 
-  const userCard =
-    document.getElementById(
-      "menuUserCard"
+  const loggedIn =
+    Boolean(
+      state.currentUser
     );
 
 
-  const loginButton =
-    document.getElementById(
-      "loginOpen"
+  document.getElementById(
+    "menuUserCard"
+  )
+    ?.classList
+    .toggle(
+      "active",
+      loggedIn
     );
 
 
-  const logoutButton =
-    document.getElementById(
-      "logoutMenuButton"
+  document.getElementById(
+    "loginOpen"
+  )
+    ?.classList
+    .toggle(
+      "hidden-login",
+      loggedIn
     );
 
 
-  const accountButton =
-    document.getElementById(
-      "myAccountMenuButton"
+  document.getElementById(
+    "logoutMenuButton"
+  )
+    ?.classList
+    .toggle(
+      "active",
+      loggedIn
     );
 
 
-  const onlineDot =
-    document.getElementById(
-      "accountOnlineDot"
+  document.getElementById(
+    "myAccountMenuButton"
+  )
+    ?.classList
+    .toggle(
+      "active",
+      loggedIn
+    );
+
+
+  document.getElementById(
+    "accountOnlineDot"
+  )
+    ?.classList
+    .toggle(
+      "active",
+      loggedIn
     );
 
 
   if (
-    state.currentUser
+    loggedIn
   ) {
 
-    const displayName =
+    const name =
       state.currentProfile
         ?.full_name ||
 
@@ -1696,625 +1593,26 @@ function updateAccountUI() {
       "Customer";
 
 
-    userCard
-      ?.classList
-      .add(
-        "active"
-      );
-
-
-    loginButton
-      ?.classList
-      .add(
-        "hidden-login"
-      );
-
-
-    logoutButton
-      ?.classList
-      .add(
-        "active"
-      );
-
-
-    accountButton
-      ?.classList
-      .add(
-        "active"
-      );
-
-
-    onlineDot
-      ?.classList
-      .add(
-        "active"
-      );
-
-
-    const nameElement =
-      document.getElementById(
-        "menuUserName"
-      );
-
-
-    const emailElement =
-      document.getElementById(
-        "menuUserEmail"
-      );
-
-
-    const avatarElement =
-      document.getElementById(
-        "menuUserAvatar"
-      );
-
-
-    if (
-      nameElement
-    ) {
-
-      nameElement.textContent =
-        displayName;
-
-    }
-
-
-    if (
-      emailElement
-    ) {
-
-      emailElement.textContent =
-        state.currentUser.email ||
-        "";
-
-    }
-
-
-    if (
-      avatarElement
-    ) {
-
-      avatarElement.textContent =
-        getInitials(
-          displayName
-        );
-
-    }
-
-  } else {
-
-    userCard
-      ?.classList
-      .remove(
-        "active"
-      );
-
-
-    loginButton
-      ?.classList
-      .remove(
-        "hidden-login"
-      );
-
-
-    logoutButton
-      ?.classList
-      .remove(
-        "active"
-      );
-
-
-    accountButton
-      ?.classList
-      .remove(
-        "active"
-      );
-
-
-    onlineDot
-      ?.classList
-      .remove(
-        "active"
-      );
-
-  }
-
-}
-
-
-/* =========================================================
-   ACCOUNT MODAL
-========================================================= */
-
-function openAccountModal() {
-
-  const modal =
     document.getElementById(
-      "accountModal"
-    );
+      "menuUserName"
+    ).textContent =
+      name;
 
 
-  const loginView =
     document.getElementById(
-      "loginView"
-    );
+      "menuUserEmail"
+    ).textContent =
+      state.currentUser.email;
 
 
-  const registerView =
     document.getElementById(
-      "registerView"
-    );
-
-
-  if (
-    !modal
-  ) {
-
-    console.error(
-      "accountModal not found."
-    );
-
-
-    return;
-
-  }
-
-
-  loginView
-    ?.classList
-    .remove(
-      "hidden"
-    );
-
-
-  registerView
-    ?.classList
-    .add(
-      "hidden"
-    );
-
-
-  if (
-    !modal.open
-  ) {
-
-    modal.showModal();
-
-  }
-
-}
-
-
-/* =========================================================
-   DASHBOARD
-========================================================= */
-
-async function openDashboard() {
-
-  if (
-    !state.currentUser
-  ) {
-
-    openAccountModal();
-
-
-    return;
-
-  }
-
-
-  await loadUserProfile();
-
-
-  const displayName =
-    state.currentProfile
-      ?.full_name ||
-
-    state.currentUser
-      ?.user_metadata
-      ?.full_name ||
-
-    "Customer";
-
-
-  const dashboardName =
-    document.getElementById(
-      "dashboardName"
-    );
-
-
-  const dashboardEmail =
-    document.getElementById(
-      "dashboardEmail"
-    );
-
-
-  const dashboardAvatar =
-    document.getElementById(
-      "dashboardAvatar"
-    );
-
-
-  const profileName =
-    document.getElementById(
-      "profileName"
-    );
-
-
-  const profileEmail =
-    document.getElementById(
-      "profileEmail"
-    );
-
-
-  const profilePhone =
-    document.getElementById(
-      "profilePhone"
-    );
-
-
-  if (
-    dashboardName
-  ) {
-
-    dashboardName.textContent =
-      displayName;
-
-  }
-
-
-  if (
-    dashboardEmail
-  ) {
-
-    dashboardEmail.textContent =
-      state.currentUser.email ||
-      "";
-
-  }
-
-
-  if (
-    dashboardAvatar
-  ) {
-
-    dashboardAvatar.textContent =
+      "menuUserAvatar"
+    ).textContent =
       getInitials(
-        displayName
+        name
       );
 
   }
-
-
-  if (
-    profileName
-  ) {
-
-    profileName.value =
-      state.currentProfile
-        ?.full_name ||
-      "";
-
-  }
-
-
-  if (
-    profileEmail
-  ) {
-
-    profileEmail.value =
-      state.currentUser.email ||
-      "";
-
-  }
-
-
-  if (
-    profilePhone
-  ) {
-
-    profilePhone.value =
-      state.currentProfile
-        ?.phone ||
-      "";
-
-  }
-
-
-  await renderOrderHistory();
-
-
-  if (
-    dashboardModal &&
-    !dashboardModal.open
-  ) {
-
-    dashboardModal.showModal();
-
-  }
-
-}
-
-
-/* =========================================================
-   UPDATE PROFILE
-========================================================= */
-
-async function updateProfile(
-  name,
-  phone
-) {
-
-  if (
-    !state.currentUser
-  ) {
-
-    return false;
-
-  }
-
-
-  try {
-
-    const {
-      data,
-      error
-    } =
-      await supabaseClient
-
-        .from(
-          "profiles"
-        )
-
-        .update({
-
-          full_name:
-            name.trim(),
-
-          phone:
-            phone.trim(),
-
-          updated_at:
-            new Date()
-              .toISOString()
-
-        })
-
-        .eq(
-          "id",
-          state.currentUser.id
-        )
-
-        .select()
-
-        .single();
-
-
-    if (
-      error
-    ) {
-
-      showToast(
-        error.message
-      );
-
-
-      return false;
-
-    }
-
-
-    state.currentProfile =
-      data;
-
-
-    await supabaseClient.auth
-      .updateUser({
-
-        data: {
-
-          full_name:
-            name.trim(),
-
-          phone:
-            phone.trim()
-
-        }
-
-      });
-
-
-    updateAccountUI();
-
-
-    await updateTawkVisitor();
-
-
-    showToast(
-      "Profile updated."
-    );
-
-
-    return true;
-
-  } catch (
-    error
-  ) {
-
-    console.error(
-      "Profile update error:",
-      error
-    );
-
-
-    return false;
-
-  }
-
-}
-
-
-/* =========================================================
-   CHANGE PASSWORD
-========================================================= */
-
-async function changePassword(
-  currentPassword,
-  newPassword
-) {
-
-  if (
-    !state.currentUser
-  ) {
-
-    return false;
-
-  }
-
-
-  if (
-    newPassword.length <
-    6
-  ) {
-
-    showToast(
-      "New password must contain at least 6 characters."
-    );
-
-
-    return false;
-
-  }
-
-
-  const {
-    error:
-      verifyError
-  } =
-    await supabaseClient.auth
-      .signInWithPassword({
-
-        email:
-          state.currentUser.email,
-
-        password:
-          currentPassword
-
-      });
-
-
-  if (
-    verifyError
-  ) {
-
-    showToast(
-      "Current password is incorrect."
-    );
-
-
-    return false;
-
-  }
-
-
-  const {
-    error
-  } =
-    await supabaseClient.auth
-      .updateUser({
-
-        password:
-          newPassword
-
-      });
-
-
-  if (
-    error
-  ) {
-
-    showToast(
-      error.message
-    );
-
-
-    return false;
-
-  }
-
-
-  showToast(
-    "Password changed successfully."
-  );
-
-
-  return true;
-
-}
-
-
-/* =========================================================
-   FORGOT PASSWORD
-========================================================= */
-
-async function sendPasswordReset() {
-
-  const email =
-    document.getElementById(
-      "loginEmail"
-    )
-      ?.value
-      ?.trim();
-
-
-  if (
-    !email
-  ) {
-
-    showToast(
-      "Enter your email address first."
-    );
-
-
-    return;
-
-  }
-
-
-  const {
-    error
-  } =
-    await supabaseClient.auth
-      .resetPasswordForEmail(
-
-        email,
-
-        {
-          redirectTo:
-            window.location.origin +
-            "/reset-password.html"
-        }
-
-      );
-
-
-  if (
-    error
-  ) {
-
-    showToast(
-      error.message
-    );
-
-
-    return;
-
-  }
-
-
-  showToast(
-    "Password reset email sent."
-  );
 
 }
 
@@ -2325,19 +1623,11 @@ async function sendPasswordReset() {
 
 function getCartKey() {
 
-  if (
-    state.currentUser
-  ) {
+  return state.currentUser
 
-    return (
-      "hp-cart-" +
-      state.currentUser.id
-    );
+    ? `hp-cart-${state.currentUser.id}`
 
-  }
-
-
-  return "hp-guest-cart";
+    : "hp-guest-cart";
 
 }
 
@@ -2353,15 +1643,7 @@ function loadCart() {
         )
       ) || [];
 
-  } catch (
-    error
-  ) {
-
-    console.error(
-      "Cart load error:",
-      error
-    );
-
+  } catch {
 
     state.cart =
       [];
@@ -2373,48 +1655,35 @@ function loadCart() {
 
 function saveCart() {
 
-  try {
+  localStorage.setItem(
 
-    localStorage.setItem(
+    getCartKey(),
 
-      getCartKey(),
+    JSON.stringify(
+      state.cart
+    )
 
-      JSON.stringify(
-        state.cart
-      )
-
-    );
-
-  } catch (
-    error
-  ) {
-
-    console.error(
-      "Cart save error:",
-      error
-    );
-
-  }
+  );
 
 }
 
 
 /* =========================================================
-   PRODUCTS FILTER
+   PRODUCTS
 ========================================================= */
 
 function getVisibleProducts() {
 
   const query =
     state.search
-      .trim()
-      .toLowerCase();
+      .toLowerCase()
+      .trim();
 
 
   return products.filter(
     product => {
 
-      const categoryMatch =
+      const categoryOK =
 
         state.category ===
           "all" ||
@@ -2423,31 +1692,28 @@ function getVisibleProducts() {
           state.category;
 
 
-      const text =
+      const searchText =
 
-        (
-          product.name +
-          " " +
-          product.description +
-          " " +
-          product.categoryLabel
-        )
+        `${product.name}
+         ${product.fullName || ""}
+         ${product.categoryLabel}
+         ${product.description}`
 
           .toLowerCase();
 
 
-      const searchMatch =
+      const searchOK =
 
         !query ||
 
-        text.includes(
+        searchText.includes(
           query
         );
 
 
       return (
-        categoryMatch &&
-        searchMatch
+        categoryOK &&
+        searchOK
       );
 
     }
@@ -2456,134 +1722,55 @@ function getVisibleProducts() {
 }
 
 
-/* =========================================================
-   PRODUCT CARD
-========================================================= */
-
 function createProductCard(
   product
 ) {
 
-  let mediaHTML;
+  const firstPrice =
+    product.dosages
+      ?.length
+
+      ? product.dosages[0]
+          .price
+
+      : product.price;
 
 
-  if (
-    product.image
-  ) {
+  const dosageHTML =
+    product.dosages
+      ?.length
 
-    mediaHTML = `
+      ? `
 
-      <div class="product-media">
-
-        <img
-          class="product-image"
-          src="${escapeHTML(product.image)}"
-          alt="${escapeHTML(product.name)}"
-          loading="lazy"
+        <select
+          class="dosage-select"
+          id="dose-${product.id}"
         >
 
+          ${product.dosages
 
-        ${
-          product.video
+            .map(
+              dose => `
 
-            ? `
+                <option
+                  value="${escapeHTML(dose.strength)}"
+                  data-price="${dose.price}"
+                >
+                  ${escapeHTML(dose.strength)}
+                  —
+                  ${formatPrice(dose.price)}
+                </option>
 
-              <button
-                class="watch-video-btn"
-                type="button"
-                data-video="${escapeHTML(product.video)}"
-                data-product-name="${escapeHTML(product.name)}"
-              >
-                ▶ Watch Video
-              </button>
+              `
+            )
 
-            `
+            .join("")}
 
-            : ""
-        }
+        </select>
 
-      </div>
+      `
 
-    `;
-
-  } else {
-
-    mediaHTML = `
-
-      <div class="product-visual">
-
-        <div class="product-placeholder">
-
-          <div style="font-size:45px;">
-            🧪
-          </div>
-
-          <span>
-            Product Image
-          </span>
-
-        </div>
-
-      </div>
-
-    `;
-
-  }
-
-
-  let dosageHTML =
-    "";
-
-
-  let displayedPrice =
-    product.price;
-
-
-  if (
-    product.dosages &&
-    product.dosages.length
-  ) {
-
-    displayedPrice =
-      product.dosages[0]
-        .price;
-
-
-    dosageHTML = `
-
-      <select
-        class="dosage-select"
-        id="dose-${product.id}"
-      >
-
-        ${product.dosages
-
-          .map(
-
-            dose => `
-
-              <option
-                value="${escapeHTML(dose.strength)}"
-                data-price="${dose.price}"
-              >
-
-                ${escapeHTML(dose.strength)}
-                —
-                ${formatPrice(dose.price)}
-
-              </option>
-
-            `
-
-          )
-
-          .join("")}
-
-      </select>
-
-    `;
-
-  }
+      : "";
 
 
   return `
@@ -2595,29 +1782,58 @@ function createProductCard(
       </span>
 
 
-      ${mediaHTML}
+      <div class="product-media">
+
+        <img
+          class="product-image"
+          src="${escapeHTML(product.image)}"
+          alt="${escapeHTML(product.name)}"
+          loading="lazy"
+          onerror="
+            this.style.display='none';
+            this.nextElementSibling.style.display='grid';
+          "
+        >
+
+
+        <div
+          class="product-image-missing"
+          style="display:none;"
+        >
+
+          <div>
+
+            <div style="font-size:40px;">
+              🧪
+            </div>
+
+            <span>
+              Add
+              ${escapeHTML(product.name)}
+              image
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
 
 
       <div class="product-info">
 
         <span class="product-category">
-
           ${escapeHTML(product.categoryLabel)}
-
         </span>
 
 
         <h3>
-
           ${escapeHTML(product.name)}
-
         </h3>
 
 
         <p>
-
           ${escapeHTML(product.description)}
-
         </p>
 
 
@@ -2630,9 +1846,7 @@ function createProductCard(
             class="product-price"
             id="price-${product.id}"
           >
-
-            ${formatPrice(displayedPrice)}
-
+            ${formatPrice(firstPrice)}
           </span>
 
 
@@ -2655,20 +1869,11 @@ function createProductCard(
 }
 
 
-/* =========================================================
-   RENDER PRODUCTS
-========================================================= */
-
 function renderProducts() {
 
   if (
     !productGrid
   ) {
-
-    console.warn(
-      "productGrid not found."
-    );
-
 
     return;
 
@@ -2690,33 +1895,14 @@ function renderProducts() {
         );
 
 
-  if (
-    displayed.length ===
-    0
-  ) {
+  productGrid.innerHTML =
+    displayed
 
-    productGrid.innerHTML = `
+      .map(
+        createProductCard
+      )
 
-      <div class="no-products">
-
-        No products match your search.
-
-      </div>
-
-    `;
-
-  } else {
-
-    productGrid.innerHTML =
-      displayed
-
-        .map(
-          createProductCard
-        )
-
-        .join("");
-
-  }
+      .join("");
 
 
   if (
@@ -2766,43 +1952,10 @@ function renderProducts() {
     );
 
 
-  productGrid
-    .querySelectorAll(
-      ".watch-video-btn"
-    )
-
-    .forEach(
-      button => {
-
-        button.addEventListener(
-          "click",
-          () => {
-
-            openProductVideo(
-
-              button.dataset
-                .video,
-
-              button.dataset
-                .productName
-
-            );
-
-          }
-        );
-
-      }
-    );
-
-
   initializeDosageSelectors();
 
 }
 
-
-/* =========================================================
-   DOSAGE SELECTORS
-========================================================= */
 
 function initializeDosageSelectors() {
 
@@ -2825,17 +1978,10 @@ function initializeDosageSelectors() {
               );
 
 
-            const selected =
+            const option =
               select.options[
                 select.selectedIndex
               ];
-
-
-            const price =
-              Number(
-                selected.dataset
-                  .price
-              );
 
 
             const priceElement =
@@ -2850,7 +1996,7 @@ function initializeDosageSelectors() {
 
               priceElement.textContent =
                 formatPrice(
-                  price
+                  option.dataset.price
                 );
 
             }
@@ -2865,616 +2011,7 @@ function initializeDosageSelectors() {
 
 
 /* =========================================================
-   PRODUCT VIDEO
-========================================================= */
-
-function openProductVideo(
-  videoURL,
-  productName
-) {
-
-  document.getElementById(
-    "productVideoModal"
-  )
-    ?.remove();
-
-
-  const modal =
-    document.createElement(
-      "div"
-    );
-
-
-  modal.id =
-    "productVideoModal";
-
-
-  modal.className =
-    "video-modal";
-
-
-  modal.innerHTML = `
-
-    <div class="video-modal-content glass-card">
-
-      <button
-        class="video-close"
-        type="button"
-      >
-        ×
-      </button>
-
-
-      <h3>
-
-        ${escapeHTML(productName)}
-
-      </h3>
-
-
-      <video
-        controls
-        autoplay
-        playsinline
-        preload="metadata"
-      >
-
-        <source
-          src="${escapeHTML(videoURL)}"
-          type="video/mp4"
-        >
-
-      </video>
-
-    </div>
-
-  `;
-
-
-  document.body.appendChild(
-    modal
-  );
-
-
-  document.body.classList.add(
-    "no-scroll"
-  );
-
-
-  function closeVideo() {
-
-    modal
-      .querySelector(
-        "video"
-      )
-      ?.pause();
-
-
-    modal.remove();
-
-
-    document.body.classList.remove(
-      "no-scroll"
-    );
-
-  }
-
-
-  modal
-    .querySelector(
-      ".video-close"
-    )
-    ?.addEventListener(
-      "click",
-      closeVideo
-    );
-
-
-  modal.addEventListener(
-    "click",
-    event => {
-
-      if (
-        event.target ===
-        modal
-      ) {
-
-        closeVideo();
-
-      }
-
-    }
-  );
-
-}
-
-
-/* =========================================================
-   GALLERY
-========================================================= */
-
-const INITIAL_GALLERY_ITEMS =
-  8;
-
-
-function renderGallery() {
-
-  const galleryGrid =
-    document.getElementById(
-      "galleryGrid"
-    );
-
-
-  const showMoreButton =
-    document.getElementById(
-      "showMoreGallery"
-    );
-
-
-  if (
-    !galleryGrid
-  ) {
-
-    console.warn(
-      "galleryGrid not found."
-    );
-
-
-    return;
-
-  }
-
-
-  const items =
-    state.galleryExpanded
-
-      ? galleryMedia
-
-      : galleryMedia.slice(
-          0,
-          INITIAL_GALLERY_ITEMS
-        );
-
-
-  galleryGrid.innerHTML =
-    items
-
-      .map(
-        (
-          item,
-          index
-        ) => {
-
-          let layoutClass =
-            "";
-
-
-          if (
-            index === 0
-          ) {
-
-            layoutClass =
-              " gallery-large";
-
-          } else if (
-            index === 5
-          ) {
-
-            layoutClass =
-              " gallery-wide";
-
-          }
-
-
-          if (
-            item.type ===
-            "video"
-          ) {
-
-            return `
-
-              <button
-                class="gallery-item gallery-video-item${layoutClass}"
-                type="button"
-                data-gallery-type="video"
-                data-gallery-source="${escapeHTML(item.source)}"
-                data-gallery-title="${escapeHTML(item.title)}"
-              >
-
-                <video
-                  class="gallery-video-preview"
-                  muted
-                  playsinline
-                  preload="metadata"
-                >
-
-                  <source
-                    src="${escapeHTML(item.source)}"
-                    type="video/mp4"
-                  >
-
-                </video>
-
-
-                <span class="gallery-video-play">
-                  ▶
-                </span>
-
-
-                <span class="gallery-overlay">
-
-                  <strong>
-
-                    ${escapeHTML(item.title)}
-
-                  </strong>
-
-                  <small>
-                    Watch Video
-                  </small>
-
-                </span>
-
-              </button>
-
-            `;
-
-          }
-
-
-          return `
-
-            <button
-              class="gallery-item${layoutClass}"
-              type="button"
-              data-gallery-type="image"
-              data-gallery-source="${escapeHTML(item.source)}"
-              data-gallery-title="${escapeHTML(item.title)}"
-            >
-
-              <img
-                src="${escapeHTML(item.source)}"
-                alt="${escapeHTML(item.title)}"
-                loading="lazy"
-              >
-
-
-              <span class="gallery-overlay">
-
-                <strong>
-
-                  ${escapeHTML(item.title)}
-
-                </strong>
-
-                <small>
-                  View Image
-                </small>
-
-              </span>
-
-            </button>
-
-          `;
-
-        }
-      )
-
-      .join("");
-
-
-  galleryGrid
-    .querySelectorAll(
-      ".gallery-item"
-    )
-
-    .forEach(
-      item => {
-
-        item.addEventListener(
-          "click",
-          () => {
-
-            openGalleryViewer(
-
-              item.dataset
-                .galleryType,
-
-              item.dataset
-                .gallerySource,
-
-              item.dataset
-                .galleryTitle
-
-            );
-
-          }
-        );
-
-      }
-    );
-
-
-  if (
-    showMoreButton
-  ) {
-
-    if (
-      galleryMedia.length <=
-      INITIAL_GALLERY_ITEMS
-    ) {
-
-      showMoreButton.hidden =
-        true;
-
-    } else {
-
-      showMoreButton.hidden =
-        false;
-
-
-      showMoreButton.textContent =
-        state.galleryExpanded
-
-          ? "Show Less"
-
-          : "View More";
-
-    }
-
-  }
-
-}
-
-
-/* =========================================================
-   INITIALIZE GALLERY
-========================================================= */
-
-function initializeGallery() {
-
-  renderGallery();
-
-
-  const showMoreButton =
-    document.getElementById(
-      "showMoreGallery"
-    );
-
-
-  if (
-    !showMoreButton
-  ) {
-
-    return;
-
-  }
-
-
-  showMoreButton.addEventListener(
-    "click",
-    () => {
-
-      state.galleryExpanded =
-        !state.galleryExpanded;
-
-
-      renderGallery();
-
-
-      if (
-        !state.galleryExpanded
-      ) {
-
-        document.getElementById(
-          "gallery"
-        )
-          ?.scrollIntoView(
-            {
-              behavior:
-                "smooth",
-
-              block:
-                "start"
-            }
-          );
-
-      }
-
-    }
-  );
-
-}
-
-
-/* =========================================================
-   GALLERY VIEWER
-========================================================= */
-
-function openGalleryViewer(
-  mediaType,
-  mediaSource,
-  title
-) {
-
-  document.getElementById(
-    "galleryLightbox"
-  )
-    ?.remove();
-
-
-  const viewer =
-    document.createElement(
-      "div"
-    );
-
-
-  viewer.id =
-    "galleryLightbox";
-
-
-  viewer.className =
-    "gallery-lightbox";
-
-
-  let mediaHTML;
-
-
-  if (
-    mediaType ===
-    "video"
-  ) {
-
-    mediaHTML = `
-
-      <video
-        class="gallery-lightbox-video"
-        controls
-        autoplay
-        playsinline
-        preload="metadata"
-      >
-
-        <source
-          src="${escapeHTML(mediaSource)}"
-          type="video/mp4"
-        >
-
-        Your browser does not support video playback.
-
-      </video>
-
-    `;
-
-  } else {
-
-    mediaHTML = `
-
-      <img
-        class="gallery-lightbox-image"
-        src="${escapeHTML(mediaSource)}"
-        alt="${escapeHTML(title)}"
-      >
-
-    `;
-
-  }
-
-
-  viewer.innerHTML = `
-
-    <div class="gallery-lightbox-content">
-
-      <button
-        class="gallery-lightbox-close"
-        type="button"
-      >
-        ×
-      </button>
-
-
-      ${mediaHTML}
-
-
-      <div class="gallery-lightbox-title">
-
-        ${escapeHTML(title)}
-
-      </div>
-
-    </div>
-
-  `;
-
-
-  document.body.appendChild(
-    viewer
-  );
-
-
-  document.body.classList.add(
-    "no-scroll"
-  );
-
-
-  function closeViewer() {
-
-    viewer
-      .querySelector(
-        "video"
-      )
-      ?.pause();
-
-
-    viewer.remove();
-
-
-    document.body.classList.remove(
-      "no-scroll"
-    );
-
-
-    document.removeEventListener(
-      "keydown",
-      handleEscape
-    );
-
-  }
-
-
-  function handleEscape(
-    event
-  ) {
-
-    if (
-      event.key ===
-      "Escape"
-    ) {
-
-      closeViewer();
-
-    }
-
-  }
-
-
-  viewer
-    .querySelector(
-      ".gallery-lightbox-close"
-    )
-    ?.addEventListener(
-      "click",
-      closeViewer
-    );
-
-
-  viewer.addEventListener(
-    "click",
-    event => {
-
-      if (
-        event.target ===
-        viewer
-      ) {
-
-        closeViewer();
-
-      }
-
-    }
-  );
-
-
-  document.addEventListener(
-    "keydown",
-    handleEscape
-  );
-
-}
-
-
-/* =========================================================
-   ADD TO CART
+   CART
 ========================================================= */
 
 function addToCart(
@@ -3510,33 +2047,27 @@ function addToCart(
     product.dosages
   ) {
 
-    const selector =
+    const select =
       document.getElementById(
         `dose-${productId}`
       );
 
 
-    if (
-      selector
-    ) {
-
-      const selected =
-        selector.options[
-          selector.selectedIndex
-        ];
+    const option =
+      select.options[
+        select.selectedIndex
+      ];
 
 
-      strength =
-        selected.value;
+    strength =
+      option.value;
 
 
-      price =
-        Number(
-          selected.dataset
-            .price
-        );
-
-    }
+    price =
+      Number(
+        option.dataset
+          .price
+      );
 
   }
 
@@ -3557,8 +2088,7 @@ function addToCart(
     existing
   ) {
 
-    existing.quantity +=
-      1;
+    existing.quantity++;
 
   } else {
 
@@ -3577,7 +2107,7 @@ function addToCart(
         strength,
 
       price:
-        price,
+        Number(price),
 
       quantity:
         1
@@ -3600,18 +2130,30 @@ function addToCart(
 }
 
 
-/* =========================================================
-   RENDER CART
-========================================================= */
+function getCartSubtotal() {
+
+  return state.cart.reduce(
+
+    (
+      total,
+      item
+    ) =>
+
+      total +
+      item.price *
+      item.quantity,
+
+    0
+
+  );
+
+}
+
 
 function renderCart() {
 
   if (
-    !cartItems ||
-    !cartCount ||
-    !cartSubtotal ||
-    !cartSummary ||
-    !cartEmpty
+    !cartItems
   ) {
 
     return;
@@ -3619,7 +2161,7 @@ function renderCart() {
   }
 
 
-  const totalItems =
+  const count =
     state.cart.reduce(
 
       (
@@ -3636,24 +2178,11 @@ function renderCart() {
 
 
   const subtotal =
-    state.cart.reduce(
-
-      (
-        total,
-        item
-      ) =>
-
-        total +
-        item.price *
-        item.quantity,
-
-      0
-
-    );
+    getCartSubtotal();
 
 
   cartCount.textContent =
-    totalItems;
+    count;
 
 
   cartSubtotal.textContent =
@@ -3663,8 +2192,7 @@ function renderCart() {
 
 
   if (
-    state.cart.length ===
-    0
+    !state.cart.length
   ) {
 
     cartItems.innerHTML =
@@ -3698,7 +2226,6 @@ function renderCart() {
     state.cart
 
       .map(
-
         item => `
 
           <div class="cart-item">
@@ -3706,56 +2233,36 @@ function renderCart() {
             <div>
 
               <h4>
-
                 ${escapeHTML(item.name)}
-
               </h4>
-
 
               ${
                 item.strength
 
-                  ? `
-
-                    <p>
-
-                      ${escapeHTML(item.strength)}
-
-                    </p>
-
-                  `
+                  ? `<p>${escapeHTML(item.strength)}</p>`
 
                   : ""
               }
 
-
               <p>
-
                 ${formatPrice(item.price)}
-
               </p>
 
 
               <div class="quantity-control">
 
                 <button
-                  type="button"
                   data-action="minus"
                   data-key="${escapeHTML(item.cartKey)}"
                 >
                   −
                 </button>
 
-
                 <span>
-
                   ${item.quantity}
-
                 </span>
 
-
                 <button
-                  type="button"
                   data-action="plus"
                   data-key="${escapeHTML(item.cartKey)}"
                 >
@@ -3769,7 +2276,6 @@ function renderCart() {
 
             <button
               class="remove-item"
-              type="button"
               data-action="remove"
               data-key="${escapeHTML(item.cartKey)}"
             >
@@ -3779,7 +2285,6 @@ function renderCart() {
           </div>
 
         `
-
       )
 
       .join("");
@@ -3814,10 +2319,6 @@ function renderCart() {
 }
 
 
-/* =========================================================
-   CART QUANTITY
-========================================================= */
-
 function updateCartItem(
   key,
   action
@@ -3825,8 +2326,8 @@ function updateCartItem(
 
   const item =
     state.cart.find(
-      entry =>
-        entry.cartKey ===
+      item =>
+        item.cartKey ===
         key
     );
 
@@ -3845,8 +2346,7 @@ function updateCartItem(
     "plus"
   ) {
 
-    item.quantity +=
-      1;
+    item.quantity++;
 
   }
 
@@ -3856,8 +2356,7 @@ function updateCartItem(
     "minus"
   ) {
 
-    item.quantity -=
-      1;
+    item.quantity--;
 
   }
 
@@ -3872,8 +2371,8 @@ function updateCartItem(
 
     state.cart =
       state.cart.filter(
-        entry =>
-          entry.cartKey !==
+        item =>
+          item.cartKey !==
           key
       );
 
@@ -3889,52 +2388,18 @@ function updateCartItem(
 
 
 /* =========================================================
-   ORDER NUMBER
-========================================================= */
-
-function generateOrderNumber() {
-
-  const timestamp =
-    Date.now()
-      .toString()
-      .slice(
-        -8
-      );
-
-
-  const random =
-    Math.floor(
-      Math.random() *
-      900 +
-      100
-    );
-
-
-  return (
-    "HP-" +
-    timestamp +
-    "-" +
-    random
-  );
-
-}
-
-
-/* =========================================================
    CHECKOUT
 ========================================================= */
 
-async function checkout() {
+function openCheckout() {
 
   if (
-    state.cart.length ===
-    0
+    !state.cart.length
   ) {
 
     showToast(
       "Your cart is empty."
     );
-
 
     return;
 
@@ -3945,12 +2410,12 @@ async function checkout() {
     !state.currentUser
   ) {
 
+    closeSidePanels();
+
+
     showToast(
       "Please log in before checkout."
     );
-
-
-    closeSidePanels();
 
 
     openAccountModal();
@@ -3961,39 +2426,267 @@ async function checkout() {
   }
 
 
-  const subtotal =
-    state.cart.reduce(
+  const name =
+    state.currentProfile
+      ?.full_name ||
 
-      (
-        total,
-        item
-      ) =>
+    state.currentUser
+      ?.user_metadata
+      ?.full_name ||
 
-        total +
-        item.price *
-        item.quantity,
+    "";
 
-      0
 
+  document.getElementById(
+    "checkoutName"
+  ).value =
+    name;
+
+
+  document.getElementById(
+    "checkoutEmail"
+  ).value =
+    state.currentUser.email ||
+    "";
+
+
+  document.getElementById(
+    "checkoutPhone"
+  ).value =
+    state.currentProfile
+      ?.phone ||
+    "";
+
+
+  renderCheckoutSummary();
+
+
+  closeSidePanels();
+
+
+  checkoutModal.showModal();
+
+}
+
+
+function renderCheckoutSummary() {
+
+  const container =
+    document.getElementById(
+      "checkoutItems"
     );
 
 
-  const shipping =
-    0;
+  const subtotal =
+    getCartSubtotal();
 
 
-  const tax =
-    0;
+  container.innerHTML =
+    state.cart
+
+      .map(
+        item => `
+
+          <div class="checkout-item">
+
+            <div>
+
+              <strong>
+                ${escapeHTML(item.name)}
+              </strong>
+
+              <small>
+
+                ${
+                  item.strength
+                    ? escapeHTML(item.strength)
+                    : ""
+                }
+
+                ×
+                ${item.quantity}
+
+              </small>
+
+            </div>
 
 
-  const total =
-    subtotal +
-    shipping +
-    tax;
+            <strong>
+
+              ${formatPrice(
+                item.price *
+                item.quantity
+              )}
+
+            </strong>
+
+          </div>
+
+        `
+      )
+
+      .join("");
+
+
+  document.getElementById(
+    "checkoutSubtotal"
+  ).textContent =
+    formatPrice(
+      subtotal
+    );
+
+
+  document.getElementById(
+    "checkoutTotal"
+  ).textContent =
+    formatPrice(
+      subtotal
+    );
+
+}
+
+
+/* =========================================================
+   CREATE ORDER
+========================================================= */
+
+function generateOrderNumber() {
+
+  return (
+    "HP-" +
+    Date.now()
+      .toString()
+      .slice(-8) +
+    "-" +
+    Math.floor(
+      Math.random() *
+      900 +
+      100
+    )
+  );
+
+}
+
+
+async function submitOrder(
+  event
+) {
+
+  event.preventDefault();
+
+
+  if (
+    !state.currentUser ||
+    !state.cart.length
+  ) {
+
+    return;
+
+  }
+
+
+  const placeButton =
+    document.getElementById(
+      "placeOrderButton"
+    );
+
+
+  placeButton.disabled =
+    true;
+
+
+  placeButton.textContent =
+    "Creating Order...";
+
+
+  const subtotal =
+    getCartSubtotal();
 
 
   const orderNumber =
     generateOrderNumber();
+
+
+  const orderData = {
+
+    user_id:
+      state.currentUser.id,
+
+    order_number:
+      orderNumber,
+
+    subtotal:
+      subtotal,
+
+    shipping:
+      0,
+
+    tax:
+      0,
+
+    total:
+      subtotal,
+
+    status:
+      "Pending",
+
+    customer_name:
+      document.getElementById(
+        "checkoutName"
+      ).value.trim(),
+
+    customer_email:
+      document.getElementById(
+        "checkoutEmail"
+      ).value.trim(),
+
+    customer_phone:
+      document.getElementById(
+        "checkoutPhone"
+      ).value.trim(),
+
+    shipping_address:
+      document.getElementById(
+        "shippingAddress"
+      ).value.trim(),
+
+    shipping_address_2:
+      document.getElementById(
+        "shippingAddress2"
+      ).value.trim(),
+
+    shipping_city:
+      document.getElementById(
+        "shippingCity"
+      ).value.trim(),
+
+    shipping_state:
+      document.getElementById(
+        "shippingState"
+      ).value.trim(),
+
+    shipping_zip:
+      document.getElementById(
+        "shippingZip"
+      ).value.trim(),
+
+    shipping_country:
+      document.getElementById(
+        "shippingCountry"
+      ).value,
+
+    delivery_instructions:
+      document.getElementById(
+        "deliveryInstructions"
+      ).value.trim(),
+
+    payment_method:
+      "To be arranged",
+
+    payment_status:
+      "Unpaid"
+
+  };
 
 
   try {
@@ -4011,30 +2704,9 @@ async function checkout() {
           "orders"
         )
 
-        .insert({
-
-          user_id:
-            state.currentUser.id,
-
-          order_number:
-            orderNumber,
-
-          subtotal:
-            subtotal,
-
-          shipping:
-            shipping,
-
-          tax:
-            tax,
-
-          total:
-            total,
-
-          status:
-            "Pending"
-
-        })
+        .insert(
+          orderData
+        )
 
         .select()
 
@@ -4045,23 +2717,12 @@ async function checkout() {
       orderError
     ) {
 
-      console.error(
-        "Order creation error:",
-        orderError
-      );
-
-
-      showToast(
-        "Unable to create order."
-      );
-
-
-      return;
+      throw orderError;
 
     }
 
 
-    const orderItems =
+    const itemRows =
       state.cart.map(
         item => ({
 
@@ -4105,7 +2766,7 @@ async function checkout() {
         )
 
         .insert(
-          orderItems
+          itemRows
         );
 
 
@@ -4113,18 +2774,7 @@ async function checkout() {
       itemError
     ) {
 
-      console.error(
-        "Order item error:",
-        itemError
-      );
-
-
-      showToast(
-        "Order created, but products could not be saved."
-      );
-
-
-      return;
+      throw itemError;
 
     }
 
@@ -4139,29 +2789,49 @@ async function checkout() {
     renderCart();
 
 
-    closeSidePanels();
+    checkoutModal.close();
 
 
-    showToast(
-      `Order ${orderNumber} created successfully.`
-    );
+    document.getElementById(
+      "confirmationOrderNumber"
+    ).textContent =
+      orderNumber;
 
 
-    await renderOrderHistory();
+    document.getElementById(
+      "confirmationTotal"
+    ).textContent =
+      formatPrice(
+        subtotal
+      );
+
+
+    confirmationModal.showModal();
+
 
   } catch (
     error
   ) {
 
     console.error(
-      "Checkout error:",
+      "Order creation error:",
       error
     );
 
 
     showToast(
-      "Something went wrong while creating your order."
+      error.message ||
+      "Unable to create order."
     );
+
+  } finally {
+
+    placeButton.disabled =
+      false;
+
+
+    placeButton.textContent =
+      "Place Order";
 
   }
 
@@ -4169,8 +2839,108 @@ async function checkout() {
 
 
 /* =========================================================
-   ORDER HISTORY
+   CUSTOMER DASHBOARD
 ========================================================= */
+
+function openAccountModal() {
+
+  document.getElementById(
+    "loginView"
+  )
+    ?.classList
+    .remove(
+      "hidden"
+    );
+
+
+  document.getElementById(
+    "registerView"
+  )
+    ?.classList
+    .add(
+      "hidden"
+    );
+
+
+  accountModal.showModal();
+
+}
+
+
+async function openDashboard() {
+
+  if (
+    !state.currentUser
+  ) {
+
+    openAccountModal();
+
+    return;
+
+  }
+
+
+  await loadUserProfile();
+
+
+  const name =
+    state.currentProfile
+      ?.full_name ||
+
+    state.currentUser
+      ?.user_metadata
+      ?.full_name ||
+
+    "Customer";
+
+
+  document.getElementById(
+    "dashboardName"
+  ).textContent =
+    name;
+
+
+  document.getElementById(
+    "dashboardEmail"
+  ).textContent =
+    state.currentUser.email;
+
+
+  document.getElementById(
+    "dashboardAvatar"
+  ).textContent =
+    getInitials(
+      name
+    );
+
+
+  document.getElementById(
+    "profileName"
+  ).value =
+    name;
+
+
+  document.getElementById(
+    "profileEmail"
+  ).value =
+    state.currentUser.email;
+
+
+  document.getElementById(
+    "profilePhone"
+  ).value =
+    state.currentProfile
+      ?.phone ||
+    "";
+
+
+  await renderOrderHistory();
+
+
+  dashboardModal.showModal();
+
+}
+
 
 async function renderOrderHistory() {
 
@@ -4178,46 +2948,6 @@ async function renderOrderHistory() {
     document.getElementById(
       "orderHistory"
     );
-
-
-  if (
-    !container
-  ) {
-
-    return;
-
-  }
-
-
-  if (
-    !state.currentUser
-  ) {
-
-    container.innerHTML = `
-
-      <div class="empty-orders">
-
-        Please log in to view your orders.
-
-      </div>
-
-    `;
-
-
-    return;
-
-  }
-
-
-  container.innerHTML = `
-
-    <div class="empty-orders">
-
-      Loading orders...
-
-    </div>
-
-  `;
 
 
   const {
@@ -4235,19 +2965,14 @@ async function renderOrderHistory() {
       .select(`
         id,
         order_number,
-        subtotal,
-        shipping,
-        tax,
         total,
         status,
         created_at,
-        order_items (
-          id,
+        order_items(
           product_name,
           strength,
           quantity,
-          unit_price,
-          line_total
+          unit_price
         )
       `)
 
@@ -4269,22 +2994,8 @@ async function renderOrderHistory() {
     error
   ) {
 
-    console.error(
-      "Order history error:",
-      error
-    );
-
-
-    container.innerHTML = `
-
-      <div class="empty-orders">
-
-        Unable to load orders.
-
-      </div>
-
-    `;
-
+    container.textContent =
+      "Unable to load orders.";
 
     return;
 
@@ -4292,21 +3003,18 @@ async function renderOrderHistory() {
 
 
   if (
-    !orders ||
-    orders.length ===
-      0
+    !orders.length
   ) {
 
     container.innerHTML = `
 
-      <div class="empty-orders">
+      <div class="account-order-card glass-card">
 
-        You have no orders yet.
+        No orders yet.
 
       </div>
 
     `;
-
 
     return;
 
@@ -4317,46 +3025,28 @@ async function renderOrderHistory() {
     orders
 
       .map(
-
         order => `
 
-          <article
-            class="account-order-card glass-card"
-          >
+          <article class="account-order-card glass-card">
 
             <div class="order-card-header">
 
-              <div>
+              <strong>
+                ${escapeHTML(order.order_number)}
+              </strong>
 
-                <span class="eyebrow">
-                  Order
-                </span>
-
-                <h4>
-
-                  ${escapeHTML(order.order_number)}
-
-                </h4>
-
-              </div>
-
-
-              <span class="order-status">
-
+              <span>
                 ${escapeHTML(order.status)}
-
               </span>
 
             </div>
 
 
-            <div class="order-date">
-
+            <small>
               ${new Date(
                 order.created_at
               ).toLocaleString()}
-
-            </div>
+            </small>
 
 
             <div class="order-products">
@@ -4367,51 +3057,37 @@ async function renderOrderHistory() {
               )
 
                 .map(
-
                   item => `
 
                     <div class="order-product-row">
 
-                      <div>
+                      <span>
 
-                        <strong>
-
-                          ${escapeHTML(item.product_name)}
-
-                        </strong>
-
+                        ${escapeHTML(item.product_name)}
 
                         ${
                           item.strength
-
-                            ? `
-
-                              <span>
-
-                                ${escapeHTML(item.strength)}
-
-                              </span>
-
-                            `
-
+                            ? `— ${escapeHTML(item.strength)}`
                             : ""
                         }
 
-                      </div>
+                        × ${item.quantity}
+
+                      </span>
 
 
-                      <div>
+                      <span>
 
-                        ${item.quantity}
-                        ×
-                        ${formatPrice(item.unit_price)}
+                        ${formatPrice(
+                          item.unit_price *
+                          item.quantity
+                        )}
 
-                      </div>
+                      </span>
 
                     </div>
 
                   `
-
                 )
 
                 .join("")}
@@ -4421,14 +3097,12 @@ async function renderOrderHistory() {
 
             <div class="order-total-row">
 
-              <span>
+              <strong>
                 Total
-              </span>
+              </strong>
 
               <strong>
-
                 ${formatPrice(order.total)}
-
               </strong>
 
             </div>
@@ -4436,7 +3110,6 @@ async function renderOrderHistory() {
           </article>
 
         `
-
       )
 
       .join("");
@@ -4445,7 +3118,497 @@ async function renderOrderHistory() {
 
 
 /* =========================================================
-   MOVING REVIEWS
+   PROFILE / PASSWORD
+========================================================= */
+
+async function updateProfile(
+  event
+) {
+
+  event.preventDefault();
+
+
+  const name =
+    document.getElementById(
+      "profileName"
+    ).value.trim();
+
+
+  const phone =
+    document.getElementById(
+      "profilePhone"
+    ).value.trim();
+
+
+  const {
+    data,
+    error
+  } =
+    await supabaseClient
+
+      .from(
+        "profiles"
+      )
+
+      .update({
+
+        full_name:
+          name,
+
+        phone:
+          phone
+
+      })
+
+      .eq(
+        "id",
+        state.currentUser.id
+      )
+
+      .select()
+
+      .single();
+
+
+  if (
+    error
+  ) {
+
+    showToast(
+      error.message
+    );
+
+    return;
+
+  }
+
+
+  state.currentProfile =
+    data;
+
+
+  updateAccountUI();
+
+
+  showToast(
+    "Profile updated."
+  );
+
+}
+
+
+async function changePassword(
+  event
+) {
+
+  event.preventDefault();
+
+
+  const current =
+    document.getElementById(
+      "currentPassword"
+    ).value;
+
+
+  const newPassword =
+    document.getElementById(
+      "newPassword"
+    ).value;
+
+
+  const {
+    error:
+      verificationError
+  } =
+    await supabaseClient.auth
+      .signInWithPassword({
+
+        email:
+          state.currentUser.email,
+
+        password:
+          current
+
+      });
+
+
+  if (
+    verificationError
+  ) {
+
+    showToast(
+      "Current password is incorrect."
+    );
+
+    return;
+
+  }
+
+
+  const {
+    error
+  } =
+    await supabaseClient.auth
+      .updateUser({
+
+        password:
+          newPassword
+
+      });
+
+
+  if (
+    error
+  ) {
+
+    showToast(
+      error.message
+    );
+
+    return;
+
+  }
+
+
+  event.target.reset();
+
+
+  showToast(
+    "Password updated."
+  );
+
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+const INITIAL_GALLERY_ITEMS =
+  8;
+
+
+function renderGallery() {
+
+  const grid =
+    document.getElementById(
+      "galleryGrid"
+    );
+
+
+  if (
+    !grid
+  ) {
+
+    return;
+
+  }
+
+
+  const visible =
+    state.galleryExpanded
+
+      ? galleryMedia
+
+      : galleryMedia.slice(
+          0,
+          INITIAL_GALLERY_ITEMS
+        );
+
+
+  grid.innerHTML =
+    visible
+
+      .map(
+        (
+          item,
+          index
+        ) => {
+
+          const featured =
+            index === 0
+              ? " gallery-large"
+              : "";
+
+
+          if (
+            item.type ===
+            "video"
+          ) {
+
+            return `
+
+              <button
+                class="gallery-item gallery-video-item${featured}"
+                data-type="video"
+                data-source="${escapeHTML(item.source)}"
+                data-title="${escapeHTML(item.title)}"
+              >
+
+                <video
+                  class="gallery-video-preview"
+                  muted
+                  playsinline
+                  preload="metadata"
+                >
+
+                  <source
+                    src="${escapeHTML(item.source)}"
+                    type="video/mp4"
+                  >
+
+                </video>
+
+                <span class="gallery-video-play">
+                  ▶
+                </span>
+
+                <span class="gallery-overlay">
+
+                  <strong>
+                    ${escapeHTML(item.title)}
+                  </strong>
+
+                  <small>
+                    Watch Video
+                  </small>
+
+                </span>
+
+              </button>
+
+            `;
+
+          }
+
+
+          return `
+
+            <button
+              class="gallery-item${featured}"
+              data-type="image"
+              data-source="${escapeHTML(item.source)}"
+              data-title="${escapeHTML(item.title)}"
+            >
+
+              <img
+                src="${escapeHTML(item.source)}"
+                alt="${escapeHTML(item.title)}"
+                loading="lazy"
+              >
+
+              <span class="gallery-overlay">
+
+                <strong>
+                  ${escapeHTML(item.title)}
+                </strong>
+
+                <small>
+                  View Image
+                </small>
+
+              </span>
+
+            </button>
+
+          `;
+
+        }
+      )
+
+      .join("");
+
+
+  grid
+    .querySelectorAll(
+      ".gallery-item"
+    )
+
+    .forEach(
+      item => {
+
+        item.addEventListener(
+          "click",
+          () => {
+
+            openGalleryViewer(
+
+              item.dataset.type,
+
+              item.dataset.source,
+
+              item.dataset.title
+
+            );
+
+          }
+        );
+
+      }
+    );
+
+
+  const button =
+    document.getElementById(
+      "showMoreGallery"
+    );
+
+
+  if (
+    button
+  ) {
+
+    button.hidden =
+      galleryMedia.length <=
+      INITIAL_GALLERY_ITEMS;
+
+
+    button.textContent =
+      state.galleryExpanded
+        ? "Show Less"
+        : "View More";
+
+  }
+
+}
+
+
+function initializeGallery() {
+
+  renderGallery();
+
+
+  document.getElementById(
+    "showMoreGallery"
+  )
+    ?.addEventListener(
+      "click",
+      () => {
+
+        state.galleryExpanded =
+          !state.galleryExpanded;
+
+
+        renderGallery();
+
+      }
+    );
+
+}
+
+
+function openGalleryViewer(
+  type,
+  source,
+  title
+) {
+
+  const viewer =
+    document.createElement(
+      "div"
+    );
+
+
+  viewer.className =
+    "gallery-lightbox";
+
+
+  const media =
+
+    type ===
+      "video"
+
+      ? `
+
+        <video
+          class="gallery-lightbox-video"
+          controls
+          autoplay
+          playsinline
+        >
+
+          <source
+            src="${escapeHTML(source)}"
+            type="video/mp4"
+          >
+
+        </video>
+
+      `
+
+      : `
+
+        <img
+          class="gallery-lightbox-image"
+          src="${escapeHTML(source)}"
+          alt="${escapeHTML(title)}"
+        >
+
+      `;
+
+
+  viewer.innerHTML = `
+
+    <div class="gallery-lightbox-content">
+
+      <button
+        class="gallery-lightbox-close"
+      >
+        ×
+      </button>
+
+      ${media}
+
+      <h3>
+        ${escapeHTML(title)}
+      </h3>
+
+    </div>
+
+  `;
+
+
+  document.body.appendChild(
+    viewer
+  );
+
+
+  viewer
+    .querySelector(
+      ".gallery-lightbox-close"
+    )
+
+    .addEventListener(
+      "click",
+      () => {
+
+        viewer.remove();
+
+      }
+    );
+
+
+  viewer.addEventListener(
+    "click",
+    event => {
+
+      if (
+        event.target ===
+        viewer
+      ) {
+
+        viewer.remove();
+
+      }
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   REVIEWS
 ========================================================= */
 
 function renderReviews() {
@@ -4456,76 +3619,39 @@ function renderReviews() {
     );
 
 
-  if (
-    !track
-  ) {
-
-    console.warn(
-      "reviewTrack not found."
-    );
-
-
-    return;
-
-  }
-
-
-  /*
-     We duplicate the reviews so the CSS animation
-     can loop continuously.
-  */
-
-  const movingReviews =
+  track.innerHTML =
     [
       ...reviews,
       ...reviews
-    ];
-
-
-  track.innerHTML =
-    movingReviews
+    ]
 
       .map(
-
         review => `
 
           <article class="review-card">
 
             <div class="review-stars">
-
               ★★★★★
-
             </div>
 
-
             <blockquote>
-
               “${escapeHTML(review.text)}”
-
             </blockquote>
-
 
             <div class="reviewer">
 
               <div class="avatar">
-
                 ${escapeHTML(review.initials)}
-
               </div>
-
 
               <div>
 
                 <strong>
-
                   ${escapeHTML(review.initials)}
-
                 </strong>
 
                 <span>
-
                   ${escapeHTML(review.handle)}
-
                 </span>
 
               </div>
@@ -4535,7 +3661,6 @@ function renderReviews() {
           </article>
 
         `
-
       )
 
       .join("");
@@ -4544,7 +3669,7 @@ function renderReviews() {
 
 
 /* =========================================================
-   SIDE PANELS
+   PANELS
 ========================================================= */
 
 function closeSidePanels() {
@@ -4569,11 +3694,6 @@ function closeSidePanels() {
       "show"
     );
 
-
-  document.body.classList.remove(
-    "no-scroll"
-  );
-
 }
 
 
@@ -4597,34 +3717,24 @@ function openSidePanel(
       "show"
     );
 
-
-  document.body.classList.add(
-    "no-scroll"
-  );
-
 }
 
 
 /* =========================================================
-   WEBSITE EVENTS
+   EVENTS
 ========================================================= */
 
 function initializeEvents() {
-
-  /* MENU */
 
   document.getElementById(
     "menuToggle"
   )
     ?.addEventListener(
       "click",
-      () => {
-
+      () =>
         openSidePanel(
           sideMenu
-        );
-
-      }
+        )
     );
 
 
@@ -4637,34 +3747,20 @@ function initializeEvents() {
     );
 
 
-  /* CART */
-
   document.getElementById(
     "cartToggle"
   )
     ?.addEventListener(
       "click",
-      () => {
-
+      () =>
         openSidePanel(
           cartDrawer
-        );
-
-      }
+        )
     );
 
 
   document.getElementById(
     "cartClose"
-  )
-    ?.addEventListener(
-      "click",
-      closeSidePanels
-    );
-
-
-  document.getElementById(
-    "cartShopLink"
   )
     ?.addEventListener(
       "click",
@@ -4679,8 +3775,6 @@ function initializeEvents() {
     );
 
 
-  /* ACCOUNT HEADER */
-
   document.getElementById(
     "accountHeaderButton"
   )
@@ -4688,23 +3782,13 @@ function initializeEvents() {
       "click",
       () => {
 
-        if (
-          state.currentUser
-        ) {
-
-          openDashboard();
-
-        } else {
-
-          openAccountModal();
-
-        }
+        state.currentUser
+          ? openDashboard()
+          : openAccountModal();
 
       }
     );
 
-
-  /* SIDE MENU LOGIN */
 
   document.getElementById(
     "loginOpen"
@@ -4715,45 +3799,20 @@ function initializeEvents() {
 
         closeSidePanels();
 
-
-        setTimeout(
-          openAccountModal,
-          100
-        );
+        openAccountModal();
 
       }
     );
 
-
-  /* MY ACCOUNT */
 
   document.getElementById(
     "myAccountMenuButton"
   )
     ?.addEventListener(
       "click",
-      () => {
-
-        closeSidePanels();
-
-
-        if (
-          state.currentUser
-        ) {
-
-          openDashboard();
-
-        } else {
-
-          openAccountModal();
-
-        }
-
-      }
+      openDashboard
     );
 
-
-  /* LOGOUT */
 
   document.getElementById(
     "logoutMenuButton"
@@ -4773,19 +3832,13 @@ function initializeEvents() {
     );
 
 
-  /* CLOSE MODALS */
-
   document.getElementById(
     "accountModalClose"
   )
     ?.addEventListener(
       "click",
-      () => {
-
-        accountModal
-          ?.close();
-
-      }
+      () =>
+        accountModal.close()
     );
 
 
@@ -4794,16 +3847,20 @@ function initializeEvents() {
   )
     ?.addEventListener(
       "click",
-      () => {
-
-        dashboardModal
-          ?.close();
-
-      }
+      () =>
+        dashboardModal.close()
     );
 
 
-  /* LOGIN */
+  document.getElementById(
+    "checkoutClose"
+  )
+    ?.addEventListener(
+      "click",
+      () =>
+        checkoutModal.close()
+    );
+
 
   document.getElementById(
     "loginForm"
@@ -4834,20 +3891,13 @@ function initializeEvents() {
           success
         ) {
 
-          event.target.reset();
-
-
-          accountModal
-            ?.close();
+          accountModal.close();
 
         }
 
       }
-
     );
 
-
-  /* REGISTER */
 
   document.getElementById(
     "registerForm"
@@ -4881,7 +3931,6 @@ function initializeEvents() {
             "Passwords do not match."
           );
 
-
           return;
 
         }
@@ -4911,20 +3960,13 @@ function initializeEvents() {
           success
         ) {
 
-          event.target.reset();
-
-
-          accountModal
-            ?.close();
+          accountModal.close();
 
         }
 
       }
-
     );
 
-
-  /* SWITCH AUTH VIEWS */
 
   document.getElementById(
     "showRegisterButton"
@@ -4935,20 +3977,16 @@ function initializeEvents() {
 
         document.getElementById(
           "loginView"
-        )
-          ?.classList
-          .add(
-            "hidden"
-          );
+        ).classList.add(
+          "hidden"
+        );
 
 
         document.getElementById(
           "registerView"
-        )
-          ?.classList
-          .remove(
-            "hidden"
-          );
+        ).classList.remove(
+          "hidden"
+        );
 
       }
     );
@@ -4963,224 +4001,133 @@ function initializeEvents() {
 
         document.getElementById(
           "registerView"
-        )
-          ?.classList
-          .add(
-            "hidden"
-          );
+        ).classList.add(
+          "hidden"
+        );
 
 
         document.getElementById(
           "loginView"
-        )
-          ?.classList
-          .remove(
-            "hidden"
-          );
+        ).classList.remove(
+          "hidden"
+        );
 
       }
     );
 
-
-  /* FORGOT PASSWORD */
-
-  document.getElementById(
-    "forgotPasswordButton"
-  )
-    ?.addEventListener(
-      "click",
-      sendPasswordReset
-    );
-
-
-  /* PROFILE */
 
   document.getElementById(
     "profileForm"
   )
     ?.addEventListener(
       "submit",
-
-      async event => {
-
-        event.preventDefault();
-
-
-        await updateProfile(
-
-          document.getElementById(
-            "profileName"
-          ).value,
-
-          document.getElementById(
-            "profilePhone"
-          ).value
-
-        );
-
-      }
-
+      updateProfile
     );
 
-
-  /* PASSWORD */
 
   document.getElementById(
     "passwordForm"
   )
     ?.addEventListener(
       "submit",
-
-      async event => {
-
-        event.preventDefault();
-
-
-        const success =
-          await changePassword(
-
-            document.getElementById(
-              "currentPassword"
-            ).value,
-
-            document.getElementById(
-              "newPassword"
-            ).value
-
-          );
-
-
-        if (
-          success
-        ) {
-
-          event.target.reset();
-
-        }
-
-      }
-
+      changePassword
     );
 
 
-  /* DELETE ACCOUNT */
-
   document.getElementById(
-    "deleteAccountButton"
+    "checkoutButton"
   )
     ?.addEventListener(
       "click",
-      () => {
-
-        showToast(
-          "Secure account deletion requires the server-side deletion function."
-        );
-
-      }
+      openCheckout
     );
 
-
-  /* DASHBOARD TABS */
-
-  document
-    .querySelectorAll(
-      ".dashboard-tab"
-    )
-
-    .forEach(
-      tab => {
-
-        tab.addEventListener(
-          "click",
-          () => {
-
-            document
-              .querySelectorAll(
-                ".dashboard-tab"
-              )
-
-              .forEach(
-                button => {
-
-                  button.classList.remove(
-                    "active"
-                  );
-
-                }
-              );
-
-
-            document
-              .querySelectorAll(
-                ".dashboard-panel"
-              )
-
-              .forEach(
-                panel => {
-
-                  panel.classList.remove(
-                    "active"
-                  );
-
-                }
-              );
-
-
-            tab.classList.add(
-              "active"
-            );
-
-
-            document.getElementById(
-              `${tab.dataset.tab}Panel`
-            )
-              ?.classList
-              .add(
-                "active"
-              );
-
-          }
-        );
-
-      }
-    );
-
-
-  /* SEARCH */
 
   document.getElementById(
-    "searchToggle"
+    "checkoutForm"
+  )
+    ?.addEventListener(
+      "submit",
+      submitOrder
+    );
+
+
+  document.getElementById(
+    "viewOrderButton"
   )
     ?.addEventListener(
       "click",
-      () => {
+      async () => {
 
-        searchPanel
-          ?.classList
-          .toggle(
-            "open"
-          );
+        confirmationModal.close();
+
+        await openDashboard();
 
 
-        globalSearch
-          ?.focus();
+        document
+          .querySelector(
+            '[data-tab="orders"]'
+          )
+          ?.click();
 
       }
     );
 
 
   document.getElementById(
-    "searchClose"
+    "continueShoppingButton"
   )
     ?.addEventListener(
       "click",
       () => {
 
-        searchPanel
-          ?.classList
-          .remove(
-            "open"
+        confirmationModal.close();
+
+
+        document.getElementById(
+          "shop"
+        )
+          ?.scrollIntoView(
+            {
+              behavior:
+                "smooth"
+            }
           );
+
+      }
+    );
+
+
+  document.getElementById(
+    "clearCart"
+  )
+    ?.addEventListener(
+      "click",
+      () => {
+
+        state.cart =
+          [];
+
+
+        saveCart();
+
+
+        renderCart();
+
+      }
+    );
+
+
+  categoryFilter
+    ?.addEventListener(
+      "change",
+      event => {
+
+        state.category =
+          event.target.value;
+
+
+        renderProducts();
 
       }
     );
@@ -5205,29 +4152,6 @@ function initializeEvents() {
     );
 
 
-  /* CATEGORY FILTER */
-
-  categoryFilter
-    ?.addEventListener(
-      "change",
-      event => {
-
-        state.category =
-          event.target.value;
-
-
-        state.showAll =
-          false;
-
-
-        renderProducts();
-
-      }
-    );
-
-
-  /* SHOW ALL PRODUCTS */
-
   showAllProducts
     ?.addEventListener(
       "click",
@@ -5243,218 +4167,170 @@ function initializeEvents() {
     );
 
 
-  /* CLEAR CART */
-
   document.getElementById(
-    "clearCart"
+    "searchToggle"
   )
     ?.addEventListener(
       "click",
       () => {
 
-        state.cart =
-          [];
-
-
-        saveCart();
-
-
-        renderCart();
-
-
-        showToast(
-          "Cart cleared."
+        searchPanel.classList.toggle(
+          "open"
         );
 
       }
     );
 
 
-  /* CHECKOUT */
-
   document.getElementById(
-    "checkoutButton"
+    "searchClose"
   )
     ?.addEventListener(
       "click",
-      checkout
-    );
+      () => {
 
-
-  /* CLOSE MENU WHEN LINK CLICKED */
-
-  sideMenu
-    ?.querySelectorAll(
-      "a"
-    )
-
-    .forEach(
-      link => {
-
-        link.addEventListener(
-          "click",
-          closeSidePanels
+        searchPanel.classList.remove(
+          "open"
         );
 
       }
     );
 
 
-  /* ESCAPE */
+  document
+    .querySelectorAll(
+      ".dashboard-tab"
+    )
 
-  document.addEventListener(
-    "keydown",
-    event => {
+    .forEach(
+      tab => {
 
-      if (
-        event.key ===
-        "Escape"
-      ) {
+        tab.addEventListener(
+          "click",
+          () => {
 
-        closeSidePanels();
+            document
+              .querySelectorAll(
+                ".dashboard-tab"
+              )
+
+              .forEach(
+                button =>
+                  button.classList.remove(
+                    "active"
+                  )
+              );
 
 
-        searchPanel
-          ?.classList
-          .remove(
-            "open"
-          );
+            document
+              .querySelectorAll(
+                ".dashboard-panel"
+              )
+
+              .forEach(
+                panel =>
+                  panel.classList.remove(
+                    "active"
+                  )
+              );
+
+
+            tab.classList.add(
+              "active"
+            );
+
+
+            document.getElementById(
+              `${tab.dataset.tab}Panel`
+            )
+              ?.classList
+              .add(
+                "active"
+              );
+
+          }
+        );
 
       }
-
-    }
-  );
+    );
 
 }
 
 
 /* =========================================================
-   INITIALIZE WEBSITE
+   INITIALIZE
 ========================================================= */
 
 async function initializeWebsite() {
-
-  console.log(
-    "Starting Healthcare Pharmaceuticals..."
-  );
-
-
-  /*
-     Buttons first so one unrelated component
-     cannot disable navigation.
-  */
 
   try {
 
     initializeEvents();
 
-
-    console.log(
-      "Navigation buttons connected."
-    );
-
   } catch (
     error
   ) {
 
     console.error(
-      "Event initialization error:",
+      "Events:",
       error
     );
 
   }
 
-
-  /* GALLERY */
 
   try {
 
     initializeGallery();
 
-
-    console.log(
-      "Gallery initialized."
-    );
-
   } catch (
     error
   ) {
 
     console.error(
-      "Gallery initialization error:",
+      "Gallery:",
       error
     );
 
   }
 
-
-  /* AUTH */
-
-  try {
-
-    initializeAuthListener();
-
-  } catch (
-    error
-  ) {
-
-    console.error(
-      "Auth initialization error:",
-      error
-    );
-
-  }
-
-
-  /* PRODUCTS */
 
   try {
 
     renderProducts();
 
-
-    console.log(
-      "Products rendered."
-    );
-
   } catch (
     error
   ) {
 
     console.error(
-      "Product rendering error:",
+      "Products:",
       error
     );
 
   }
 
-
-  /* REVIEWS */
 
   try {
 
     renderReviews();
 
-
-    console.log(
-      "Moving reviews initialized."
-    );
-
   } catch (
     error
   ) {
 
     console.error(
-      "Review rendering error:",
+      "Reviews:",
       error
     );
 
   }
 
 
-  /* SESSION */
-
   try {
+
+    initializeAuthListener();
+
 
     await restoreSession();
 
@@ -5463,14 +4339,12 @@ async function initializeWebsite() {
   ) {
 
     console.error(
-      "Session restoration error:",
+      "Authentication:",
       error
     );
 
   }
 
-
-  /* YEAR */
 
   const year =
     document.getElementById(
@@ -5488,17 +4362,8 @@ async function initializeWebsite() {
 
   }
 
-
-  console.log(
-    "Healthcare Pharmaceuticals initialized successfully."
-  );
-
 }
 
-
-/* =========================================================
-   START
-========================================================= */
 
 document.addEventListener(
   "DOMContentLoaded",
