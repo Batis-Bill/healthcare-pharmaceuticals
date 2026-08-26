@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="robots"
+    content="noindex,nofollow"
+  >
+
+  <title>
+    Owner Portal | Healthcare Pharmaceuticals
+  </title>
+
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
+
+</head>
+
+
+<body class="admin-body">
+
+
+  <main class="admin-shell">
+
+
+    <!-- ACCESS CHECK -->
+
+    <section
+      class="admin-access glass-card"
+      id="adminAccess"
+      style="
+        padding:50px;
+        border-radius:25px;
+        text-align:center;
+      "
+    >
+
+      <span class="eyebrow">
+        Secure Owner Portal
+      </span>
+
+      <h1>
+        Checking administrator access...
+      </h1>
+
+      <p>
+        Please wait.
+      </p>
+
+    </section>
+
+
+
+    <!-- ADMIN DASHBOARD -->
+
+    <div
+      id="adminDashboard"
+      class="hidden"
+    >
+
+
+      <header class="admin-header glass-card">
+
+        <div>
+
+          <span class="eyebrow">
+            Owner Dashboard
+          </span>
+
+          <h1>
+            Healthcare Pharmaceuticals
+          </h1>
+
+          <p id="adminEmail"></p>
+
+        </div>
+
+
+        <div class="admin-header-actions">
+
+          <a
+            href="/"
+            class="button button-secondary"
+          >
+            View Website
+          </a>
+
+
+          <button
+            class="button button-secondary"
+            id="adminLogout"
+            type="button"
+          >
+            Log Out
+          </button>
+
+        </div>
+
+      </header>
+
+
+
+      <!-- STATISTICS -->
+
+      <section class="admin-stats">
+
+        <article class="admin-stat-card glass-card">
+
+          <span class="eyebrow">
+            Total Orders
+          </span>
+
+          <strong id="totalOrders">
+            0
+          </strong>
+
+        </article>
+
+
+        <article class="admin-stat-card glass-card">
+
+          <span class="eyebrow">
+            Pending
+          </span>
+
+          <strong id="pendingOrders">
+            0
+          </strong>
+
+        </article>
+
+
+        <article class="admin-stat-card glass-card">
+
+          <span class="eyebrow">
+            Processing
+          </span>
+
+          <strong id="processingOrders">
+            0
+          </strong>
+
+        </article>
+
+
+        <article class="admin-stat-card glass-card">
+
+          <span class="eyebrow">
+            Revenue
+          </span>
+
+          <strong id="totalRevenue">
+            $0.00
+          </strong>
+
+        </article>
+
+      </section>
+
+
+
+      <!-- FILTER -->
+
+      <section class="admin-toolbar glass-card">
+
+        <input
+          id="adminSearch"
+          type="search"
+          placeholder="Search order, customer or email..."
+        >
+
+
+        <select
+          id="adminStatusFilter"
+          class="admin-status-select"
+        >
+
+          <option value="all">
+            All Statuses
+          </option>
+
+          <option value="Pending">
+            Pending
+          </option>
+
+          <option value="Processing">
+            Processing
+          </option>
+
+          <option value="Shipped">
+            Shipped
+          </option>
+
+          <option value="Delivered">
+            Delivered
+          </option>
+
+          <option value="Cancelled">
+            Cancelled
+          </option>
+
+        </select>
+
+
+        <button
+          class="button button-primary"
+          id="refreshOrders"
+          type="button"
+        >
+          Refresh
+        </button>
+
+      </section>
+
+
+
+      <!-- ORDERS -->
+
+      <section
+        class="admin-orders"
+        id="adminOrders"
+      ></section>
+
+
+    </div>
+
+  </main>
+
+
+  <div
+    class="toast"
+    id="toast"
+  ></div>
+
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+  ></script>
+
+
+  <script src="owner-portal.js"></script>
+
+
+</body>
+
+</html>
