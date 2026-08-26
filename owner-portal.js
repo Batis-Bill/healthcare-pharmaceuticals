@@ -1,5 +1,14 @@
 /* =========================================================
+   HEALTHCARE PHARMACEUTICALS
    OWNER PORTAL
+========================================================= */
+
+
+/* =========================================================
+   SUPABASE
+
+   IMPORTANT:
+   USE THE SAME VALUES FROM YOUR WORKING script.js
 ========================================================= */
 
 const SUPABASE_URL =
@@ -16,27 +25,44 @@ const supabaseClient =
     SUPABASE_PUBLISHABLE_KEY,
     {
       auth: {
-
         persistSession: true,
-
-        autoRefreshToken: true
-
+        autoRefreshToken: true,
+        detectSessionInUrl: true
       }
     }
   );
 
 
-let adminUser =
-  null;
+/* =========================================================
+   STATE
+========================================================= */
+
+let adminUser = null;
+
+let adminProfile = null;
+
+let allOrders = [];
 
 
-let allOrders =
-  [];
+/* =========================================================
+   ELEMENTS
+========================================================= */
 
-
-const adminAccess =
+const adminLoading =
   document.getElementById(
-    "adminAccess"
+    "adminLoading"
+  );
+
+
+const adminLoginScreen =
+  document.getElementById(
+    "adminLoginScreen"
+  );
+
+
+const adminDeniedScreen =
+  document.getElementById(
+    "adminDeniedScreen"
   );
 
 
@@ -52,13 +78,29 @@ const adminOrders =
   );
 
 
+const adminLoginForm =
+  document.getElementById(
+    "adminLoginForm"
+  );
+
+
+const adminLoginButton =
+  document.getElementById(
+    "adminLoginButton"
+  );
+
+
+const toast =
+  document.getElementById(
+    "toast"
+  );
+
+
 /* =========================================================
    HELPERS
 ========================================================= */
 
-function escapeHTML(
-  value
-) {
+function escapeHTML(value) {
 
   return String(
     value ?? ""
@@ -92,20 +134,16 @@ function escapeHTML(
 }
 
 
-function formatPrice(
-  value
-) {
+function formatPrice(value) {
 
   return new Intl.NumberFormat(
     "en-US",
     {
-
       style:
         "currency",
 
       currency:
         "USD"
-
     }
   ).format(
     Number(value) || 0
@@ -114,14 +152,13 @@ function formatPrice(
 }
 
 
-function showToast(
-  message
-) {
+function showToast(message) {
 
-  const toast =
-    document.getElementById(
-      "toast"
-    );
+  if (
+    !toast
+  ) {
+    return;
+  }
 
 
   toast.textContent =
@@ -133,83 +170,134 @@ function showToast(
   );
 
 
-  setTimeout(
-    () => {
-
-      toast.classList.remove(
-        "show"
-      );
-
-    },
-
-    3000
+  clearTimeout(
+    showToast.timer
   );
+
+
+  showToast.timer =
+    setTimeout(
+      () => {
+
+        toast.classList.remove(
+          "show"
+        );
+
+      },
+      3200
+    );
 
 }
 
 
 /* =========================================================
-   VERIFY ADMIN
+   SCREENS
 ========================================================= */
 
-async function verifyAdministrator() {
+function hideAllScreens() {
 
-  const {
-    data:
-      sessionData,
+  adminLoading
+    ?.classList
+    .add(
+      "hidden"
+    );
 
-    error:
-      sessionError
-  } =
-    await supabaseClient.auth
-      .getSession();
 
+  adminLoginScreen
+    ?.classList
+    .add(
+      "hidden"
+    );
+
+
+  adminDeniedScreen
+    ?.classList
+    .add(
+      "hidden"
+    );
+
+
+  adminDashboard
+    ?.classList
+    .add(
+      "hidden"
+    );
+
+}
+
+
+function showLoading() {
+
+  hideAllScreens();
+
+
+  adminLoading
+    ?.classList
+    .remove(
+      "hidden"
+    );
+
+}
+
+
+function showLogin() {
+
+  hideAllScreens();
+
+
+  adminLoginScreen
+    ?.classList
+    .remove(
+      "hidden"
+    );
+
+}
+
+
+function showDenied() {
+
+  hideAllScreens();
+
+
+  adminDeniedScreen
+    ?.classList
+    .remove(
+      "hidden"
+    );
+
+}
+
+
+function showDashboard() {
+
+  hideAllScreens();
+
+
+  adminDashboard
+    ?.classList
+    .remove(
+      "hidden"
+    );
+
+}
+
+
+/* =========================================================
+   CHECK ADMIN ROLE
+========================================================= */
+
+async function getAdministratorProfile(user) {
 
   if (
-    sessionError ||
-    !sessionData.session
+    !user
   ) {
-
-    adminAccess.innerHTML = `
-
-      <span class="eyebrow">
-        Owner Portal
-      </span>
-
-      <h1>
-        Administrator Login Required
-      </h1>
-
-      <p>
-        Log in through the main website using the
-        administrator account, then return to this URL.
-      </p>
-
-      <a
-        class="button button-primary"
-        href="/"
-      >
-        Go to Website
-      </a>
-
-    `;
-
-
-    return false;
-
+    return null;
   }
 
 
-  adminUser =
-    sessionData.session.user;
-
-
   const {
-    data:
-      profile,
-
-    error:
-      profileError
+    data,
+    error
   } =
     await supabaseClient
 
@@ -218,71 +306,329 @@ async function verifyAdministrator() {
       )
 
       .select(
-        "id, full_name, role"
+        "id, full_name, phone, role"
       )
 
       .eq(
         "id",
-        adminUser.id
+        user.id
       )
 
-      .single();
+      .maybeSingle();
 
 
   if (
-    profileError ||
-    !profile ||
-    profile.role !==
-      "admin"
+    error
   ) {
 
-    adminAccess.innerHTML = `
-
-      <span class="eyebrow">
-        Access Denied
-      </span>
-
-      <h1>
-        Administrator Permission Required
-      </h1>
-
-      <p>
-        This account does not have permission to
-        access the owner dashboard.
-      </p>
-
-      <a
-        class="button button-secondary"
-        href="/"
-      >
-        Return to Website
-      </a>
-
-    `;
+    console.error(
+      "Admin profile lookup failed:",
+      error
+    );
 
 
-    return false;
+    return null;
 
   }
 
 
-  adminAccess.classList.add(
-    "hidden"
-  );
+  return data;
+
+}
 
 
-  adminDashboard.classList.remove(
-    "hidden"
-  );
+/* =========================================================
+   VERIFY CURRENT SESSION
+========================================================= */
+
+async function verifyCurrentSession() {
+
+  showLoading();
 
 
-  document.getElementById(
-    "adminEmail"
-  ).textContent =
-    adminUser.email;
+  try {
+
+    const {
+      data,
+      error
+    } =
+      await supabaseClient.auth
+        .getSession();
 
 
-  return true;
+    if (
+      error
+    ) {
+
+      console.error(
+        "Session error:",
+        error
+      );
+
+
+      showLogin();
+
+      return;
+
+    }
+
+
+    const session =
+      data.session;
+
+
+    if (
+      !session
+    ) {
+
+      adminUser =
+        null;
+
+
+      adminProfile =
+        null;
+
+
+      showLogin();
+
+      return;
+
+    }
+
+
+    adminUser =
+      session.user;
+
+
+    adminProfile =
+      await getAdministratorProfile(
+        adminUser
+      );
+
+
+    if (
+      !adminProfile
+    ) {
+
+      showDenied();
+
+      return;
+
+    }
+
+
+    if (
+      adminProfile.role !==
+      "admin"
+    ) {
+
+      showDenied();
+
+      return;
+
+    }
+
+
+    await initializeDashboard();
+
+  } catch (
+    error
+  ) {
+
+    console.error(
+      "Owner portal initialization error:",
+      error
+    );
+
+
+    showLogin();
+
+  }
+
+}
+
+
+/* =========================================================
+   ADMIN LOGIN
+========================================================= */
+
+async function loginAdministrator(
+  email,
+  password
+) {
+
+  adminLoginButton.disabled =
+    true;
+
+
+  adminLoginButton.textContent =
+    "Signing In...";
+
+
+  try {
+
+    const {
+      data,
+      error
+    } =
+      await supabaseClient.auth
+        .signInWithPassword({
+          email:
+            email
+              .trim()
+              .toLowerCase(),
+
+          password:
+            password
+        });
+
+
+    if (
+      error
+    ) {
+
+      console.error(
+        "Login error:",
+        error
+      );
+
+
+      if (
+        error.message
+          ?.toLowerCase()
+          .includes(
+            "email not confirmed"
+          )
+      ) {
+
+        showToast(
+          "Please confirm this account's email before signing in."
+        );
+
+      } else {
+
+        showToast(
+          error.message ||
+          "Unable to sign in."
+        );
+
+      }
+
+
+      return;
+
+    }
+
+
+    adminUser =
+      data.user;
+
+
+    adminProfile =
+      await getAdministratorProfile(
+        adminUser
+      );
+
+
+    if (
+      !adminProfile
+    ) {
+
+      await supabaseClient.auth
+        .signOut();
+
+
+      showToast(
+        "Administrator profile could not be found."
+      );
+
+
+      showLogin();
+
+      return;
+
+    }
+
+
+    if (
+      adminProfile.role !==
+      "admin"
+    ) {
+
+      showDenied();
+
+      return;
+
+    }
+
+
+    showToast(
+      "Administrator login successful."
+    );
+
+
+    await initializeDashboard();
+
+  } catch (
+    error
+  ) {
+
+    console.error(
+      "Administrator login failed:",
+      error
+    );
+
+
+    showToast(
+      "Unable to sign in."
+    );
+
+  } finally {
+
+    adminLoginButton.disabled =
+      false;
+
+
+    adminLoginButton.textContent =
+      "Sign In";
+
+  }
+
+}
+
+
+/* =========================================================
+   INITIALIZE DASHBOARD
+========================================================= */
+
+async function initializeDashboard() {
+
+  showDashboard();
+
+
+  const adminEmail =
+    document.getElementById(
+      "adminEmail"
+    );
+
+
+  if (
+    adminEmail
+  ) {
+
+    const displayName =
+      adminProfile
+        ?.full_name ||
+      "Administrator";
+
+
+    adminEmail.textContent =
+      `${displayName} • ${adminUser.email}`;
+
+  }
+
+
+  await loadOrders();
 
 }
 
@@ -292,6 +638,13 @@ async function verifyAdministrator() {
 ========================================================= */
 
 async function loadOrders() {
+
+  if (
+    !adminOrders
+  ) {
+    return;
+  }
+
 
   adminOrders.innerHTML = `
 
@@ -334,6 +687,7 @@ async function loadOrders() {
         total,
         status,
         created_at,
+        updated_at,
         order_items(
           id,
           product_name,
@@ -358,6 +712,7 @@ async function loadOrders() {
   ) {
 
     console.error(
+      "Unable to load orders:",
       error
     );
 
@@ -366,11 +721,13 @@ async function loadOrders() {
 
       <article class="admin-order-card glass-card">
 
-        Unable to load orders.
+        <h3>
+          Unable to load orders
+        </h3>
 
-        <br><br>
-
-        ${escapeHTML(error.message)}
+        <p>
+          ${escapeHTML(error.message)}
+        </p>
 
       </article>
 
@@ -416,7 +773,7 @@ function updateStatistics() {
     ).length;
 
 
-  const revenue =
+  const orderValue =
     allOrders
 
       .filter(
@@ -427,13 +784,13 @@ function updateStatistics() {
 
       .reduce(
         (
-          sum,
+          total,
           order
         ) =>
 
-          sum +
+          total +
           Number(
-            order.total
+            order.total || 0
           ),
 
         0
@@ -462,7 +819,7 @@ function updateStatistics() {
     "totalRevenue"
   ).textContent =
     formatPrice(
-      revenue
+      orderValue
     );
 
 }
@@ -478,15 +835,18 @@ function getFilteredOrders() {
     document.getElementById(
       "adminSearch"
     )
-      .value
+      ?.value
       .trim()
-      .toLowerCase();
+      .toLowerCase() ||
+    "";
 
 
   const status =
     document.getElementById(
       "adminStatusFilter"
-    ).value;
+    )
+      ?.value ||
+    "all";
 
 
   return allOrders.filter(
@@ -497,32 +857,30 @@ function getFilteredOrders() {
         `${order.order_number || ""}
          ${order.customer_name || ""}
          ${order.customer_email || ""}
-         ${order.customer_phone || ""}`
+         ${order.customer_phone || ""}
+         ${order.shipping_city || ""}
+         ${order.shipping_state || ""}`
 
           .toLowerCase();
 
 
-      const searchMatch =
-
+      const matchesSearch =
         !search ||
-
         searchText.includes(
           search
         );
 
 
-      const statusMatch =
-
+      const matchesStatus =
         status ===
           "all" ||
-
         order.status ===
           status;
 
 
       return (
-        searchMatch &&
-        statusMatch
+        matchesSearch &&
+        matchesStatus
       );
 
     }
@@ -549,7 +907,13 @@ function renderOrders() {
 
       <article class="admin-order-card glass-card">
 
-        No orders match your filters.
+        <h3>
+          No orders found
+        </h3>
+
+        <p>
+          There are no orders matching your current search or filter.
+        </p>
 
       </article>
 
@@ -565,246 +929,369 @@ function renderOrders() {
     orders
 
       .map(
-        order => `
+        order => {
 
-          <article class="admin-order-card glass-card">
+          const items =
+            order.order_items ||
+            [];
 
 
-            <div class="admin-order-top">
+          return `
 
-              <div>
+            <article class="admin-order-card glass-card">
 
-                <span class="eyebrow">
-                  Order
-                </span>
 
-                <h2>
-                  ${escapeHTML(order.order_number)}
-                </h2>
+              <div class="admin-order-top">
 
-                <div class="admin-order-meta">
+                <div>
 
-                  ${new Date(
-                    order.created_at
-                  ).toLocaleString()}
+                  <span class="eyebrow">
+                    Order
+                  </span>
+
+
+                  <h2>
+                    ${escapeHTML(
+                      order.order_number
+                    )}
+                  </h2>
+
+
+                  <div class="admin-order-meta">
+
+                    ${new Date(
+                      order.created_at
+                    ).toLocaleString()}
+
+                  </div>
+
+                </div>
+
+
+                <div class="admin-order-price">
+
+                  <small>
+                    Total
+                  </small>
+
+                  <strong>
+                    ${formatPrice(
+                      order.total
+                    )}
+                  </strong>
 
                 </div>
 
               </div>
 
 
-              <div>
 
-                <strong style="font-size:1.35rem;">
+              <div class="admin-customer-grid">
 
-                  ${formatPrice(order.total)}
 
-                </strong>
+                <div class="admin-detail">
+
+                  <small>
+                    Customer
+                  </small>
+
+                  <strong>
+                    ${escapeHTML(
+                      order.customer_name ||
+                      "Not provided"
+                    )}
+                  </strong>
+
+                </div>
+
+
+                <div class="admin-detail">
+
+                  <small>
+                    Email
+                  </small>
+
+                  <span>
+                    ${escapeHTML(
+                      order.customer_email ||
+                      "Not provided"
+                    )}
+                  </span>
+
+                </div>
+
+
+                <div class="admin-detail">
+
+                  <small>
+                    Phone
+                  </small>
+
+                  <span>
+                    ${escapeHTML(
+                      order.customer_phone ||
+                      "Not provided"
+                    )}
+                  </span>
+
+                </div>
+
+
+                <div class="admin-detail">
+
+                  <small>
+                    Payment Status
+                  </small>
+
+                  <span>
+                    ${escapeHTML(
+                      order.payment_status ||
+                      "Unpaid"
+                    )}
+                  </span>
+
+                </div>
+
+
+                <div class="admin-detail">
+
+                  <small>
+                    Payment Method
+                  </small>
+
+                  <span>
+                    ${escapeHTML(
+                      order.payment_method ||
+                      "Not specified"
+                    )}
+                  </span>
+
+                </div>
+
+
+                <div class="admin-detail">
+
+                  <small>
+                    Shipping Address
+                  </small>
+
+                  <span>
+
+                    ${escapeHTML(
+                      order.shipping_address ||
+                      ""
+                    )}
+
+                    ${
+                      order.shipping_address_2
+
+                        ? `<br>${escapeHTML(
+                            order.shipping_address_2
+                          )}`
+
+                        : ""
+                    }
+
+                    <br>
+
+                    ${escapeHTML(
+                      order.shipping_city ||
+                      ""
+                    )}
+
+                    ${
+                      order.shipping_city &&
+                      order.shipping_state
+                        ? ", "
+                        : ""
+                    }
+
+                    ${escapeHTML(
+                      order.shipping_state ||
+                      ""
+                    )}
+
+                    ${escapeHTML(
+                      order.shipping_zip ||
+                      ""
+                    )}
+
+                    <br>
+
+                    ${escapeHTML(
+                      order.shipping_country ||
+                      ""
+                    )}
+
+                  </span>
+
+                </div>
+
+
+                <div class="admin-detail">
+
+                  <small>
+                    Delivery Instructions
+                  </small>
+
+                  <span>
+                    ${escapeHTML(
+                      order.delivery_instructions ||
+                      "None"
+                    )}
+                  </span>
+
+                </div>
+
 
               </div>
 
-            </div>
 
 
-
-            <div class="admin-customer-grid">
-
-              <div class="admin-detail">
-
-                <small>
-                  Customer
-                </small>
+              <div class="admin-order-items">
 
                 <strong>
-                  ${escapeHTML(order.customer_name || "Not provided")}
+                  Products
                 </strong>
 
-              </div>
-
-
-              <div class="admin-detail">
-
-                <small>
-                  Email
-                </small>
-
-                ${escapeHTML(order.customer_email || "")}
-
-              </div>
-
-
-              <div class="admin-detail">
-
-                <small>
-                  Phone
-                </small>
-
-                ${escapeHTML(order.customer_phone || "")}
-
-              </div>
-
-
-              <div class="admin-detail">
-
-                <small>
-                  Payment
-                </small>
-
-                ${escapeHTML(order.payment_status || "Unpaid")}
-
-              </div>
-
-
-              <div class="admin-detail">
-
-                <small>
-                  Shipping Address
-                </small>
-
-                ${escapeHTML(order.shipping_address || "")}
 
                 ${
-                  order.shipping_address_2
-                    ? `<br>${escapeHTML(order.shipping_address_2)}`
-                    : ""
+                  items.length
+
+                    ? items
+                        .map(
+                          item => `
+
+                            <div class="admin-order-line">
+
+                              <span>
+
+                                ${escapeHTML(
+                                  item.product_name
+                                )}
+
+                                ${
+                                  item.strength
+
+                                    ? `— ${escapeHTML(
+                                        item.strength
+                                      )}`
+
+                                    : ""
+                                }
+
+                                ×
+                                ${item.quantity}
+
+                              </span>
+
+
+                              <strong>
+
+                                ${formatPrice(
+                                  item.line_total
+                                )}
+
+                              </strong>
+
+                            </div>
+
+                          `
+                        )
+                        .join("")
+
+                    : `
+
+                      <p class="admin-order-meta">
+                        No order items found.
+                      </p>
+
+                    `
                 }
 
-                <br>
-
-                ${escapeHTML(order.shipping_city || "")},
-                ${escapeHTML(order.shipping_state || "")}
-                ${escapeHTML(order.shipping_zip || "")}
-
-                <br>
-
-                ${escapeHTML(order.shipping_country || "")}
-
               </div>
 
 
-              <div class="admin-detail">
 
-                <small>
-                  Delivery Instructions
-                </small>
+              <div class="admin-order-actions">
 
-                ${escapeHTML(order.delivery_instructions || "None")}
+                <label>
 
-              </div>
-
-            </div>
-
-
-
-            <div class="admin-order-items">
-
-              <strong>
-                Products
-              </strong>
-
-
-              ${(
-                order.order_items ||
-                []
-              )
-
-                .map(
-                  item => `
-
-                    <div class="admin-order-line">
-
-                      <span>
-
-                        ${escapeHTML(item.product_name)}
-
-                        ${
-                          item.strength
-                            ? `— ${escapeHTML(item.strength)}`
-                            : ""
-                        }
-
-                        × ${item.quantity}
-
-                      </span>
-
-
-                      <strong>
-
-                        ${formatPrice(item.line_total)}
-
-                      </strong>
-
-                    </div>
-
-                  `
-                )
-
-                .join("")}
-
-            </div>
-
-
-
-            <div class="admin-order-actions">
-
-              <div>
-
-                <small>
                   Order Status
-                </small>
 
-                <select
-                  class="admin-status-select"
-                  data-order-id="${order.id}"
-                >
+                  <select
+                    class="admin-status-select order-status-control"
+                    data-order-id="${order.id}"
+                  >
 
-                  ${[
-                    "Pending",
-                    "Processing",
-                    "Shipped",
-                    "Delivered",
-                    "Cancelled"
-                  ]
+                    ${[
+                      "Pending",
+                      "Processing",
+                      "Shipped",
+                      "Delivered",
+                      "Cancelled"
+                    ]
 
-                    .map(
-                      status => `
+                      .map(
+                        status => `
 
-                        <option
-                          value="${status}"
-                          ${
-                            order.status === status
-                              ? "selected"
-                              : ""
-                          }
-                        >
-                          ${status}
-                        </option>
+                          <option
+                            value="${status}"
+                            ${
+                              order.status ===
+                              status
 
-                      `
-                    )
+                                ? "selected"
 
-                    .join("")}
+                                : ""
+                            }
+                          >
+                            ${status}
+                          </option>
 
-                </select>
+                        `
+                      )
+
+                      .join("")}
+
+                  </select>
+
+                </label>
+
+
+                <div class="admin-order-totals">
+
+                  <span>
+                    Subtotal:
+                    ${formatPrice(
+                      order.subtotal
+                    )}
+                  </span>
+
+                  <span>
+                    Shipping:
+                    ${formatPrice(
+                      order.shipping
+                    )}
+                  </span>
+
+                  <strong>
+                    Total:
+                    ${formatPrice(
+                      order.total
+                    )}
+                  </strong>
+
+                </div>
 
               </div>
 
 
-              <div>
+            </article>
 
-                <span>
-                  Subtotal:
-                  ${formatPrice(order.subtotal)}
-                </span>
+          `;
 
-              </div>
-
-            </div>
-
-
-          </article>
-
-        `
+        }
       )
 
       .join("");
@@ -812,7 +1299,7 @@ function renderOrders() {
 
   adminOrders
     .querySelectorAll(
-      ".admin-status-select"
+      ".order-status-control"
     )
 
     .forEach(
@@ -823,12 +1310,9 @@ function renderOrders() {
           async () => {
 
             await updateOrderStatus(
-
-              select.dataset
-                .orderId,
-
-              select.value
-
+              select.dataset.orderId,
+              select.value,
+              select
             );
 
           }
@@ -841,13 +1325,33 @@ function renderOrders() {
 
 
 /* =========================================================
-   UPDATE STATUS
+   UPDATE ORDER STATUS
 ========================================================= */
 
 async function updateOrderStatus(
   orderId,
-  status
+  newStatus,
+  selectElement
 ) {
+
+  if (
+    !adminUser ||
+    adminProfile?.role !==
+      "admin"
+  ) {
+
+    showToast(
+      "Administrator access required."
+    );
+
+    return;
+
+  }
+
+
+  selectElement.disabled =
+    true;
+
 
   const {
     error
@@ -859,14 +1363,12 @@ async function updateOrderStatus(
       )
 
       .update({
-
         status:
-          status,
+          newStatus,
 
         updated_at:
           new Date()
             .toISOString()
-
       })
 
       .eq(
@@ -875,11 +1377,16 @@ async function updateOrderStatus(
       );
 
 
+  selectElement.disabled =
+    false;
+
+
   if (
     error
   ) {
 
     console.error(
+      "Status update failed:",
       error
     );
 
@@ -889,25 +1396,27 @@ async function updateOrderStatus(
     );
 
 
+    await loadOrders();
+
     return;
 
   }
 
 
-  const order =
+  const localOrder =
     allOrders.find(
-      item =>
-        item.id ===
+      order =>
+        order.id ===
         orderId
     );
 
 
   if (
-    order
+    localOrder
   ) {
 
-    order.status =
-      status;
+    localOrder.status =
+      newStatus;
 
   }
 
@@ -916,7 +1425,110 @@ async function updateOrderStatus(
 
 
   showToast(
-    `Order changed to ${status}.`
+    `Order changed to ${newStatus}.`
+  );
+
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+async function logoutAdministrator() {
+
+  await supabaseClient.auth
+    .signOut();
+
+
+  adminUser =
+    null;
+
+
+  adminProfile =
+    null;
+
+
+  allOrders =
+    [];
+
+
+  adminLoginForm
+    ?.reset();
+
+
+  showLogin();
+
+
+  showToast(
+    "Logged out."
+  );
+
+}
+
+
+/* =========================================================
+   PASSWORD RESET
+========================================================= */
+
+async function sendAdminPasswordReset() {
+
+  const email =
+    document.getElementById(
+      "adminLoginEmail"
+    )
+      ?.value
+      .trim()
+      .toLowerCase();
+
+
+  if (
+    !email
+  ) {
+
+    showToast(
+      "Enter your administrator email first."
+    );
+
+    return;
+
+  }
+
+
+  const {
+    error
+  } =
+    await supabaseClient.auth
+      .resetPasswordForEmail(
+        email,
+        {
+          redirectTo:
+            `${window.location.origin}/owner-portal.html`
+        }
+      );
+
+
+  if (
+    error
+  ) {
+
+    console.error(
+      "Password reset error:",
+      error
+    );
+
+
+    showToast(
+      error.message
+    );
+
+    return;
+
+  }
+
+
+  showToast(
+    "Password reset email sent."
   );
 
 }
@@ -927,6 +1539,96 @@ async function updateOrderStatus(
 ========================================================= */
 
 function initializeAdminEvents() {
+
+
+  adminLoginForm
+    ?.addEventListener(
+      "submit",
+      async event => {
+
+        event.preventDefault();
+
+
+        const email =
+          document.getElementById(
+            "adminLoginEmail"
+          ).value;
+
+
+        const password =
+          document.getElementById(
+            "adminLoginPassword"
+          ).value;
+
+
+        await loginAdministrator(
+          email,
+          password
+        );
+
+      }
+    );
+
+
+  document.getElementById(
+    "toggleAdminPassword"
+  )
+    ?.addEventListener(
+      "click",
+      event => {
+
+        const passwordInput =
+          document.getElementById(
+            "adminLoginPassword"
+          );
+
+
+        const showing =
+          passwordInput.type ===
+          "text";
+
+
+        passwordInput.type =
+          showing
+            ? "password"
+            : "text";
+
+
+        event.currentTarget.textContent =
+          showing
+            ? "Show"
+            : "Hide";
+
+      }
+    );
+
+
+  document.getElementById(
+    "adminForgotPassword"
+  )
+    ?.addEventListener(
+      "click",
+      sendAdminPasswordReset
+    );
+
+
+  document.getElementById(
+    "adminLogout"
+  )
+    ?.addEventListener(
+      "click",
+      logoutAdministrator
+    );
+
+
+  document.getElementById(
+    "deniedLogoutButton"
+  )
+    ?.addEventListener(
+      "click",
+      logoutAdministrator
+    );
+
 
   document.getElementById(
     "adminSearch"
@@ -951,23 +1653,14 @@ function initializeAdminEvents() {
   )
     ?.addEventListener(
       "click",
-      loadOrders
-    );
-
-
-  document.getElementById(
-    "adminLogout"
-  )
-    ?.addEventListener(
-      "click",
       async () => {
 
-        await supabaseClient.auth
-          .signOut();
+        showToast(
+          "Refreshing orders..."
+        );
 
 
-        window.location.href =
-          "/";
+        await loadOrders();
 
       }
     );
@@ -976,28 +1669,66 @@ function initializeAdminEvents() {
 
 
 /* =========================================================
-   START
+   AUTH STATE LISTENER
+========================================================= */
+
+function initializeAuthListener() {
+
+  supabaseClient.auth
+    .onAuthStateChange(
+      async (
+        event,
+        session
+      ) => {
+
+        if (
+          event ===
+          "SIGNED_OUT"
+        ) {
+
+          adminUser =
+            null;
+
+
+          adminProfile =
+            null;
+
+
+          showLogin();
+
+          return;
+
+        }
+
+
+        if (
+          session?.user
+        ) {
+
+          adminUser =
+            session.user;
+
+        }
+
+      }
+    );
+
+}
+
+
+/* =========================================================
+   INITIALIZE
 ========================================================= */
 
 async function initializeOwnerPortal() {
 
-  const authorized =
-    await verifyAdministrator();
-
-
-  if (
-    !authorized
-  ) {
-
-    return;
-
-  }
-
-
   initializeAdminEvents();
 
 
-  await loadOrders();
+  initializeAuthListener();
+
+
+  await verifyCurrentSession();
 
 }
 
