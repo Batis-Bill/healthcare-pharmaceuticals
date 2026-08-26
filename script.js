@@ -40,7 +40,7 @@ const supabaseClient =
 const products = [
 
   /* =====================================================
-     CURRENT PRODUCTS
+     MOUNJARO
   ====================================================== */
 
   {
@@ -49,11 +49,14 @@ const products = [
     name:
       "Mounjaro",
 
+    genericName:
+      "Tirzepatide",
+
     category:
       "medicine",
 
     categoryLabel:
-      "Medicine",
+      "Prescription Medicine",
 
     image:
       "assets/products/mounjaro.jpg",
@@ -61,47 +64,107 @@ const products = [
     video:
       "assets/products/mounjaro.mp4",
 
-    description:
-      "Available in multiple strengths.",
+    shortDescription:
+      "Once-weekly prescription tirzepatide injection used alongside diet and exercise for adults with type 2 diabetes.",
 
     badge:
       "Available",
 
+    details: {
+
+      introduction:
+        "Mounjaro (tirzepatide) is a prescription medication used together with diet and exercise to improve blood sugar control in adults with type 2 diabetes.",
+
+      sections: [
+
+        {
+          title:
+            "How Mounjaro Works",
+
+          paragraphs: [
+
+            "Tirzepatide works by activating two hormone receptors, GIP and GLP-1, which help regulate blood sugar and appetite.",
+
+            "It can increase insulin release when blood sugar is elevated, decrease glucagon secretion, slow stomach emptying and reduce food intake."
+
+          ]
+        },
+
+        {
+          title:
+            "Product Description",
+
+          paragraphs: [
+
+            "Mounjaro is a once-weekly injectable prescription medication supplied in a prefilled injection device.",
+
+            "It is available in several strengths and should be used according to the instructions provided by a qualified healthcare professional."
+
+          ]
+        }
+
+      ]
+
+    },
+
     dosages: [
 
       {
-        strength: "2.5 mg",
-        price: 150
+        strength:
+          "2.5 mg",
+
+        price:
+          150
       },
 
       {
-        strength: "5 mg",
-        price: 200
+        strength:
+          "5 mg",
+
+        price:
+          200
       },
 
       {
-        strength: "7.5 mg",
-        price: 250
+        strength:
+          "7.5 mg",
+
+        price:
+          250
       },
 
       {
-        strength: "10 mg",
-        price: 300
+        strength:
+          "10 mg",
+
+        price:
+          300
       },
 
       {
-        strength: "12.5 mg",
-        price: 400
+        strength:
+          "12.5 mg",
+
+        price:
+          400
       },
 
       {
-        strength: "15 mg",
-        price: 450
+        strength:
+          "15 mg",
+
+        price:
+          450
       }
 
     ]
+
   },
 
+
+  /* =====================================================
+     OZEMPIC
+  ====================================================== */
 
   {
     id: 2,
@@ -109,11 +172,14 @@ const products = [
     name:
       "Ozempic",
 
+    genericName:
+      "Semaglutide",
+
     category:
       "medicine",
 
     categoryLabel:
-      "Medicine",
+      "Prescription Medicine",
 
     image:
       "assets/products/ozempic.jpg",
@@ -121,32 +187,87 @@ const products = [
     video:
       "",
 
-    description:
-      "Available in multiple strengths.",
+    shortDescription:
+      "Once-weekly prescription semaglutide medicine used alongside diet and exercise in adults with type 2 diabetes.",
 
     badge:
       "Available",
 
+    details: {
+
+      introduction:
+        "Ozempic (semaglutide) is a prescription medication used alongside diet and exercise to improve blood sugar control in adults with type 2 diabetes. It belongs to a class of medicines called GLP-1 receptor agonists.",
+
+      sections: [
+
+        {
+          title:
+            "How Ozempic Works",
+
+          paragraphs: [
+
+            "Ozempic works by mimicking a natural hormone called GLP-1.",
+
+            "It helps the body release insulin when blood sugar is elevated, reduces the amount of glucose released by the liver and slows stomach emptying.",
+
+            "It can also reduce appetite and food intake, which may contribute to weight loss."
+
+          ]
+        },
+
+        {
+          title:
+            "Product Description",
+
+          paragraphs: [
+
+            "Ozempic is a once-weekly injectable prescription medicine containing semaglutide.",
+
+            "It is available in different strengths and is administered using a prefilled injection pen according to a healthcare professional's instructions.",
+
+            "Ozempic is a prescription medication and should only be used under the supervision of a qualified healthcare professional. It is not appropriate for everyone, and patients should discuss their medical history, other medications and potential side effects with their healthcare provider before use."
+
+          ]
+        }
+
+      ]
+
+    },
+
     dosages: [
 
       {
-        strength: "0.25 mg",
-        price: 100
+        strength:
+          "0.25 mg",
+
+        price:
+          100
       },
 
       {
-        strength: "0.5 mg",
-        price: 130
+        strength:
+          "0.5 mg",
+
+        price:
+          130
       },
 
       {
-        strength: "1 mg",
-        price: 150
+        strength:
+          "1 mg",
+
+        price:
+          150
       }
 
     ]
+
   },
 
+
+  /* =====================================================
+     WEGOVY
+  ====================================================== */
 
   {
     id: 3,
@@ -154,11 +275,14 @@ const products = [
     name:
       "Wegovy",
 
+    genericName:
+      "Semaglutide",
+
     category:
       "medicine",
 
     categoryLabel:
-      "Medicine",
+      "Prescription Medicine",
 
     image:
       "assets/products/vegovy.jpg",
@@ -166,42 +290,101 @@ const products = [
     video:
       "",
 
-    description:
-      "Available in multiple strengths.",
+    shortDescription:
+      "Once-weekly prescription semaglutide injection used for chronic weight management in eligible patients.",
 
     badge:
       "Available",
 
+    details: {
+
+      introduction:
+        "Wegovy is a prescription medication used together with a reduced-calorie diet and increased physical activity for certain people with obesity or overweight and related health conditions.",
+
+      sections: [
+
+        {
+          title:
+            "How Wegovy Works",
+
+          paragraphs: [
+
+            "Wegovy contains semaglutide, which mimics a naturally occurring hormone called GLP-1.",
+
+            "It acts on areas of the brain involved in appetite regulation, helping reduce hunger and food intake.",
+
+            "It also slows stomach emptying and can help regulate blood sugar."
+
+          ]
+        },
+
+        {
+          title:
+            "Product Description",
+
+          paragraphs: [
+
+            "Wegovy is a once-weekly prescription injection supplied in a prefilled injection pen.",
+
+            "It is available in different strengths, with the appropriate dose determined and adjusted by a healthcare professional based on the patient's treatment needs and tolerability."
+
+          ]
+        }
+
+      ]
+
+    },
+
     dosages: [
 
       {
-        strength: "0.25 mg",
-        price: 199
+        strength:
+          "0.25 mg",
+
+        price:
+          199
       },
 
       {
-        strength: "0.5 mg",
-        price: 199
+        strength:
+          "0.5 mg",
+
+        price:
+          199
       },
 
       {
-        strength: "1 mg",
-        price: 249
+        strength:
+          "1 mg",
+
+        price:
+          249
       },
 
       {
-        strength: "1.7 mg",
-        price: 299
+        strength:
+          "1.7 mg",
+
+        price:
+          299
       },
 
       {
-        strength: "2.4 mg",
-        price: 349
+        strength:
+          "2.4 mg",
+
+        price:
+          349
       }
 
     ]
+
   },
 
+
+  /* =====================================================
+     SAXENDA
+  ====================================================== */
 
   {
     id: 4,
@@ -209,11 +392,14 @@ const products = [
     name:
       "Saxenda",
 
+    genericName:
+      "Liraglutide",
+
     category:
       "medicine",
 
     categoryLabel:
-      "Medicine",
+      "Prescription Medicine",
 
     image:
       "assets/products/saxenda.jpg",
@@ -221,8 +407,325 @@ const products = [
     video:
       "",
 
-    description:
-      "Available in multiple strengths.",
+    shortDescription:
+      "Once-daily prescription liraglutide injection used for chronic weight management in certain eligible patients.",
+
+    badge:
+      "Available",
+
+    details: {
+
+      introduction:
+        "Saxenda is a prescription medication used together with a reduced-calorie diet and increased physical activity for chronic weight management in certain adults and children who meet specific eligibility criteria.",
+
+      sections: [
+
+        {
+          title:
+            "How Saxenda Works",
+
+          paragraphs: [
+
+            "Saxenda contains liraglutide, which is a GLP-1 receptor agonist.",
+
+            "It works on areas of the brain involved in appetite regulation, helping reduce hunger and food intake.",
+
+            "It also slows stomach emptying and can help increase feelings of fullness."
+
+          ]
+        },
+
+        {
+          title:
+            "Product Description",
+
+          paragraphs: [
+
+            "Saxenda is a once-daily prescription injection supplied in a prefilled injection pen.",
+
+            "It contains liraglutide and is available as a multidose pen.",
+
+            "Treatment is typically started at a lower dose and increased gradually according to a healthcare professional's instructions to help improve tolerability."
+
+          ]
+        }
+
+      ]
+
+    },
+
+    dosages: [
+
+      {
+        strength:
+          "0.6 mg",
+
+        price:
+          150
+      },
+
+      {
+        strength:
+          "1.2 mg",
+
+        price:
+          175
+      },
+
+      {
+        strength:
+          "1.8 mg",
+
+        price:
+          200
+      },
+
+      {
+        strength:
+          "2.4 mg",
+
+        price:
+          225
+      },
+
+      {
+        strength:
+          "3 mg",
+
+        price:
+          250
+      }
+
+    ]
+
+  },
+
+
+  /* =====================================================
+     NAD+
+  ====================================================== */
+
+  {
+    id: 5,
+
+    name:
+      "NAD+",
+
+    fullName:
+      "Nicotinamide Adenine Dinucleotide",
+
+    category:
+      "cofactor",
+
+    categoryLabel:
+      "Research Compound",
+
+    image:
+      "assets/products/NAD+.jpg",
+
+    video:
+      "",
+
+    shortDescription:
+      "Essential coenzyme widely studied in cellular energy metabolism, mitochondrial function and redox biology.",
+
+    badge:
+      "Available",
+
+    price:
+      89,
+
+    details: {
+
+      sections: [
+
+        {
+          title:
+            "Product Description",
+
+          bullets: [
+
+            "Essential coenzyme central to cellular redox and energy metabolism. Studied in mitochondrial-function and longevity research.",
+
+            "Investigated for roles in sirtuin activity and DNA-repair pathways. Frequently referenced in cellular-aging models.",
+
+            "Participates in electron-transfer reactions across many enzymes."
+
+          ]
+        },
+
+        {
+          title:
+            "Research Use Notes",
+
+          bullets: [
+
+            "Supplied as lyophilized powder. Requires reconstitution before use.",
+
+            "Research Water required for mixing (sold separately). Swirl gently, never shake."
+
+          ]
+        },
+
+        {
+          title:
+            "Storage",
+
+          bullets: [
+
+            "Store lyophilized vial frozen and protected from light.",
+
+            "Keep reconstituted solution at 2 to 8°C. Protect from light and heat."
+
+          ]
+        },
+
+        {
+          title:
+            "Handling",
+
+          bullets: [
+
+            "Use sterile technique during reconstitution.",
+
+            "For laboratory research use only."
+
+          ]
+        }
+
+      ]
+
+    }
+
+  },
+
+
+  /* =====================================================
+     GHK-CU
+  ====================================================== */
+
+  {
+    id: 6,
+
+    name:
+      "GHK-Cu",
+
+    fullName:
+      "Copper Tripeptide-1",
+
+    category:
+      "peptide",
+
+    categoryLabel:
+      "Research Peptide",
+
+    image:
+      "assets/products/ghk-cu.jpg",
+
+    video:
+      "",
+
+    shortDescription:
+      "Naturally occurring copper-binding tripeptide studied in tissue-remodeling and extracellular-matrix research.",
+
+    badge:
+      "Available",
+
+    price:
+      72,
+
+    details: {
+
+      sections: [
+
+        {
+          title:
+            "Product Description",
+
+          bullets: [
+
+            "Naturally occurring copper-binding tripeptide (Gly-His-Lys). Studied in tissue-remodeling and extracellular-matrix research.",
+
+            "Investigated for roles in skin and connective-tissue models. Frequently referenced in regenerative research literature.",
+
+            "Copper complex gives the reconstituted solution a blue tint."
+
+          ]
+        },
+
+        {
+          title:
+            "Research Use Notes",
+
+          bullets: [
+
+            "Supplied as lyophilized powder. Requires reconstitution before use.",
+
+            "Research Water required for mixing (sold separately). Swirl gently, never shake."
+
+          ]
+        },
+
+        {
+          title:
+            "Storage",
+
+          bullets: [
+
+            "Store lyophilized vial frozen for extended holding.",
+
+            "Keep reconstituted solution at 2 to 8°C. Refrigerated solution stable for up to 30 days."
+
+          ]
+        },
+
+        {
+          title:
+            "Handling",
+
+          bullets: [
+
+            "Use sterile technique during reconstitution.",
+
+            "For laboratory research use only."
+
+          ]
+        }
+
+      ]
+
+    }
+
+  },
+
+
+  /* =====================================================
+     BPC-157
+  ====================================================== */
+
+  {
+    id: 7,
+
+    name:
+      "BPC-157",
+
+    fullName:
+      "Body Protection Compound",
+
+    category:
+      "peptide",
+
+    categoryLabel:
+      "Research Peptide",
+
+    image:
+      "assets/products/bpc-157.jpg",
+
+    video:
+      "",
+
+    shortDescription:
+      "15-amino-acid research peptide widely referenced in tissue, gastrointestinal and connective-tissue research.",
 
     badge:
       "Available",
@@ -230,120 +733,99 @@ const products = [
     dosages: [
 
       {
-        strength: "0.6 mg",
-        price: 150
+        strength:
+          "5 mg",
+
+        price:
+          52
       },
 
       {
-        strength: "1.2 mg",
-        price: 175
-      },
+        strength:
+          "10 mg",
 
-      {
-        strength: "1.8 mg",
-        price: 200
-      },
-
-      {
-        strength: "2.4 mg",
-        price: 225
-      },
-
-      {
-        strength: "3 mg",
-        price: 250
+        price:
+          97
       }
 
-    ]
+    ],
+
+    details: {
+
+      sections: [
+
+        {
+          title:
+            "Product Description",
+
+          bullets: [
+
+            "Stable 15-amino-acid sequence derived from a gastric protective protein. Often referred to as body protection compound.",
+
+            "Studied for tissue-repair, tendon and angiogenesis signaling. Investigated for cytoprotective effects in research models.",
+
+            "Referenced widely in gut and connective-tissue research."
+
+          ]
+        },
+
+        {
+          title:
+            "Research Use Notes",
+
+          bullets: [
+
+            "Supplied as lyophilized powder. Requires reconstitution before use.",
+
+            "Research Water required for mixing (sold separately). Swirl gently, never shake."
+
+          ]
+        },
+
+        {
+          title:
+            "Storage",
+
+          bullets: [
+
+            "Store lyophilized vial frozen for long-term holding.",
+
+            "Keep reconstituted solution at 2 to 8°C. Protect from light and heat."
+
+          ]
+        },
+
+        {
+          title:
+            "Handling",
+
+          bullets: [
+
+            "Maintain sterile technique throughout reconstitution.",
+
+            "For laboratory research use only.",
+
+            "Avoid repeated freeze-thaw cycles to preserve integrity."
+
+          ]
+        }
+
+      ]
+
+    }
+
   },
 
 
-  {
-    id: 5,
-
-    name:
-      "NAD+ Research Compound",
-
-    price:
-      89,
-
-    category:
-      "cofactor",
-
-    categoryLabel:
-      "Cofactor",
-
-    image:
-      "assets/products/NAD+.jpg",
-
-    description:
-      "NAD+ product in our research collection.",
-
-    badge:
-      "Available"
-  },
-
-
-  {
-    id: 6,
-
-    name:
-      "GHK-Cu Research Peptide",
-
-    price:
-      72,
-
-    category:
-      "peptide",
-
-    categoryLabel:
-      "Peptide",
-
-    image:
-      "assets/products/ghk-cu.jpg",
-
-    description:
-      "GHK-Cu product in our research collection.",
-
-    badge:
-      "Available"
-  },
-
-
-  {
-    id: 7,
-
-    name:
-      "BPC Reference Peptide",
-
-    price:
-      64,
-
-    category:
-      "peptide",
-
-    categoryLabel:
-      "Peptide",
-
-    image:
-      "assets/products/BPC.jpg",
-
-    description:
-      "BPC reference product.",
-
-    badge:
-      "Available"
-  },
-
+  /* =====================================================
+     CJC
+  ====================================================== */
 
   {
     id: 8,
 
     name:
       "CJC Reference Material",
-
-    price:
-      78,
 
     category:
       "reference",
@@ -354,35 +836,71 @@ const products = [
     image:
       "assets/products/CJC.jpg",
 
-    description:
-      "CJC reference material.",
+    video:
+      "",
+
+    shortDescription:
+      "CJC peptide reference material supplied for laboratory and analytical research applications.",
 
     badge:
-      "Available"
+      "Available",
+
+    price:
+      78,
+
+    details: {
+
+      sections: [
+
+        {
+          title:
+            "Product Description",
+
+          paragraphs: [
+
+            "CJC peptide reference material supplied for laboratory, analytical and research applications."
+
+          ]
+        },
+
+        {
+          title:
+            "Research Use",
+
+          bullets: [
+
+            "Intended for laboratory and analytical research applications.",
+
+            "Handle according to the product label, supplier specifications and applicable laboratory protocols."
+
+          ]
+        }
+
+      ]
+
+    }
+
   },
 
 
   /* =====================================================
-     NEW PEPTIDES
+     RETATRUTIDE
   ====================================================== */
-
-
-  /* RETTA / RETATRUTIDE */
 
   {
     id: 9,
 
     name:
-      "Retta",
-
-    fullName:
       "Retatrutide",
+
+    alternateName:
+      "RETA",
 
     category:
       "peptide",
 
     categoryLabel:
-      "Peptide",
+      "Research Peptide",
 
     image:
       "assets/products/retatrutide.jpg",
@@ -390,8 +908,8 @@ const products = [
     video:
       "",
 
-    description:
-      "Retatrutide research compound available in multiple vial strengths.",
+    shortDescription:
+      "Investigational research peptide studied for activity at GIP, GLP-1 and glucagon receptors.",
 
     badge:
       "Available",
@@ -399,74 +917,115 @@ const products = [
     dosages: [
 
       {
-        strength: "10 mg",
-        price: 69
+        strength:
+          "10 mg",
+
+        price:
+          69
       },
 
       {
-        strength: "30 mg",
-        price: 170
+        strength:
+          "30 mg",
+
+        price:
+          170
       }
 
-    ]
+    ],
+
+    details: {
+
+      sections: [
+
+        {
+          title:
+            "Product Description",
+
+          paragraphs: [
+
+            "Retatrutide is an investigational peptide being studied for its activity at three hormone receptors: GIP, GLP-1 and glucagon.",
+
+            "Research has examined its potential effects on metabolic pathways, energy balance, glucose regulation and body-weight-related mechanisms.",
+
+            "Retatrutide remains an investigational compound and is not approved for human therapeutic use."
+
+          ]
+        },
+
+        {
+          title:
+            "Research Use Notes",
+
+          bullets: [
+
+            "For laboratory research use only.",
+
+            "Not for human or veterinary use.",
+
+            "Not intended to diagnose, treat, cure or prevent any disease.",
+
+            "Researchers should use appropriate laboratory protocols and institutional safety procedures.",
+
+            "Research involving retatrutide should be conducted by appropriately qualified personnel.",
+
+            "Do not provide human dosing, treatment or physique/bodybuilding claims for this product."
+
+          ]
+        },
+
+        {
+          title:
+            "Storage & Handling",
+
+          paragraphs: [
+
+            "Because storage requirements can vary according to the formulation and supplier's validated specifications, the manufacturer's certificate of analysis (CoA), product specification sheet and label should take precedence."
+
+          ],
+
+          bullets: [
+
+            "Keep the material in its original, properly labeled container.",
+
+            "Protect from excessive heat, moisture and direct light.",
+
+            "Minimize repeated temperature changes.",
+
+            "Handle using appropriate laboratory PPE and contamination-control procedures.",
+
+            "Do not use material if the container is damaged, improperly labeled or shows signs of contamination or degradation.",
+
+            "Follow the supplier's validated storage temperature and stability instructions for the specific batch."
+
+          ]
+        }
+
+      ]
+
+    }
+
   },
 
 
-  /* BPC-157 */
+  /* =====================================================
+     TESAMORELIN
+  ====================================================== */
 
   {
     id: 10,
 
     name:
-      "BPC-157",
-
-    category:
-      "peptide",
-
-    categoryLabel:
-      "Peptide",
-
-    image:
-      "assets/products/bpc-157.jpg",
-
-    video:
-      "",
-
-    description:
-      "BPC-157 research peptide available in multiple vial strengths.",
-
-    badge:
-      "Available",
-
-    dosages: [
-
-      {
-        strength: "5 mg",
-        price: 52
-      },
-
-      {
-        strength: "10 mg",
-        price: 97
-      }
-
-    ]
-  },
-
-
-  /* TESAMORELIN */
-
-  {
-    id: 11,
-
-    name:
       "Tesamorelin",
 
+    fullName:
+      "GHRH Analog",
+
     category:
       "peptide",
 
     categoryLabel:
-      "Peptide",
+      "Research Peptide",
 
     image:
       "assets/products/tesamorelin.jpg",
@@ -474,8 +1033,8 @@ const products = [
     video:
       "",
 
-    description:
-      "Tesamorelin research peptide available in multiple vial strengths.",
+    shortDescription:
+      "Synthetic growth-hormone-releasing-hormone analog studied in endocrine and growth-hormone-axis research.",
 
     badge:
       "Available",
@@ -483,32 +1042,106 @@ const products = [
     dosages: [
 
       {
-        strength: "5 mg",
-        price: 43
+        strength:
+          "5 mg",
+
+        price:
+          43
       },
 
       {
-        strength: "10 mg",
-        price: 79
+        strength:
+          "10 mg",
+
+        price:
+          79
       }
 
-    ]
+    ],
+
+    details: {
+
+      sections: [
+
+        {
+          title:
+            "Product Description",
+
+          bullets: [
+
+            "Stabilized synthetic analog of growth-hormone-releasing hormone. Studied in endocrine and growth-hormone-axis research.",
+
+            "Investigated for activity at the GHRH receptor and downstream signaling. Referenced in metabolic and adipose-tissue research models.",
+
+            "Modified GHRH(1-44) structure for improved research stability."
+
+          ]
+        },
+
+        {
+          title:
+            "Research Use Notes",
+
+          bullets: [
+
+            "Supplied as lyophilized powder. Requires reconstitution before use.",
+
+            "Research Water required for mixing (sold separately). Swirl gently, never shake."
+
+          ]
+        },
+
+        {
+          title:
+            "Storage",
+
+          bullets: [
+
+            "Store lyophilized vial frozen for long-term holding.",
+
+            "Keep reconstituted solution at 2 to 8°C. Use within typical research handling window."
+
+          ]
+        },
+
+        {
+          title:
+            "Handling",
+
+          bullets: [
+
+            "Maintain sterile technique during reconstitution.",
+
+            "For laboratory research use only."
+
+          ]
+        }
+
+      ]
+
+    }
+
   },
 
 
-  /* MOTS-C */
+  /* =====================================================
+     MOTS-C
+  ====================================================== */
 
   {
-    id: 12,
+    id: 11,
 
     name:
       "MOTS-C",
+
+    fullName:
+      "Mitochondrial-Derived Peptide",
 
     category:
       "peptide",
 
     categoryLabel:
-      "Peptide",
+      "Research Peptide",
 
     image:
       "assets/products/mots-c.jpg",
@@ -516,8 +1149,8 @@ const products = [
     video:
       "",
 
-    description:
-      "MOTS-C research peptide.",
+    shortDescription:
+      "16-amino-acid mitochondrial-derived peptide studied in cellular metabolism and energy-homeostasis research.",
 
     badge:
       "Available",
@@ -525,27 +1158,98 @@ const products = [
     dosages: [
 
       {
-        strength: "10 mg",
-        price: 116
+        strength:
+          "10 mg",
+
+        price:
+          116
       }
 
-    ]
+    ],
+
+    details: {
+
+      sections: [
+
+        {
+          title:
+            "Product Description",
+
+          bullets: [
+
+            "16-amino-acid peptide encoded within the mitochondrial 12S rRNA. Studied in cellular metabolism and energy-homeostasis research.",
+
+            "Investigated for roles in metabolic-stress and insulin-sensitivity models. Often referenced in exercise-mimetic research.",
+
+            "Acts as a signaling peptide between mitochondria and the nucleus."
+
+          ]
+        },
+
+        {
+          title:
+            "Research Use Notes",
+
+          bullets: [
+
+            "Supplied as lyophilized powder. Requires reconstitution before use.",
+
+            "Research Water required for mixing (sold separately). Swirl gently, never shake."
+
+          ]
+        },
+
+        {
+          title:
+            "Storage",
+
+          bullets: [
+
+            "Store lyophilized vial frozen for long-term holding.",
+
+            "Keep reconstituted solution at 2 to 8°C. Stable refrigerated for up to 28 days."
+
+          ]
+        },
+
+        {
+          title:
+            "Handling",
+
+          bullets: [
+
+            "Maintain sterile workflow during reconstitution.",
+
+            "For laboratory research use only."
+
+          ]
+        }
+
+      ]
+
+    }
+
   },
 
 
-  /* SS-31 */
+  /* =====================================================
+     SS-31
+  ====================================================== */
 
   {
-    id: 13,
+    id: 12,
 
     name:
       "SS-31",
+
+    fullName:
+      "Elamipretide",
 
     category:
       "peptide",
 
     categoryLabel:
-      "Peptide",
+      "Research Peptide",
 
     image:
       "assets/products/ss-31.jpg",
@@ -553,8 +1257,8 @@ const products = [
     video:
       "",
 
-    description:
-      "SS-31 research peptide available in multiple vial strengths.",
+    shortDescription:
+      "Mitochondria-targeting tetrapeptide studied in mitochondrial structure, bioenergetics and cellular-energy research.",
 
     badge:
       "Available",
@@ -562,32 +1266,108 @@ const products = [
     dosages: [
 
       {
-        strength: "10 mg",
-        price: 29
+        strength:
+          "10 mg",
+
+        price:
+          29
       },
 
       {
-        strength: "50 mg",
-        price: 130
+        strength:
+          "50 mg",
+
+        price:
+          130
       }
 
-    ]
+    ],
+
+    details: {
+
+      sections: [
+
+        {
+          title:
+            "Product Description",
+
+          bullets: [
+
+            "Mitochondria-targeting tetrapeptide that concentrates at the inner mitochondrial membrane and binds the phospholipid cardiolipin.",
+
+            "Studied for support of mitochondrial structure and bioenergetics. Investigated for reduction of reactive oxygen species.",
+
+            "Referenced in cellular-energy and age-related research models."
+
+          ]
+        },
+
+        {
+          title:
+            "Research Use Notes",
+
+          bullets: [
+
+            "Supplied as lyophilized powder. Requires reconstitution before use.",
+
+            "Research Water required for mixing (sold separately). Swirl gently, never shake."
+
+          ]
+        },
+
+        {
+          title:
+            "Storage",
+
+          bullets: [
+
+            "Store lyophilized vial frozen for long-term holding.",
+
+            "Keep reconstituted solution at 2 to 8°C. Protect from light and heat."
+
+          ]
+        },
+
+        {
+          title:
+            "Handling",
+
+          bullets: [
+
+            "Maintain sterile technique throughout reconstitution.",
+
+            "For laboratory research use only.",
+
+            "Avoid repeated freeze-thaw cycles to preserve integrity."
+
+          ]
+        }
+
+      ]
+
+    }
+
   },
 
 
-  /* KPV */
+  /* =====================================================
+     KPV
+  ====================================================== */
 
   {
-    id: 14,
+    id: 13,
 
     name:
       "KPV",
+
+    fullName:
+      "Lysine-Proline-Valine",
 
     category:
       "peptide",
 
     categoryLabel:
-      "Peptide",
+      "Research Peptide",
 
     image:
       "assets/products/kpv.jpg",
@@ -595,8 +1375,8 @@ const products = [
     video:
       "",
 
-    description:
-      "KPV research peptide available in multiple vial strengths.",
+    shortDescription:
+      "Short tripeptide fragment of α-MSH studied in inflammatory-signaling, gut and skin research models.",
 
     badge:
       "Available",
@@ -604,16 +1384,87 @@ const products = [
     dosages: [
 
       {
-        strength: "4 mg",
-        price: 38
+        strength:
+          "4 mg",
+
+        price:
+          38
       },
 
       {
-        strength: "10 mg",
-        price: 29
+        strength:
+          "10 mg",
+
+        price:
+          29
       }
 
-    ]
+    ],
+
+    details: {
+
+      sections: [
+
+        {
+          title:
+            "Product Description",
+
+          bullets: [
+
+            "C-terminal tripeptide fragment of alpha-melanocyte-stimulating hormone (α-MSH). Retains the anti-inflammatory core of α-MSH.",
+
+            "Studied for modulation of inflammatory signaling pathways. Investigated in gut and skin research models.",
+
+            "Small, stable sequence frequently studied alongside repair peptides."
+
+          ]
+        },
+
+        {
+          title:
+            "Research Use Notes",
+
+          bullets: [
+
+            "Supplied as lyophilized powder. Requires reconstitution before use.",
+
+            "Research Water required for mixing (sold separately). Swirl gently, never shake."
+
+          ]
+        },
+
+        {
+          title:
+            "Storage",
+
+          bullets: [
+
+            "Store lyophilized vial frozen for long-term holding.",
+
+            "Keep reconstituted solution at 2 to 8°C. Protect from light and heat."
+
+          ]
+        },
+
+        {
+          title:
+            "Handling",
+
+          bullets: [
+
+            "Maintain sterile technique throughout reconstitution.",
+
+            "For laboratory research use only.",
+
+            "Avoid repeated freeze-thaw cycles to preserve integrity."
+
+          ]
+        }
+
+      ]
+
+    }
+
   }
 
 ];
@@ -1727,24 +2578,22 @@ function createProductCard(
 ) {
 
   const firstPrice =
-    product.dosages
-      ?.length
+    product.dosages?.length
 
-      ? product.dosages[0]
-          .price
+      ? product.dosages[0].price
 
       : product.price;
 
 
   const dosageHTML =
-    product.dosages
-      ?.length
+    product.dosages?.length
 
       ? `
 
         <select
           class="dosage-select"
           id="dose-${product.id}"
+          aria-label="Select ${escapeHTML(product.name)} strength"
         >
 
           ${product.dosages
@@ -1756,9 +2605,11 @@ function createProductCard(
                   value="${escapeHTML(dose.strength)}"
                   data-price="${dose.price}"
                 >
+
                   ${escapeHTML(dose.strength)}
                   —
                   ${formatPrice(dose.price)}
+
                 </option>
 
               `
@@ -1777,8 +2628,13 @@ function createProductCard(
 
     <article class="product-card">
 
+
       <span class="product-badge">
-        ${escapeHTML(product.badge)}
+
+        ${escapeHTML(
+          product.badge
+        )}
+
       </span>
 
 
@@ -1786,9 +2642,17 @@ function createProductCard(
 
         <img
           class="product-image"
-          src="${escapeHTML(product.image)}"
-          alt="${escapeHTML(product.name)}"
+
+          src="${escapeHTML(
+            product.image
+          )}"
+
+          alt="${escapeHTML(
+            product.name
+          )}"
+
           loading="lazy"
+
           onerror="
             this.style.display='none';
             this.nextElementSibling.style.display='grid';
@@ -1808,9 +2672,7 @@ function createProductCard(
             </div>
 
             <span>
-              Add
-              ${escapeHTML(product.name)}
-              image
+              Product image
             </span>
 
           </div>
@@ -1822,18 +2684,56 @@ function createProductCard(
 
       <div class="product-info">
 
+
         <span class="product-category">
-          ${escapeHTML(product.categoryLabel)}
+
+          ${escapeHTML(
+            product.categoryLabel
+          )}
+
         </span>
 
 
         <h3>
-          ${escapeHTML(product.name)}
+
+          ${escapeHTML(
+            product.name
+          )}
+
         </h3>
 
 
+        ${
+          product.fullName
+
+            ? `
+
+              <small
+                style="
+                  display:block;
+                  color:var(--muted-2);
+                  margin-bottom:10px;
+                "
+              >
+
+                ${escapeHTML(
+                  product.fullName
+                )}
+
+              </small>
+
+            `
+
+            : ""
+        }
+
+
         <p>
-          ${escapeHTML(product.description)}
+
+          ${escapeHTML(
+            product.shortDescription
+          )}
+
         </p>
 
 
@@ -1846,8 +2746,28 @@ function createProductCard(
             class="product-price"
             id="price-${product.id}"
           >
-            ${formatPrice(firstPrice)}
+
+            ${formatPrice(
+              firstPrice
+            )}
+
           </span>
+
+        </div>
+
+
+        <div class="product-card-actions">
+
+
+          <button
+            class="product-details-button"
+            type="button"
+            data-details-product="${product.id}"
+          >
+
+            View Details
+
+          </button>
 
 
           <button
@@ -1855,8 +2775,11 @@ function createProductCard(
             type="button"
             data-product-id="${product.id}"
           >
+
             Add to Cart
+
           </button>
+
 
         </div>
 
@@ -1952,6 +2875,34 @@ function renderProducts() {
     );
 
 
+    productGrid
+    .querySelectorAll(
+      "[data-details-product]"
+    )
+
+    .forEach(
+      button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            openProductDetails(
+
+              Number(
+                button.dataset
+                  .detailsProduct
+              )
+
+            );
+
+          }
+        );
+
+      }
+    );
+
+
   initializeDosageSelectors();
 
 }
@@ -2009,6 +2960,523 @@ function initializeDosageSelectors() {
 
 }
 
+
+/* =========================================================
+   PRODUCT DETAILS
+========================================================= */
+
+let currentDetailsProductId =
+  null;
+
+
+function createProductDetailsHTML(
+  product
+) {
+
+  if (
+    !product.details
+  ) {
+
+    return `
+
+      <div class="product-description-section">
+
+        <h3>
+          Product Description
+        </h3>
+
+        <p>
+          ${escapeHTML(
+            product.shortDescription ||
+            ""
+          )}
+        </p>
+
+      </div>
+
+    `;
+
+  }
+
+
+  let html =
+    "";
+
+
+  if (
+    product.details.introduction
+  ) {
+
+    html += `
+
+      <div class="product-description-section">
+
+        <h3>
+          Overview
+        </h3>
+
+        <p>
+
+          ${escapeHTML(
+            product.details.introduction
+          )}
+
+        </p>
+
+      </div>
+
+    `;
+
+  }
+
+
+  (
+    product.details.sections ||
+    []
+  ).forEach(
+    section => {
+
+
+      html += `
+
+        <div class="product-description-section">
+
+          <h3>
+
+            ${escapeHTML(
+              section.title
+            )}
+
+          </h3>
+
+      `;
+
+
+      if (
+        section.paragraphs?.length
+      ) {
+
+        section.paragraphs.forEach(
+          paragraph => {
+
+            html += `
+
+              <p>
+
+                ${escapeHTML(
+                  paragraph
+                )}
+
+              </p>
+
+            `;
+
+          }
+        );
+
+      }
+
+
+      if (
+        section.bullets?.length
+      ) {
+
+        html +=
+          "<ul>";
+
+
+        section.bullets.forEach(
+          bullet => {
+
+            html += `
+
+              <li>
+
+                ${escapeHTML(
+                  bullet
+                )}
+
+              </li>
+
+            `;
+
+          }
+        );
+
+
+        html +=
+          "</ul>";
+
+      }
+
+
+      html +=
+        "</div>";
+
+    }
+  );
+
+
+  return html;
+
+}
+
+
+function openProductDetails(
+  productId
+) {
+
+  const product =
+    products.find(
+      item =>
+        item.id ===
+        Number(
+          productId
+        )
+    );
+
+
+  if (
+    !product
+  ) {
+
+    return;
+
+  }
+
+
+  currentDetailsProductId =
+    product.id;
+
+
+  const modal =
+    document.getElementById(
+      "productDetailsModal"
+    );
+
+
+  const image =
+    document.getElementById(
+      "productDetailsImage"
+    );
+
+
+  const placeholder =
+    document.getElementById(
+      "productDetailsImagePlaceholder"
+    );
+
+
+  const strengthWrapper =
+    document.getElementById(
+      "productDetailsStrengthWrapper"
+    );
+
+
+  const strengthSelect =
+    document.getElementById(
+      "productDetailsStrength"
+    );
+
+
+  document.getElementById(
+    "productDetailsCategory"
+  ).textContent =
+    product.categoryLabel;
+
+
+  document.getElementById(
+    "productDetailsName"
+  ).textContent =
+    product.fullName
+
+      ? `${product.name} (${product.fullName})`
+
+      : product.name;
+
+
+  document.getElementById(
+    "productDetailsDescription"
+  ).innerHTML =
+    createProductDetailsHTML(
+      product
+    );
+
+
+  image.style.display =
+    "block";
+
+
+  placeholder.classList.add(
+    "hidden"
+  );
+
+
+  image.src =
+    product.image;
+
+
+  image.alt =
+    product.name;
+
+
+  image.onerror =
+    () => {
+
+      image.style.display =
+        "none";
+
+
+      placeholder.classList.remove(
+        "hidden"
+      );
+
+    };
+
+
+  if (
+    product.dosages?.length
+  ) {
+
+    strengthWrapper.classList.remove(
+      "hidden"
+    );
+
+
+    strengthSelect.innerHTML =
+      product.dosages
+
+        .map(
+          dose => `
+
+            <option
+              value="${escapeHTML(
+                dose.strength
+              )}"
+              data-price="${dose.price}"
+            >
+
+              ${escapeHTML(
+                dose.strength
+              )}
+
+              —
+              ${formatPrice(
+                dose.price
+              )}
+
+            </option>
+
+          `
+        )
+
+        .join("");
+
+
+    document.getElementById(
+      "productDetailsPrice"
+    ).textContent =
+      formatPrice(
+        product.dosages[0]
+          .price
+      );
+
+
+  } else {
+
+    strengthWrapper.classList.add(
+      "hidden"
+    );
+
+
+    strengthSelect.innerHTML =
+      "";
+
+
+    document.getElementById(
+      "productDetailsPrice"
+    ).textContent =
+      formatPrice(
+        product.price
+      );
+
+  }
+
+
+  if (
+    !modal.open
+  ) {
+
+    modal.showModal();
+
+  }
+
+}
+
+
+/* =========================================================
+   PRODUCT DETAILS STRENGTH
+========================================================= */
+
+function updateProductDetailsPrice() {
+
+  const select =
+    document.getElementById(
+      "productDetailsStrength"
+    );
+
+
+  const option =
+    select.options[
+      select.selectedIndex
+    ];
+
+
+  if (
+    !option
+  ) {
+
+    return;
+
+  }
+
+
+  document.getElementById(
+    "productDetailsPrice"
+  ).textContent =
+    formatPrice(
+      option.dataset.price
+    );
+
+}
+
+
+/* =========================================================
+   ADD FROM DETAILS MODAL
+========================================================= */
+
+function addDetailsProductToCart() {
+
+  if (
+    !currentDetailsProductId
+  ) {
+
+    return;
+
+  }
+
+
+  const product =
+    products.find(
+      item =>
+        item.id ===
+        currentDetailsProductId
+    );
+
+
+  if (
+    !product
+  ) {
+
+    return;
+
+  }
+
+
+  let strength =
+    null;
+
+
+  let price =
+    product.price;
+
+
+  if (
+    product.dosages?.length
+  ) {
+
+    const select =
+      document.getElementById(
+        "productDetailsStrength"
+      );
+
+
+    const option =
+      select.options[
+        select.selectedIndex
+      ];
+
+
+    strength =
+      option.value;
+
+
+    price =
+      Number(
+        option.dataset.price
+      );
+
+  }
+
+
+  const cartKey =
+    `${product.id}-${strength || "standard"}`;
+
+
+  const existing =
+    state.cart.find(
+      item =>
+        item.cartKey ===
+        cartKey
+    );
+
+
+  if (
+    existing
+  ) {
+
+    existing.quantity++;
+
+  } else {
+
+    state.cart.push({
+
+      cartKey:
+        cartKey,
+
+      id:
+        product.id,
+
+      name:
+        product.name,
+
+      strength:
+        strength,
+
+      price:
+        Number(
+          price
+        ),
+
+      quantity:
+        1
+
+    });
+
+  }
+
+
+  saveCart();
+
+
+  renderCart();
+
+
+  showToast(
+    `${product.name} added to cart.`
+  );
+
+}
 
 /* =========================================================
    CART
@@ -4253,6 +5721,39 @@ function initializeEvents() {
 
       }
     );
+
+    document.getElementById(
+  "productDetailsClose"
+)
+  ?.addEventListener(
+    "click",
+    () => {
+
+      document.getElementById(
+        "productDetailsModal"
+      )
+        ?.close();
+
+    }
+  );
+
+
+document.getElementById(
+  "productDetailsStrength"
+)
+  ?.addEventListener(
+    "change",
+    updateProductDetailsPrice
+  );
+
+
+document.getElementById(
+  "productDetailsAddCart"
+)
+  ?.addEventListener(
+    "click",
+    addDetailsProductToCart
+  );
 
 }
 
