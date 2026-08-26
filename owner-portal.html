@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -18,7 +17,6 @@
   <title>
     Owner Portal | Healthcare Pharmaceuticals
   </title>
-
 
   <link
     rel="preconnect"
@@ -36,42 +34,50 @@
     rel="stylesheet"
   >
 
-
   <link
     rel="stylesheet"
     href="styles.css"
   >
-
 </head>
 
 
 <body class="admin-body">
 
-
   <main class="admin-shell">
 
 
-    <!-- ACCESS CHECK -->
+    <!-- ============================================
+         LOADING SCREEN
+    ============================================= -->
 
     <section
-      class="admin-access glass-card"
-      id="adminAccess"
-      style="
-        padding:50px;
-        border-radius:25px;
-        text-align:center;
-      "
+      class="owner-login-card glass-card"
+      id="adminLoading"
     >
+
+      <div class="owner-login-brand">
+        <div class="brand-mark">+</div>
+
+        <div>
+          <strong>
+            Healthcare
+          </strong>
+
+          <span>
+            Pharmaceuticals
+          </span>
+        </div>
+      </div>
 
       <span class="eyebrow">
         Secure Owner Portal
       </span>
 
       <h1>
-        Checking administrator access...
+        Checking your session...
       </h1>
 
-      <p>
+      <p class="owner-login-description">
         Please wait.
       </p>
 
@@ -79,13 +85,190 @@
 
 
 
-    <!-- ADMIN DASHBOARD -->
+    <!-- ============================================
+         OWNER LOGIN
+    ============================================= -->
+
+    <section
+      class="owner-login-card glass-card hidden"
+      id="adminLoginScreen"
+    >
+
+      <div class="owner-login-brand">
+
+        <div class="brand-mark">
+          +
+        </div>
+
+        <div>
+
+          <strong>
+            Healthcare
+          </strong>
+
+          <span>
+            Pharmaceuticals
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <span class="eyebrow">
+        Owner Portal
+      </span>
+
+
+      <h1>
+        Administrator Sign In
+      </h1>
+
+
+      <p class="owner-login-description">
+        Enter your administrator account details to access
+        orders and customer information.
+      </p>
+
+
+      <form
+        class="owner-login-form"
+        id="adminLoginForm"
+      >
+
+        <label>
+
+          Email Address
+
+          <input
+            id="adminLoginEmail"
+            type="email"
+            autocomplete="email"
+            required
+            placeholder="admin@example.com"
+          >
+
+        </label>
+
+
+        <label>
+
+          Password
+
+          <div class="password-field">
+
+            <input
+              id="adminLoginPassword"
+              type="password"
+              autocomplete="current-password"
+              required
+              placeholder="Enter your password"
+            >
+
+            <button
+              class="password-toggle"
+              id="toggleAdminPassword"
+              type="button"
+            >
+              Show
+            </button>
+
+          </div>
+
+        </label>
+
+
+        <button
+          class="button button-primary button-full"
+          id="adminLoginButton"
+          type="submit"
+        >
+          Sign In
+        </button>
+
+
+        <button
+          class="text-button owner-forgot-password"
+          id="adminForgotPassword"
+          type="button"
+        >
+          Forgot password?
+        </button>
+
+      </form>
+
+
+      <div class="owner-login-footer">
+
+        <a
+          href="/"
+          class="text-button"
+        >
+          ← Return to Website
+        </a>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ============================================
+         ACCESS DENIED
+    ============================================= -->
+
+    <section
+      class="owner-login-card glass-card hidden"
+      id="adminDeniedScreen"
+    >
+
+      <div class="owner-denied-icon">
+        !
+      </div>
+
+      <span class="eyebrow">
+        Access Denied
+      </span>
+
+      <h1>
+        Administrator Permission Required
+      </h1>
+
+      <p class="owner-login-description">
+        The account you signed in with is valid, but it does
+        not have administrator permission.
+      </p>
+
+      <button
+        class="button button-primary button-full"
+        id="deniedLogoutButton"
+        type="button"
+      >
+        Sign In With Another Account
+      </button>
+
+      <a
+        href="/"
+        class="button button-secondary button-full owner-back-button"
+      >
+        Return to Website
+      </a>
+
+    </section>
+
+
+
+    <!-- ============================================
+         OWNER DASHBOARD
+    ============================================= -->
 
     <div
       id="adminDashboard"
       class="hidden"
     >
 
+
+      <!-- HEADER -->
 
       <header class="admin-header glass-card">
 
@@ -174,7 +357,7 @@
         <article class="admin-stat-card glass-card">
 
           <span class="eyebrow">
-            Revenue
+            Order Value
           </span>
 
           <strong id="totalRevenue">
@@ -187,14 +370,14 @@
 
 
 
-      <!-- FILTER -->
+      <!-- FILTERS -->
 
       <section class="admin-toolbar glass-card">
 
         <input
           id="adminSearch"
           type="search"
-          placeholder="Search order, customer or email..."
+          placeholder="Search order, customer, email or phone..."
         >
 
 
@@ -249,11 +432,12 @@
         id="adminOrders"
       ></section>
 
-
     </div>
 
   </main>
 
+
+  <!-- TOAST -->
 
   <div
     class="toast"
@@ -261,13 +445,14 @@
   ></div>
 
 
+  <!-- SUPABASE -->
+
   <script
     src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
   ></script>
 
 
   <script src="owner-portal.js"></script>
-
 
 </body>
 
